@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@use './variables' as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.l-container {
+  max-width: $content-width;
+}
+
+/* ------------------- Webチームブログここから ------------------- */
+.p-blogList {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__card {
+    display: block;
+    width: 350px;
+    height: 462px;
+    background-color: #d9d9d9;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/* ------------------- Webチームブログここまで ------------------- */

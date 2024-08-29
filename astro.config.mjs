@@ -42,6 +42,9 @@ export default defineConfig({
       },
     },
   },
+  image: {
+    remotePatterns: [{ protocol: "https" }],
+  },
   integrations: [
     CoverImageDownloader(),
     CustomIconDownloader(),

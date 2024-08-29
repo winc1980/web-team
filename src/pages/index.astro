@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
 import { NUMBER_OF_POSTS_PER_PAGE } from '@/server-constants.ts'
 import {
   getPosts,
@@ -17,17 +18,33 @@ const dynamicPath = 'posts'
 const title = ''
 const description = ''
 const og_image = ''
-console.log(posts);
+const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
   <main>
-    {
-      posts.map((post) => (
-        <div>
-          <a href={`${dynamicPath}/${post.Slug}`}>{post.Title}{post.Date}</a>
+    <section id="blogList" class="p-blogList">
+      <div class="l-container">
+        <div class="p-blogList__wrapper">
+          {
+            posts.map((post) => (
+              <a href={`${dynamicPath}/${post.Slug}`} class="p-blogList__card">
+                <Image
+                  src={post?.FeaturedImage?.Url ?? defaultImg}
+                  alt={post.Title}
+                  width="350"
+                  height="196"
+                />
+                <h5>{post.Date}</h5>
+                <h4>{post.Title}</h4>
+                <p>
+                  あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波
+                </p>
+              </a>
+            ))
+          }
         </div>
-      ))
-    }
+      </div>
+    </section>
   </main>
 </Layout>
