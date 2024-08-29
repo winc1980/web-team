@@ -1,0 +1,47 @@
+---
+import "@/scss/styles.scss";
+import { Image } from "astro:assets";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+// タイトル等をPropsとして受け取る。
+let { title, description, og_image } = Astro.props;
+//　指定がない場合のデフォルト値を設定しておく。
+if (!title) {
+  title = "";
+}
+if (!description) {
+  description =
+    "";
+}
+if (!og_image) {
+  og_image = "";
+}
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={og_image} />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content={og_image} />
+    <link rel="icon" sizes="32x32" type="image/png" href="" />
+    <link rel="shortcut icon" href="" />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
