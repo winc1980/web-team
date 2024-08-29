@@ -1,12 +1,33 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-const title = "";
-const description = "";
-const og_image = "";
+import Layout from '@/layouts/Layout.astro'
+import { NUMBER_OF_POSTS_PER_PAGE } from '@/server-constants.ts'
+import {
+  getPosts,
+  getRankedPosts,
+  getAllTags,
+  getNumberOfPages,
+} from '@/lib/notion/client.ts'
+const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
+  getPosts(NUMBER_OF_POSTS_PER_PAGE),
+  getRankedPosts(),
+  getAllTags(),
+  getNumberOfPages(),
+])
+const dynamicPath = 'posts'
+const title = ''
+const description = ''
+const og_image = ''
+console.log(posts);
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-	<main>
-		<a href="posts/history-of-web-team">Webチームの歴史</a>
-	</main>
+  <main>
+    {
+      posts.map((post) => (
+        <div>
+          <a href={`${dynamicPath}/${post.Slug}`}>{post.Title}{post.Date}</a>
+        </div>
+      ))
+    }
+  </main>
 </Layout>
