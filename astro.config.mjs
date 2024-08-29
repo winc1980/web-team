@@ -35,6 +35,13 @@ const getSite = function () {
 export default defineConfig({
   site: getSite(),
   base: BASE_PATH,
+  vite: {
+    resolve: {
+      alias: {
+        "@": "/src",
+      },
+    },
+  },
   integrations: [
     CoverImageDownloader(),
     CustomIconDownloader(),
