@@ -22,6 +22,30 @@ h5 {
   font-weight: 500;
 }
 
+.web-team {
+  &__button {
+    display: block;
+    width: fit-content;
+    height: 47px;
+    text-align: center;
+    padding: 8px 25px 0 25px;
+    margin: 0 auto;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: 'Noto Sans JP';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 31.014px */
+    &.--yellow {
+      background-color: #f2b551;
+    }
+    &.--blue {
+      background-color: #518ef2;
+    }
+  }
+}
+
 /* ------------------- 共通要素ここまで ------------------- */
 /* ------------------- Webチームブログここから ------------------- */
 .p-blogList {

@@ -1,0 +1,77 @@
+@use './variables' as *;
+
+.p-web-team-header {
+  height: 109px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  &__logo {
+    display: block;
+  }
+  img {
+    width: 310px;
+    object-fit: contain;
+    margin-left: 22px;
+    display: block;
+  }
+  nav {
+    display: block;
+    ul {
+      display: flex;
+      li {
+        margin: 0 20px;
+        a {
+          color: #000;
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: normal;
+          font-weight: 500;
+          font-style: normal;
+        }
+      }
+    }
+  }
+  &__blocks {
+    display: flex;
+  }
+  &__cta {
+    a {
+      display: block;
+      width: 147px;
+      height: 112px;
+      padding-top: 40px;
+      background-color: #f2b551;
+      p {
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+  }
+  &__contact {
+    a {
+      display: block;
+      width: 147px;
+      height: 112px;
+      padding-top: 40px;
+      background-color: #518ef2;
+      p {
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+  }
+}

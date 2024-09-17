@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import { NUMBER_OF_POSTS_PER_PAGE } from '@/server-constants.ts'
+import Button from '@/components/Button.astro'
 import {
   getPosts,
   getRankedPosts,
@@ -44,6 +45,9 @@ console.log(posts)
               </a>
             ))
           }
+        </div>
+        <div class="my-10">
+          <Button url="/posts/" text="ブログ一覧" color="yellow"/>
         </div>
       </div>
     </section>

@@ -1,0 +1,19 @@
+---
+const {url, text, color} = Astro.props;
+let bg_color = "--yellow";
+// 以下の分岐： colorに値が入っていなければyellow、blueが入っていればblue、それ以外ならyellow
+if (color == null) {
+    bg_color = "--yellow";
+} else if (color == "yellow") {
+    bg_color = "--yellow";
+} else if (color == "blue") {
+    bg_color = "--blue";
+} else {
+    bg_color = "--yellow";
+}
+---
+
+<a href={url} class={`web-team__button ${bg_color}`}>{text}</a>
+<style>
+  
+</style>
