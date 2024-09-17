@@ -28,7 +28,7 @@ console.log(posts)
       <div class="l-container">
         <div class="p-blogList__wrapper">
           {
-            posts.map((post) => (
+            posts.slice(0, 3).map((post) => (
               <a href={`${dynamicPath}/${post.Slug}`} class="p-blogList__card">
                 <Image
                   src={post?.FeaturedImage?.Url ?? defaultImg}
