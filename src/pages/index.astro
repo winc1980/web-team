@@ -8,10 +8,6 @@ import {
   getAllTags,
   getNumberOfPages,
 } from '@/lib/notion/client.ts'
-import { Swiper } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getPosts(NUMBER_OF_POSTS_PER_PAGE),
   getRankedPosts(),
@@ -30,112 +26,26 @@ console.log(posts)
   <main>
     <section id="blogList" class="p-blogList">
       <div class="l-container">
-        <!--HTML CODE-->
-
-        <div class="w-full relative">
-          <div class="swiper multiple-slide-carousel swiper-container relative">
-            <div class="p-blogList__wrapper swiper-wrapper mb-16">
-              {
-                posts.map((post) => (
-                  <a
-                    href={`${dynamicPath}/${post.Slug}`}
-                    class="p-blogList__card"
-                  >
-                    <Image
-                      src={post?.FeaturedImage?.Url ?? defaultImg}
-                      alt={post.Title}
-                      width="350"
-                      height="196"
-                    />
-                    <div class="p-blogList__card__text">
-                      <h5>{post.Date}</h5>
-                      <h4>{post.Title}</h4>
-                      <p>{post.Excerpt}</p>
-                    </div>
-                  </a>
-                ))
-              }
-            </div>
-            <div
-              class="absolute flex justify-center items-center m-auto left-0 right-0 w-fit bottom-12"
-            >
-              <button
-                id="slider-button-left"
-                class="swiper-button-prev group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full hover:bg-indigo-600 !-translate-x-16"
-                data-carousel-prev
-              >
-                <svg
-                  class="h-5 w-5 text-indigo-600 group-hover:text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <path
-                    d="M10.0002 11.9999L6 7.99971L10.0025 3.99719"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg>
-              </button>
-              <button
-                id="slider-button-right"
-                class="swiper-button-next group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full hover:bg-indigo-600 !translate-x-16"
-                data-carousel-next
-              >
-                <svg
-                  class="h-5 w-5 text-indigo-600 group-hover:text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <path
-                    d="M5.99984 4.00012L10 8.00029L5.99748 12.0028"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
+        <div class="p-blogList__wrapper">
+          {
+            posts.map((post) => (
+              <a href={`${dynamicPath}/${post.Slug}`} class="p-blogList__card">
+                <Image
+                  src={post?.FeaturedImage?.Url ?? defaultImg}
+                  alt={post.Title}
+                  width="350"
+                  height="196"
+                />
+                <div class="p-blogList__card__text">
+                  <h5>{post.Date}</h5>
+                  <h4>{post.Title}</h4>
+                  <p>{post.Excerpt}</p>
+                </div>
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
   </main>
 </Layout>
-<link
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  rel="stylesheet"
-/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-></script>
-<script is:inline>
-  var swiper = new Swiper('.multiple-slide-carousel', {
-    loop: true,
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: '.multiple-slide-carousel .swiper-button-next',
-      prevEl: '.multiple-slide-carousel .swiper-button-prev',
-    },
-    breakpoints: {
-      1920: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      1028: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      990: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      },
-    },
-  })
-</script>

@@ -21,6 +21,7 @@
     "@astrojs/rss": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
     "@notionhq/client": "^2.2.5",
+    "@splidejs/splide": "^4.1.4",
     "@supercharge/promise-pool": "^2.4.0",
     "astro": "^3.3.1",
     "astro-icon": "^0.8.1",
