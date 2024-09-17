@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @use './variables' as *;
 
-
-
 .l-container {
   max-width: $content-width;
   margin: 0 auto;
@@ -24,6 +22,12 @@
       width: 100%;
       height: 196px;
       object-fit: cover;
+    }
+    p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 7;
     }
   }
 }
