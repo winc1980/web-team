@@ -1,29 +1,70 @@
 @charset "UTF-8";
 @use './variables' as *;
 
+/* ------------------- 共通要素ここから ------------------- */
+
 .l-container {
   max-width: $content-width;
   margin: 0 auto;
   padding: 0 15px;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #000;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  line-height: 172.3%; /* 24.122px */
+  font-weight: 500;
+}
+
+/* ------------------- 共通要素ここまで ------------------- */
 /* ------------------- Webチームブログここから ------------------- */
 .p-blogList {
+  .swiper-wrapper {
+    width: 100%;
+    height: max-content !important;
+    padding-bottom: 64px !important;
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+  }
+  .swiper-pagination-bullet {
+    background: #4f46e5;
+  }
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   &__card {
     display: block;
     width: 350px;
     height: 462px;
-    background-color: #d9d9d9;
+    border: #518ef2 1px solid;
+    &__text {
+      padding: 7px;
+    }
     img {
-      width: 100%;
-      height: 196px;
+      aspect-ratio: 16/9;
       object-fit: cover;
     }
+    h5 {
+      font-size: 14px;
+      line-height: 172.3%; /* 24.122px */
+    }
+    h4 {
+      font-size: 18px;
+      line-height: 172.3%; /* 31.014px */
+    }
     p {
+      color: #222;
+      font-size: 16px;
+      line-height: 172.3%; /* 27.568px */
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;

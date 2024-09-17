@@ -980,7 +980,9 @@ function _buildPost(pageObject: responses.PageObject): Post {
     Slug: prop.Slug.rich_text
       ? prop.Slug.rich_text.map((richText) => richText.plain_text).join('')
       : '',
-    Date: prop.Date.date ? prop.Date.date.start : '',
+    Date: prop.Date.date
+      ? prop.Date.date.start.replace(/-/g, '.') // 日付フォーマットを変更
+      : '',
     Tags: prop.Tags.multi_select ? prop.Tags.multi_select : [],
     Excerpt:
       prop.Excerpt.rich_text && prop.Excerpt.rich_text.length > 0
