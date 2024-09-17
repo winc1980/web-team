@@ -78,22 +78,13 @@ if (database.Icon && database.Icon.Type === 'file') {
   <body>
     <GoogleAnalytics trackingId={PUBLIC_GA_TRACKING_ID} />
     <div class="container">
-      <header>
-        {
-          coverImageURL && (
-            <div class="cover">
-              <img src={coverImageURL} alt="Site cover image" loading="lazy" />
-            </div>
-          )
-        }
-      </header>
 
       <div>
         <main>
           <div class="content">
             <header>
               <h1>
-                <a href={getNavLink('/')}>
+                <a href={getNavLink('/posts')}>
                   {
                     database.Icon && database.Icon.Type === 'emoji' ? (
                       <>
