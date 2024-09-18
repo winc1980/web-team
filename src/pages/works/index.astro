@@ -1,0 +1,28 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import Button from '@/components/Button.astro'
+//microCMS呼び出し
+import { getWorks } from '@/lib/microcms'
+const response = await getWorks({ fields: ['id', 'title'] })
+
+const title = ''
+const description = ''
+const og_image = ''
+---
+
+<Layout title={title} , description={description}, og_image={og_image}>
+  <main>
+    <section id="" class="">
+      <ul>
+        {
+          response.contents.map((content: any) => (
+            <li>
+              <a href={"/works/" + content.id}>{content.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>

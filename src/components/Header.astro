@@ -1,11 +1,10 @@
 ---
-import '@/scss/nav.scss'
 import { Image } from 'astro:assets'
 import logo from '@/assets/images/webteam_logo_name.webp'
 ---
 
-<header id="web-team-header" class="p-web-team-header">
-  <a href="/" class="p-web-team-header__logo"><Image src={logo} alt="" /></a>
+<header class="web-team__header">
+  <a href="/" class="web-team__header__logo"><Image src={logo} alt="" /></a>
   <nav>
     <ul>
       <li><a href="">Webチームの一年</a></li>
@@ -15,11 +14,11 @@ import logo from '@/assets/images/webteam_logo_name.webp'
       <li><a href="">ブログ</a></li>
     </ul>
   </nav>
-  <div class="p-web-team-header__blocks">
-      <div class="p-web-team-header__cta">
+  <div class="web-team__header__blocks">
+      <div class="web-team__header__cta">
         <a href=""><p>入会はこちら</p></a>
       </div>
-      <div class="p-web-team-header__contact">
+      <div class="web-team__header__contact">
         <a href=""><p>お問い合わせ</p></a>
       </div>
   </div>

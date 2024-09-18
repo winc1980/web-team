@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@use './variables' as *;
+
+.sub-page {
+  h2 {
+    color: #000;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: #393939 1px solid;
+  }
+}

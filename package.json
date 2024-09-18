@@ -34,6 +34,7 @@
     "metascraper-description": "^5.34.4",
     "metascraper-image": "^5.34.4",
     "metascraper-title": "^5.34.4",
+    "microcms-js-sdk": "^3.1.2",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

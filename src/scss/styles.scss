@@ -44,6 +44,81 @@ h5 {
       background-color: #518ef2;
     }
   }
+  &__header {
+    height: 109px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    &__logo {
+      display: block;
+    }
+    img {
+      width: 310px;
+      object-fit: contain;
+      margin-left: 22px;
+      display: block;
+    }
+    nav {
+      display: block;
+      ul {
+        display: flex;
+        li {
+          margin: 0 20px;
+          a {
+            color: #000;
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: normal;
+            font-weight: 500;
+            font-style: normal;
+          }
+        }
+      }
+    }
+    &__blocks {
+      display: flex;
+    }
+    &__cta {
+      a {
+        display: block;
+        width: 147px;
+        height: 112px;
+        padding-top: 40px;
+        background-color: #f2b551;
+        p {
+          color: #fff;
+          font-family: Inter;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-align: center;
+        }
+      }
+    }
+    &__contact {
+      a {
+        display: block;
+        width: 147px;
+        height: 112px;
+        padding-top: 40px;
+        background-color: #518ef2;
+        p {
+          color: #fff;
+          font-family: Inter;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 /* ------------------- 共通要素ここまで ------------------- */
@@ -87,3 +162,76 @@ h5 {
 }
 
 /* ------------------- Webチームブログここまで ------------------- */
+
+/* ------------------- 制作実績セクションここから ------------------- */
+/* ------------------- 制作実績セクションここまで ------------------- */
+
+/* ------------------- 制作実績一覧ここから ------------------- */
+/* ------------------- 制作実績一覧ここまで ------------------- */
+
+/* ------------------- 制作実績詳細ここから ------------------- */
+.p-works-detail {
+  &-mv {
+    h1 {
+      color: #000;
+      font-family: Inter;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  &-contributors {
+    h2 {
+      font-family: Inter;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: normal;
+    }
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      li {
+        max-width: 350px;
+        > p {
+          margin-top: 27px;
+          color: #222;
+          font-family: 'Noto Sans JP';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 172.3%; /* 27.568px */
+        }
+      }
+    }
+    &__profile {
+      display: flex;
+      img {
+        border-radius: 50px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+      &__detail {
+        margin-top: 28px;
+        margin-left: 17px;
+        p {
+          color: #000;
+          font-family: Inter;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        h3 {
+          color: #000;
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+/* ------------------- 制作実績詳細ここまで ------------------- */
