@@ -35,8 +35,12 @@ const og_image = ''
     </section>
     <section id="works-detail-fv" class="p-works-detail-fv">
       <div class="l-container">
-        <Image src={work.sp_image.url} alt="" width="140" height="284" />
-        <Image src={work.pc_image.url} alt="" width="772" height="513" />
+        <div class="p-works-detail-fv__wrapper">
+          <div class="p-works-detail-fv__images">
+            <Image src={work.sp_image.url} alt="" width="140" height="284" />
+            <Image src={work.pc_image.url} alt="" width="772" height="513" />
+          </div>
+        </div>
         <a href={work.url} target="_blank" rel="noopener">{work.url}</a>
       </div>
     </section>
@@ -71,7 +75,7 @@ const og_image = ''
         </ul>
       </div>
     </section>
-    <section id="works-detail-other-works" class="">
+    <section id="works-detail-other-works" class="p-works-detail-other-works">
       <div class="l-container">
         <h2>Other Works</h2>
       </div>
