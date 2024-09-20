@@ -52,21 +52,23 @@ h5 {
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 1000;
     &__logo {
       display: block;
     }
     img {
-      width: 310px;
+      width: 250px;
       object-fit: contain;
       margin-left: 22px;
       display: block;
     }
     nav {
-      display: block;
+      display: flex;
+      align-items: center;
       ul {
         display: flex;
         li {
-          margin: 0 20px;
+          margin: 0 15px;
           a {
             color: #000;
             font-family: Inter;
