@@ -4,7 +4,7 @@ import CoverImageDownloader from './src/integrations/cover-image-downloader';
 import CustomIconDownloader from './src/integrations/custom-icon-downloader';
 import FeaturedImageDownloader from './src/integrations/featured-image-downloader';
 import PublicNotionCopier from './src/integrations/public-notion-copier';
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind';
 const getSite = function () {
   if (CUSTOM_DOMAIN) {
     return new URL(BASE_PATH, `https://${CUSTOM_DOMAIN}`).toString();
@@ -16,11 +16,13 @@ const getSite = function () {
     if (process.env.CF_PAGES_BRANCH !== 'main') {
       return new URL(BASE_PATH, process.env.CF_PAGES_URL).toString();
     }
-    return new URL(BASE_PATH, `https://${new URL(process.env.CF_PAGES_URL).host.split('.').slice(1).join('.')}`).toString();
+    return new URL(
+      BASE_PATH,
+      `https://${new URL(process.env.CF_PAGES_URL).host.split('.').slice(1).join('.')}`
+    ).toString();
   }
   return new URL(BASE_PATH, 'http://localhost:4321').toString();
 };
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,14 +31,22 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "@": "/src"
-      }
-    }
+        '@': '/src',
+      },
+    },
   },
   image: {
-    remotePatterns: [{
-      protocol: "https"
-    }]
+    remotePatterns: [
+      {
+        protocol: 'https',
+      },
+    ],
   },
-  integrations: [CoverImageDownloader(), CustomIconDownloader(), FeaturedImageDownloader(), PublicNotionCopier(), tailwind()]
+  integrations: [
+    CoverImageDownloader(),
+    CustomIconDownloader(),
+    FeaturedImageDownloader(),
+    PublicNotionCopier(),
+    tailwind(),
+  ],
 });
