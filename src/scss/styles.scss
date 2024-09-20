@@ -191,6 +191,7 @@ h5 {
     ul {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      place-items: center;
       flex-wrap: wrap;
       justify-content: space-evenly;
       li {
