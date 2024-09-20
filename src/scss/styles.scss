@@ -167,6 +167,56 @@ h5 {
 /* ------------------- 制作実績セクションここまで ------------------- */
 
 /* ------------------- 制作実績一覧ここから ------------------- */
+.p-works-list {
+  &-mv {
+    h1 {
+      color: #000;
+      font-family: Inter;
+      font-size: 38px;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  &-cards {
+    h2 {
+      color: #000;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      li {
+        a {
+          color: #000;
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          img {
+            max-width: 380px;
+          }
+        }
+        p {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          background-color: #518ef2;
+          width: fit-content;
+          padding: 0 12px;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}
 /* ------------------- 制作実績一覧ここまで ------------------- */
 
 /* ------------------- 制作実績詳細ここから ------------------- */
@@ -188,12 +238,28 @@ h5 {
     &__images {
       display: flex;
       align-items: baseline;
-      img:first-of-type {
+      > img {
         max-width: 140px;
         object-fit: contain;
       }
-      img:last-of-type {
-        max-width: 700px;
+      div {
+        img {
+          max-width: 700px;
+          border-radius: 20px;
+          position: relative;
+        }
+        &::after {
+          content: '';
+          /* background-image: url(/assets/images/pc_bottom.svg); */
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: inherit;
+          display: block;
+          position: absolute;
+          width: 1000px;
+          height: 100px;
+          z-index: 1000;
+        }
       }
     }
     a {

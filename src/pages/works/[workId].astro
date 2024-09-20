@@ -30,15 +30,27 @@ const og_image = ''
   <main id="works-detail" class="p-works-detail">
     <section id="works-detail-mv" class="p-works-detail-mv">
       <div class="l-container">
-        <h1 class="title">{work.title}</h1>
+        <h1>{work.title}</h1>
       </div>
     </section>
     <section id="works-detail-fv" class="p-works-detail-fv">
       <div class="l-container">
         <div class="p-works-detail-fv__wrapper">
           <div class="p-works-detail-fv__images">
-            <Image src={work.sp_image.url} alt="" width="140" height="284" />
-            <Image src={work.pc_image.url} alt="" width="772" height="513" />
+            <Image
+              src={work.sp_image.url}
+              alt=""
+              width={work.sp_image.width}
+              height={work.sp_image.height}
+            />
+            <div>
+              <Image
+                src={work.pc_image.url}
+                alt=""
+                width={work.pc_image.width}
+                height={work.pc_image.height}
+              />
+            </div>
           </div>
         </div>
         <a href={work.url} target="_blank" rel="noopener">{work.url}</a>
