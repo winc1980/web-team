@@ -49,7 +49,7 @@ const og_image = ''
         <ul>
           {
             response.contents.map((content: any) =>
-              content.product_category[0] != 'Webアプリ開発' ? (
+              content.product_category[0] === 'Webサイト制作(自由制作)' ? (
                 <li>
                   <a href={'/works/' + content.id}>
                     <Image
