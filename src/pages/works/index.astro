@@ -23,11 +23,33 @@ const og_image = ''
     </section>
     <section id="works-list-cards" class="p-works-list-cards">
       <div class="l-container">
-        <h2>Webサイト制作</h2>
+        <h2>Webサイト制作(案件)</h2>
         <ul>
           {
             response.contents.map((content: any) =>
-              content.product_category[0] != 'Webアプリ開発' ? (
+              content.product_category[0] != 'Webアプリ開発' &&
+              content.product_category[0] != 'Webサイト制作(自由制作)' ? (
+                <li>
+                  <a href={'/works/' + content.id}>
+                    <Image
+                      src={content.pc_image.url}
+                      alt={content.title + 'のPC画像'}
+                      width={content.pc_image.width}
+                      height={content.pc_image.height}
+                    />
+                  </a>
+                  <p>{content.product_category}</p>
+                  <a href={'/works/' + content.id}>{content.title}</a>
+                </li>
+              ) : null
+            )
+          }
+        </ul>
+        <h2>Webサイト制作(自由制作)</h2>
+        <ul>
+          {
+            response.contents.map((content: any) =>
+              content.product_category[0] === 'Webサイト制作(自由制作)' ? (
                 <li>
                   <a href={'/works/' + content.id}>
                     <Image
