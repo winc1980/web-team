@@ -3,18 +3,7 @@ import "@/scss/styles.scss";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 // タイトル等をPropsとして受け取る。
-let { title, description, og_image } = Astro.props;
-//　指定がない場合のデフォルト値を設定しておく。
-if (!title) {
-  title = "";
-}
-if (!description) {
-  description =
-    "";
-}
-if (!og_image) {
-  og_image = "";
-}
+let { title = "", description = "", og_image = "" } = Astro.props;
 ---
 <!doctype html>
 <html lang="ja">
