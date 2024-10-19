@@ -125,6 +125,169 @@ h5 {
 
 /* ------------------- 共通要素ここまで ------------------- */
 /* ------------------- Webチームブログここから ------------------- */
+
+.p-topblog {
+  margin-bottom: 5%;
+  &__backimg {
+    background-image: url('@/assets/images/dummy.webp');
+    background-size: cover;
+    height: 624px;
+    margin-bottom: 5%;
+  }
+  span {
+    font-size: 48px;
+    font-weight: 400;
+    background-color: white;
+    margin-top: 353px;
+    color: #518ef2;
+  }
+  &__flexbox {
+    display: flex;
+    justify-content: center;
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      color: #518ef2;
+    }
+    p {
+      margin-top: 4%;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    img {
+      height: 340px;
+      width: 500px;
+      margin-left: 2%;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    color: #518ef2;
+  }
+  &__updateview {
+    margin-top: 5%;
+    &__wrappercards {
+      margin-bottom: 5%;
+
+      &__card {
+        padding-bottom: 2%;
+        width: 90%;
+        margin: 0 auto;
+        &__date {
+          padding-bottom: 1%;
+        }
+        &__txt {
+          padding-top: 1%;
+          color: #424aff;
+        }
+      }
+    }
+  }
+}
+
+/* ------------------- topblogここまで ------------------- */
+/* ------------------- activitiesここから ------------------- */
+
+.activities__wrapper {
+  margin: 10% auto;
+  width: 93%;
+  &__ttl {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #518ef2;
+    }
+    p {
+      font-size: 50px;
+      font-weight: 500;
+      color: #518ef2;
+    }
+  }
+}
+
+.activities__card {
+  display: flex;
+  &__txt {
+    font-weight: 500;
+    font-size: 15px;
+    width: 48%;
+  }
+}
+
+.triangle-button__wrapper {
+  text-align: right;
+  padding-top: 5%;
+}
+
+.triangle-button__blue {
+  position: relative;
+  padding: 0px 0px 0px 1em;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.triangle-button__white {
+  position: relative;
+  padding: 0px 0px 0px 1em;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.triangle-button__blue::before {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 0px;
+  height: 0px;
+  border: 0.3em solid transparent;
+  border-left: 0.4em solid #518ef2;
+  content: '';
+}
+
+.triangle-button__white::before {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 0px;
+  height: 0px;
+  border: 0.3em solid transparent;
+  border-left: 0.4em solid red;
+  content: '';
+}
+
+.activities__flexbox__imgwrapper {
+  display: flex;
+  width: 48%;
+  margin-left: 4%;
+  &__row {
+    display: row;
+  }
+  &__triangle-button__wrapper {
+    padding-top: 32%;
+  }
+}
+
+.PC-img {
+  width: 387px;
+  height: 232px;
+  padding-right: 5%;
+  padding-top: 1%;
+}
+
+.SP-img {
+  width: 140px;
+  height: 290px;
+  padding-top: 0;
+}
+
+/* ------------------- activitiesここまで------------------- */
+/* ------------------- bloglistここから ------------------- */
 .p-blogList {
   &__wrapper {
     display: flex;
