@@ -211,10 +211,62 @@ h5 {
 
 .activities__card {
   display: flex;
+  justify-content: center;
   &__txt {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 83%;
+  }
+}
+
+.activities__cardttl {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.middlecardnumber {
+  font-size: 50px;
+  font-weight: 500;
+  color: #518ef2;
+}
+
+.activities__middlecard__flexbox {
+  display: flex;
+  width: 93%;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  &__imgwrapper {
+    &__up {
+      display: flex;
+    }
+    &__down {
+      display: flex;
+    }
+  }
+  &__txt {
+    font-weight: 500;
+    font-size: 83%;
     width: 48%;
+  }
+}
+
+.bottomcardnumber {
+  font-size: 50px;
+  font-weight: 500;
+  color: #518ef2;
+  text-align: right;
+}
+
+.activities__bottomcard {
+  display: flex;
+  justify-content: center;
+  &__txt {
+    font-weight: 500;
+    font-size: 83%;
+  }
+  img {
+    width: 400px;
+    height: 250px;
   }
 }
 
@@ -275,15 +327,25 @@ h5 {
 
 .PC-img {
   width: 387px;
-  height: 232px;
+  height: 200px;
   padding-right: 5%;
   padding-top: 1%;
 }
 
 .SP-img {
   width: 140px;
-  height: 290px;
+  height: 250px;
   padding-top: 0;
+}
+
+.vertically__long {
+  width: 80px;
+  height: 120px;
+}
+
+.horizontally__long {
+  width: 120px;
+  height: 80px;
 }
 
 /* ------------------- activitiesここまで------------------- */
@@ -515,3 +577,22 @@ h5 {
   }
 }
 /* ------------------- 制作実績詳細ここまで ------------------- */
+/* ------------------- footerここから ------------------- */
+footer {
+  background-color: #518ef2cc;
+}
+
+.flexbox-top {
+  display: flex;
+  justify-content: center;
+}
+
+.flexbox-bottom {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+/* ------------------- footerここまで ------------------- */
