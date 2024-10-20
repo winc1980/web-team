@@ -20,6 +20,8 @@
     "@astrojs/react": "^3.0.3",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/heebo": "^5.1.0",
+    "@fontsource/twinkle-star": "^5.1.0",
     "@notionhq/client": "^2.2.5",
     "@splidejs/splide": "^4.1.4",
     "@supercharge/promise-pool": "^2.4.0",

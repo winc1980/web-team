@@ -2,6 +2,8 @@
 import "@/scss/styles.scss";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+// Supports weights 100-900
+import '@fontsource-variable/heebo';
 // タイトル等をPropsとして受け取る。
 let { title = "", description = "", og_image = "" } = Astro.props;
 ---
