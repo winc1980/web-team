@@ -37,9 +37,37 @@
       }
     }
     ul {
+      position: absolute;
+      top: 10px;
+      left: 21px;
+      padding: 7px;
       display: flex;
+      background-color: #518ef299;
+      width: fit-content;
       li {
-        
+        color: #fff;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &::before {
+          content: '>';
+          display: inline-block;
+          margin: 0 10px;
+        }
+        &:first-child {
+          &::before {
+            content: '';
+            margin: 0;
+          }
+        }
+        a {
+          &:hover {
+            color: #518ef2;
+            transition: all 0.5s 0s ease;
+          }
+        }
       }
     }
     h1 {
@@ -60,7 +88,7 @@
         position: absolute;
         width: 100%;
         height: 87px;
-        background-color: #518EF2;
+        background-color: #518ef2;
         left: 14px;
         top: 14px;
         z-index: -1;

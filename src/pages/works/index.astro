@@ -17,7 +17,14 @@ const og_image = ''
 
 <Layout title={title} , description={description} , og_image={og_image}>
   <main id="works-list" class="p-works-list sub-page">
-    <MV title="制作実績"/>
+    <MV
+      title="制作実績"
+      bgImg="/src/assets/images/works.jpg"
+      items={[
+        { text: 'TOP', link: '/' },
+        { text: '制作実績', link: '/works' }
+      ]}
+    />
     <section id="works-list-cards" class="p-works-list-cards">
       <div class="l-container">
         <h2>Webサイト制作(案件)</h2>
