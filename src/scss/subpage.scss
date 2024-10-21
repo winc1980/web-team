@@ -9,6 +9,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 20px;
+    display: flex;
+    &::before {
+      content: '';
+      display: block;
+      background-color: #518ef2;
+      width: 5px;
+      height: 43px;
+      margin-right: 10px;
+    }
   }
   h3 {
     color: #000;
