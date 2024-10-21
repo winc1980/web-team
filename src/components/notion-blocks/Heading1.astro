@@ -45,16 +45,30 @@ const id = buildHeadingId(block.Heading1)
 
 <style>
   h3 {
-    margin: 1.1em 0 0.3em;
-    color: var(--fg);
-    font-size: 1.8rem;
+    color: #000;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
+    display: flex;
   }
+
+  h3::before {
+    content: "";
+    display: block;
+    background-color: #518EF2;
+    width: 5px;
+    height: 43px;
+    margin-right: 10px;
+  }
+
   @media (max-width: 640px) {
     h3 {
       font-size: 1.3rem;
     }
   }
-
   .toggle {
     margin: 2rem 0 0;
   }

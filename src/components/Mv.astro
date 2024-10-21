@@ -1,0 +1,19 @@
+---
+const { title, bgImg, items } = Astro.props
+---
+
+<div id="mv" class="p-mv">
+  <div class="p-mv__bg"><img src={bgImg} /></div>
+  <ul>
+    {
+      items.map((i) => {
+        return (
+          <li>
+            <a href={i.link}> {i.text}</a>
+          </li>
+        )
+      })
+    }
+  </ul>
+  <h1>{title}</h1>
+</div>
