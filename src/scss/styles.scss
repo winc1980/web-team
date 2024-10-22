@@ -170,7 +170,6 @@ h5 {
     margin-top: 5%;
     &__wrappercards {
       margin-bottom: 5%;
-
       &__card {
         padding-bottom: 2%;
         width: 90%;
@@ -233,8 +232,7 @@ h5 {
   display: flex;
   width: 93%;
   margin-bottom: 3%;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
   &__imgwrapper {
     &__up {
       display: flex;
@@ -260,6 +258,7 @@ h5 {
 .activities__bottomcard {
   display: flex;
   justify-content: center;
+  padding-bottom: 5%;
   &__txt {
     font-weight: 500;
     font-size: 83%;
@@ -267,6 +266,10 @@ h5 {
   img {
     width: 400px;
     height: 250px;
+  }
+  &__triangle-button__wrapper {
+    text-align: right;
+    padding-top: 5%;
   }
 }
 
@@ -349,6 +352,79 @@ h5 {
 }
 
 /* ------------------- activitiesここまで------------------- */
+/* ------------------- teamcharacteristicここから ------------------- */
+
+.p-teamcharacteristic {
+  h4 {
+    display: inline;
+    background-color: #518ef2;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding: 0 1%;
+    margin-left: 5%;
+  }
+}
+
+.left {
+  margin-top: 13%;
+}
+
+.center {
+  margin-top: 8%;
+}
+
+.right {
+  margin-top: 3%;
+}
+
+.p-teamcharacteristic__cardwrapper {
+  display: flex;
+  justify-content: center;
+  &__card {
+    position: relative;
+    width: 27%;
+    margin-right: 1%;
+    margin-left: 1%;
+    &__number {
+      position: absolute;
+      font-weight: 500;
+      font-size: 100%;
+      background-color: #518ef2;
+      width: 50px;
+      height: 50px;
+      top: -3%;
+      left: -3%;
+      p {
+        //ここから１０２１
+        line-height: 100%;
+        place-items: center;
+        text-align: center;
+        margin: 0 auto;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 120%;
+        color: white;
+      }
+    }
+    img {
+      margin: 0 auto;
+      width: 100px;
+      width: 100px;
+    }
+    &__ttl {
+      color: #518ef2;
+      font-weight: 600;
+      font-size: 120%;
+    }
+    &__txt {
+      font-weight: 500;
+      font-size: 90%;
+    }
+  }
+}
+
+/* ------------------- teamcharacteristicここまで ------------------- */
 /* ------------------- bloglistここから ------------------- */
 .p-blogList {
   &__wrapper {
