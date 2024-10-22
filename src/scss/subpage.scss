@@ -4,7 +4,6 @@
 .sub-page {
   h2 {
     color: #000;
-    font-family: Inter;
     font-size: 38px;
     font-style: normal;
     font-weight: 400;
@@ -15,9 +14,14 @@
       content: '';
       display: block;
       background-color: #518ef2;
-      width: 5px;
-      height: 43px;
+      width: 6px;
+      height: 48px;
       margin-right: 10px;
+    }
+  }
+  @media (max-width: $breakpointMobile) {
+    h2 {
+      font-size: 20px;
     }
   }
   h3 {
