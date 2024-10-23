@@ -9,6 +9,9 @@ import {
   getAllTags,
   getNumberOfPages,
 } from '@/lib/notion/client.ts'
+
+import IMG from '@/assets/images/dummy.webp'
+
 const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getPosts(NUMBER_OF_POSTS_PER_PAGE),
   getRankedPosts(),
@@ -25,8 +28,189 @@ console.log(posts)
 
 <Layout title={title} , description={description}, og_image={og_image}>
   <main>
+    <section id="topblog"class="p-topblog">
+      
+        <div class="p-topblog__backimg">
+          <span style="transform: skewX(-20deg);  display: inline-block;">「創る」を楽しめる人になろう」</span>
+        </div>
+        <div class="l-container">
+        <div class="p-topblog__flexbox">
+          <div class="p-topblog__flexbox__txtwrapper">
+            <h1>Webチームとは</h1>
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつ<br>くしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトー<br>ヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られ<br>たモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった<br>風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、<br>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつ<br>くしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトー<br>ヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られ<br>たモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった<br>風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、<br>  
+            </p>
+          </div>
+          <Image
+          src={IMG}
+          alt={"false"}
+          />
+        </div>
+      </div>
+      <div class="p-topblog__updateview">
+        <h2>更新情報</h2>
+        <div class="l-container">
+          <ul class="p-topblog__updateview__wrappercards">
+            <ul class="p-topblog__updateview__wrappercards__card">
+              <li class="p-topblog__updateview__wrappercards__card__date">2024/08/18</li>
+              <li><a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a></li>
+            </ul>
+            <ul class="p-topblog__updateview__wrappercards__card">
+              <li class="p-topblog__updateview__wrappercards__card__date">2024/08/18</li>
+              <li><a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a></li>
+            </ul>
+            <ul class="p-topblog__updateview__wrappercards__card">
+              <li class="p-topblog__updateview__wrappercards__card__date">2024/08/18</li>
+              <li><a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a></li>
+            </ul>
+          </ul>
+          <Button url="/posts/" text="更新情報一覧" color="yellow"/>
+        </div>
+      </div>
+    </section>
+    <section id="activities">
+      <div class="l-container">
+        <div class="activities__wrapper">
+          <div class="activities__wrapper__ttl">
+            <h3>活動内容</h3>
+            <p>01</p>
+          </div>
+          <p class="activities__topcardttl">Webサイトの案件制作</p>
+          <div class="activities__topcard"> 
+            <div class="activities__topcard__txtwrapper">
+              <p class="activities__topcard__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリー<br>オ市、<br>
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>
+              <div class="triangle-button__wrapper">
+                <a href="" class="triangle-button__blue">案件製作</a>
+              </div>
+            </div>
+            <div class="activities__flexbox__imgwrapper">
+              <Image
+              src={IMG}
+              alt={"false"}
+              class="PC-img"
+              />
+              <div class="activities__flexbox__imgwrapper__row">
+              <Image
+                src={IMG}
+                alt={"false"}
+                class="SP-img"
+                />
+                <div class="activities__flexbox__imgwrapper__triangle-button__wrapper">
+                  <a href="" class="triangle-button__white">製作実績</a>
+                </div>
+              </div>
+            </div>  
+            </div>
+          </div>
+          
+          
+          <div class="activities__middlecard__flexbox">
+            <p class="middlecardnumber">02</p>
+            <div class="activities__middlecard__flexbox__imgwrapper">
+              <div class="activities__middlecard__flexbox__imgwrapper__up">
+                <Image
+                  src={IMG}
+                  alt={"CSS"}
+                  class="vertically__long"
+                />
+                <Image
+                  src={IMG}
+                  alt={"HTML"}
+                  class="vertically__long"
+                />
+                <Image
+                  src={IMG}
+                  alt={"flask"}
+                  class="horizontally__long"
+                />
+              </div>
+              <div class="activities__middlecard__flexbox__imgwrapper__down">
+                <Image
+                  src={IMG}
+                  alt={"three.js"}
+                  class="horizontally__long"
+                />
+                <Image
+                  src={IMG}
+                  alt={"Astro"}
+                  class="horizontally__long"
+                />
+              </div>
+            </div>
+            <p class="activities__middlecard__flexbox__ttl">Webアプリ開発</p>
+            <p class="activities__middlecard__flexbox__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリー<br>オ市、<br>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>     
+          </div>
+          
+          <div class="activities__bottomcard">
+            <p class="bottomcardnumber">03</p>
+            <div>
+              <p class="activities__bottomcard__cardttl">合宿によるハッカソン</p>
+              <p class="activities__bottomcard__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリー<br>オ市、<br>
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>   
+            </div>
+              <div>
+              <Image
+              src={IMG}
+              alt={"Astro"}              
+              />
+              <div class="activities__bottomcard__triangle-button__wrapper">
+                <a href="" class="triangle-button__white">Webチームの一年</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="teamcharacteristic" class="p-teamcharacteristic">
+      <div class="l-container">
+        <h4>チームの特徴</h4>
+        <div class="p-teamcharacteristic__cardwrapper">
+          
+          <div class="p-teamcharacteristic__cardwrapper__card left">
+            <div class="p-teamcharacteristic__cardwrapper__card__number">
+              <p>01</p>
+            </div>
+            <Image
+            src={IMG}
+            alt={"Astro"}              
+            />
+            <p class="p-teamcharacteristic__cardwrapper__card__ttl">ほとんどがプログラミング未経験</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+          </div>
+          <div class="p-teamcharacteristic__cardwrapper__card center">
+            <div class="p-teamcharacteristic__cardwrapper__card__number">
+              <p>02</p>
+            </div>
+            <Image
+            src={IMG}
+            alt={"Astro"}              
+            />
+            <p class="p-teamcharacteristic__cardwrapper__card__ttl">男女比は7:3</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+          </div>
+          <div class="p-teamcharacteristic__cardwrapper__card right">
+            <div class="p-teamcharacteristic__cardwrapper__card__number">
+              <p>03</p>
+            </div>
+            <Image
+            src={IMG}
+            alt={"Astro"}              
+            />
+            <p class="p-teamcharacteristic__cardwrapper__card__ttl">インターカレッジ</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="schedule" class="p-schedule">
+      <p class="p-schedule__ttl">活動日程</p>
+    </section>
     <section id="blogList" class="p-blogList">
       <div class="l-container">
+        <h6>Webチームブログ</h6>
         <div class="p-blogList__wrapper">
           {
             posts.slice(0, 3).map((post) => (
@@ -51,5 +235,26 @@ console.log(posts)
         </div>
       </div>
     </section>
+    <footer>
+      <div class="flexbox-top">
+        <div class="flexbox-top__buttonwrapper"><a href="" >TOP</a></div>
+        <div class="flexbox-top__buttonwrapper"><a href="" >Webチームの一年</a></div>
+        <div class="flexbox-top__buttonwrapper"><a href="" >得られる経験</a></div>
+        <div class="flexbox-top__buttonwrapper"><a href="" >製作実績</a></div>
+        <div class="flexbox-top__buttonwrapper"><a href="" >案件製作</a></div>
+        <div class="flexbox-top__buttonwrapper"><a href="" >ブログ</a></div>
+        <div class="flexbox-top__buttonwrapper"><a href="" >更新情報一覧</a></div>
+        <div class="flexbox-top__buttonwrapper flexname">
+        <p>© 2024 Copyright: </p>
+        <a href="" >コンピュータ研究会・WINC</a></div>
+      </div>
+      <div class="flexbox-bottom">
+        <p>早稲田コンピュータ研究会　WINC</p>
+        <Image
+         src={IMG}
+         alt={"Astro"}
+        />
+      </div>
+    </footer>
   </main>
 </Layout>
