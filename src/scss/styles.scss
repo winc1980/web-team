@@ -203,51 +203,6 @@ h5 {
   }
 }
 
-h1::before {
-  position: absolute;
-  content: '';
-  height: 2px;
-  flex-grow: 1;
-  width: 50%;
-  background-color: #518ef2;
-  left: -50%;
-}
-
-h1::after {
-  content: '';
-  height: 1px;
-  flex-grow: 1;
-  background-color: white;
-}
-
-h1::before {
-  margin-right: 15px;
-}
-
-h1::after {
-  margin-left: 15px;
-}
-
-h2::before {
-  content: '';
-  height: 1px;
-  flex-grow: 1;
-  background-color: #518ef2;
-}
-h2::after {
-  content: '';
-  height: 1px;
-  flex-grow: 1;
-  background-color: #518ef2;
-}
-
-h2::before {
-  margin-right: 2%;
-}
-h2::after {
-  margin-left: 2%;
-}
-
 /* ------------------- topblogここまで ------------------- */
 /* ------------------- activitiesここから ------------------- */
 
