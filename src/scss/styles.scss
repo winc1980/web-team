@@ -16,12 +16,22 @@ h3,
 h4,
 h5 {
   color: #000;
-  font-family: 'Noto Sans JP';
   font-style: normal;
   line-height: 172.3%; /* 24.122px */
   font-weight: 500;
 }
+p,
+a {
+  font-family: 'Noto Sans JP';
+}
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Inter Variable', sans-serif;
+}
 .web-team {
   &__button {
     display: block;
@@ -32,7 +42,6 @@ h5 {
     margin: 0 auto;
     flex-shrink: 0;
     color: #fff;
-    font-family: 'Noto Sans JP';
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -71,7 +80,6 @@ h5 {
           margin: 0 15px;
           a {
             color: #000;
-            font-family: Inter;
             font-size: 18px;
             font-weight: 400;
             line-height: normal;
@@ -93,7 +101,6 @@ h5 {
         background-color: #f2b551;
         p {
           color: #fff;
-          font-family: Inter;
           font-size: 18px;
           font-style: normal;
           font-weight: 400;
@@ -111,7 +118,6 @@ h5 {
         background-color: #518ef2;
         p {
           color: #fff;
-          font-family: Inter;
           font-size: 18px;
           font-style: normal;
           font-weight: 400;
@@ -703,7 +709,6 @@ h2::after {
   &-mv {
     h1 {
       color: #000;
-      font-family: Inter;
       font-size: 38px;
       font-weight: 400;
       line-height: normal;
@@ -712,7 +717,6 @@ h2::after {
   &-cards {
     h2 {
       color: #000;
-      font-family: Inter;
       font-size: 20px;
       font-style: normal;
       font-weight: 400;
@@ -727,7 +731,6 @@ h2::after {
       li {
         a {
           color: #000;
-          font-family: Inter;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
@@ -737,14 +740,15 @@ h2::after {
           }
         }
         p {
+          color: #fff;
           font-size: 16px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 700;
           line-height: normal;
-          background-color: #518ef2;
+          border-radius: 30px;
+          background: rgba(81, 142, 242, 0.6);
           width: fit-content;
           padding: 0 12px;
-          border-radius: 30px;
         }
       }
     }
@@ -757,7 +761,6 @@ h2::after {
   &-mv {
     h1 {
       color: #000;
-      font-family: Inter;
       font-size: 38px;
       font-weight: 400;
       line-height: normal;
@@ -797,7 +800,6 @@ h2::after {
     }
     a {
       color: #000;
-      font-family: Inter;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -820,7 +822,6 @@ h2::after {
   }
   &-contributors {
     h2 {
-      font-family: Inter;
       text-align: center;
       font-size: 38px;
       font-weight: 400;
@@ -834,7 +835,6 @@ h2::after {
         > p {
           margin-top: 27px;
           color: #222;
-          font-family: 'Noto Sans JP';
           font-size: 16px;
           font-style: normal;
           font-weight: 500;
@@ -854,7 +854,6 @@ h2::after {
         margin-left: 17px;
         p {
           color: #000;
-          font-family: Inter;
           font-size: 12px;
           font-style: normal;
           font-weight: 400;
@@ -862,7 +861,6 @@ h2::after {
         }
         h3 {
           color: #000;
-          font-family: Inter;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
@@ -873,7 +871,6 @@ h2::after {
   }
   &-other-works {
     h2 {
-      font-family: Inter;
       text-align: center;
       font-size: 38px;
       font-weight: 400;
