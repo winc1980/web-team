@@ -6,7 +6,7 @@
 .l-container {
   max-width: $content-width;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 4%;
 }
 
 p,
@@ -148,6 +148,12 @@ h5 {
       font-size: 40px;
       font-weight: 600;
       color: #518ef2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1%;
+      margin-right: 1%;
     }
     p {
       margin-top: 4%;
@@ -165,15 +171,20 @@ h5 {
     font-size: 40px;
     font-weight: 400;
     color: #518ef2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__updateview {
     margin-top: 5%;
     &__wrappercards {
       margin-bottom: 5%;
+
       &__card {
         padding-bottom: 2%;
         width: 90%;
         margin: 0 auto;
+        border-bottom: 1px solid #929292;
         &__date {
           padding-bottom: 1%;
         }
@@ -186,18 +197,63 @@ h5 {
   }
 }
 
+h1::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  flex-grow: 1;
+  width: 50%;
+  background-color: #518ef2;
+  left: -50%;
+}
+
+h1::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: white;
+}
+
+h1::before {
+  margin-right: 15px;
+}
+
+h1::after {
+  margin-left: 15px;
+}
+
+h2::before {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: #518ef2;
+}
+h2::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: #518ef2;
+}
+
+h2::before {
+  margin-right: 2%;
+}
+h2::after {
+  margin-left: 2%;
+}
+
 /* ------------------- topblogここまで ------------------- */
 /* ------------------- activitiesここから ------------------- */
 
 .activities__wrapper {
-  margin: 10% auto;
-  width: 93%;
+  margin: 0 auto;
+  width: 100%;
   &__ttl {
     display: flex;
     justify-content: space-between;
     h3 {
-      font-size: 36px;
-      font-weight: 400;
+      font-size: 200%;
+      font-weight: 600;
       color: #518ef2;
     }
     p {
@@ -208,74 +264,201 @@ h5 {
   }
 }
 
-.activities__card {
+.activities__topcard {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: stretch;
   &__txt {
     font-weight: 500;
     font-size: 83%;
   }
 }
 
-.activities__cardttl {
-  font-weight: 500;
-  font-size: 30px;
+.activities__topcard__txtwrapper {
+  position: relative;
+}
+
+.activities__topcardttl {
+  font-weight: 400;
+  font-size: 140%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+
+.activities__topcardttl::before {
+  position: absolute;
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: #518ef2;
+  width: 50%;
+  left: -51%;
+}
+.activities__topcardttl::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: #518ef2;
+  width: 90%;
+  left: 20%;
+}
+
+.activities__topcardttl::after {
+  margin-left: 3%;
 }
 
 .middlecardnumber {
+  position: absolute;
   font-size: 50px;
   font-weight: 500;
   color: #518ef2;
+  top: -50%;
+  left: 2%;
 }
 
 .activities__middlecard__flexbox {
+  position: relative;
   display: flex;
-  width: 93%;
-  margin-bottom: 3%;
-  justify-content: center;
+  width: 100%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  justify-content: space-around;
   &__imgwrapper {
     &__up {
       display: flex;
+      justify-content: space-around;
+      margin-bottom: 5%;
+      width: 120%;
+      img {
+        margin-left: 1%;
+        margin-right: 1%;
+      }
     }
     &__down {
+      margin-top: 5%;
       display: flex;
+      justify-content: space-around;
+      img {
+        margin-left: 20%;
+      }
     }
   }
+  &__ttl {
+    position: absolute;
+    top: -30%;
+    left: 0%;
+    font-size: 150%;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    width: 120%;
+  }
   &__txt {
+    margin-top: 2%;
     font-weight: 500;
     font-size: 83%;
-    width: 48%;
   }
 }
 
+.activities__middlecard__flexbox__ttl::before {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  width: 20%;
+  background-color: #518ef2;
+}
+
+.activities__middlecard__flexbox__ttl::after {
+  content: '';
+  height: 1px;
+  flex-grow: 2;
+  width: 10%;
+  background-color: #518ef2;
+}
+
+.activities__middlecard__flexbox__ttl::before {
+  margin-right: 1%;
+}
+
+.activities__middlecard__flexbox__ttl::after {
+  margin-left: 1%;
+}
+
 .bottomcardnumber {
+  position: absolute;
   font-size: 50px;
   font-weight: 500;
   color: #518ef2;
   text-align: right;
+  top: -20%;
+  left: 93%;
 }
 
 .activities__bottomcard {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding-bottom: 5%;
+  &__cardttl {
+    position: relative;
+    padding-bottom: 5%;
+    font-weight: 400;
+    font-size: 150%;
+    display: flex;
+    align-items: center;
+    width: 120%;
+  }
   &__txt {
     font-weight: 500;
     font-size: 83%;
   }
   img {
-    width: 400px;
+    width: 390px;
     height: 250px;
+    margin-left: 5%;
   }
   &__triangle-button__wrapper {
     text-align: right;
-    padding-top: 5%;
+    padding-top: 10%;
   }
+}
+
+.activities__bottomcard__cardttl::before {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  width: 10%;
+  background-color: #518ef2;
+  position: absolute;
+  left: -11%;
+}
+
+.activities__bottomcard__cardttl::after {
+  content: '';
+  height: 1px;
+  flex-grow: 2;
+  width: 5%;
+  background-color: #518ef2;
+}
+
+.activities__bottomcard__cardttl::before {
+  margin-right: 1%;
+}
+
+.activities__bottomcard__cardttl::after {
+  margin-left: 1%;
 }
 
 .triangle-button__wrapper {
   text-align: right;
   padding-top: 5%;
+  position: absolute;
+  bottom: 0;
+  left: 84%;
 }
 
 .triangle-button__blue {
@@ -355,11 +538,12 @@ h5 {
 /* ------------------- teamcharacteristicここから ------------------- */
 
 .p-teamcharacteristic {
+  margin-bottom: 5%;
   h4 {
     display: inline;
     background-color: #518ef2;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 180%;
     color: white;
     padding: 0 1%;
     margin-left: 5%;
@@ -383,25 +567,24 @@ h5 {
   justify-content: center;
   &__card {
     position: relative;
-    width: 27%;
-    margin-right: 1%;
-    margin-left: 1%;
+    width: 30%;
+    height: 300px;
+    margin-right: 2%;
+    margin-left: 2%;
+    box-shadow: 30px 30px #518ef299;
     &__number {
       position: absolute;
-      font-weight: 500;
-      font-size: 100%;
+      font-weight: 400;
+      font-size: 120%;
       background-color: #518ef2;
       width: 50px;
       height: 50px;
-      top: -3%;
-      left: -3%;
+      top: -10%;
+      left: -5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       p {
-        //ここから１０２１
-        line-height: 100%;
-        place-items: center;
-        text-align: center;
-        margin: 0 auto;
-        justify-content: center;
         font-weight: 500;
         font-size: 120%;
         color: white;
@@ -413,6 +596,7 @@ h5 {
       width: 100px;
     }
     &__ttl {
+      text-align: center;
       color: #518ef2;
       font-weight: 600;
       font-size: 120%;
@@ -420,21 +604,66 @@ h5 {
     &__txt {
       font-weight: 500;
       font-size: 90%;
+      padding-left: 5%;
+      padding-right: 5%;
     }
   }
 }
 
 /* ------------------- teamcharacteristicここまで ------------------- */
+/* ------------------- scheduleここから------------------- */
+.p-schedule__ttl {
+  font-size: 150%;
+  font-weight: 400;
+  color: #518ef2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-schedule__ttl::before {
+  content: '';
+  height: 1px;
+  flex-grow: 2;
+  background-color: #518ef2;
+}
+
+.p-schedule__ttl::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: #518ef2;
+}
+
+.p-schedule__ttl::before {
+  margin-left: 1%;
+}
+
+.p-schedule__ttl::after {
+  margin-right: 1%;
+}
+/* ------------------- scheduleここまで------------------- */
 /* ------------------- bloglistここから ------------------- */
 .p-blogList {
+  h6 {
+    color: white;
+    background-color: #518ef2;
+    box-shadow: 10px 10px #c5deff;
+    display: inline;
+    width: 50%;
+    height: 20%;
+    font-weight: 600;
+    font-size: 40px;
+  }
   &__wrapper {
+    margin-top: 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   &__card {
     display: block;
-    width: 350px;
+    width: 330px;
     height: 462px;
     border: #518ef2 1px solid;
     &__text {
@@ -658,17 +887,39 @@ footer {
   background-color: #518ef2cc;
 }
 
+.flexname {
+  display: flex;
+}
+
 .flexbox-top {
   display: flex;
   justify-content: center;
+  padding-top: 4%;
+  &__buttonwrapper {
+    padding-left: 1%;
+    padding-right: 1%;
+    p {
+      color: white;
+    }
+    a {
+      color: white;
+      text-decoration: underline 1px solid;
+    }
+  }
 }
 
 .flexbox-bottom {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  p {
+    font-size: 200%;
+  }
   img {
-    width: 100px;
-    height: 100px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    width: 300px;
+    height: 250px;
   }
 }
 /* ------------------- footerここまで ------------------- */
