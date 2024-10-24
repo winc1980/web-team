@@ -23,6 +23,11 @@
   @media (max-width: $breakpointMobile) {
     h2 {
       font-size: 20px;
+      margin-bottom: 20px;
+      &::before {
+        width: 3px;
+        height: 24px;
+      }
     }
   }
   h3 {
