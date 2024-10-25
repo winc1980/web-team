@@ -32,13 +32,19 @@
   }
   h3 {
     color: #000;
-    font-family: Inter;
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    border-bottom: #393939 1px solid;
+    border-bottom: #518EF2 3px solid;
     margin-bottom: 20px;
+  }
+  @media (max-width: $breakpointMobile) {
+    h3 {
+      font-size: 20px;
+      border-bottom: #518EF2 2px solid;
+      margin-bottom: 20px;
+    }
   }
   p {
     margin-bottom: 20px;
