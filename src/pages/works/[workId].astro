@@ -64,7 +64,7 @@ const og_image = ''
         <a href={work.url} target="_blank" rel="noopener">{work.url}</a>
         <div class="p-works-detail-fv__table__wrapper">
           {
-            work.productDetailTables.map((productDetailTable) => (
+            work.productDetailTables?.map((productDetailTable) => (
               <div class="p-works-detail-fv__table">
                 <h4>{productDetailTable.detailTitle}</h4>
                 <p>{productDetailTable.detailDescription}</p>
@@ -84,7 +84,7 @@ const og_image = ''
         <h2>Contributors</h2>
         <ul>
           {
-            work.contributors.map((contributor) => (
+            work.contributors?.map((contributor) => (
               <li key={contributor.name}>
                 <div class="p-works-detail-contributors__profile">
                   <Image
