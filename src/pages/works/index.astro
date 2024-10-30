@@ -34,7 +34,7 @@ const og_image = ''
               content.product_category[0] != 'Webアプリ開発' &&
               content.product_category[0] != 'Webサイト制作(自由制作)' ? (
                 <li>
-                  <a href={'/works/' + content.id}>
+                  <a href={'/works/' + content.id} class="hover__opacity">
                     <Image
                       src={content.pc_image.url}
                       alt={content.title + 'のPC画像'}
@@ -43,7 +43,7 @@ const og_image = ''
                     />
                   </a>
                   <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id}>{content.title}</a>
+                  <a href={'/works/' + content.id} class="hover__underline">{content.title}</a>
                 </li>
               ) : null
             )
@@ -59,7 +59,7 @@ const og_image = ''
             response.contents.map((content: any) =>
               content.product_category[0] === 'Webサイト制作(自由制作)' ? (
                 <li>
-                  <a href={'/works/' + content.id}>
+                  <a href={'/works/' + content.id} class="hover__opacity">
                     <Image
                       src={content.pc_image.url}
                       alt={content.title + 'のPC画像'}
@@ -68,7 +68,7 @@ const og_image = ''
                     />
                   </a>
                   <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id}>{content.title}</a>
+                  <a href={'/works/' + content.id} class="hover__underline">{content.title}</a>
                 </li>
               ) : null
             )
@@ -84,7 +84,7 @@ const og_image = ''
             response.contents.map((content: any) =>
               content.product_category[0] === 'Webアプリ開発' ? (
                 <li>
-                  <a href={'/works/' + content.id}>
+                  <a href={'/works/' + content.id} class="hover__opacity">
                     <Image
                       src={content.pc_image.url}
                       alt={content.title + 'のPC画像'}
@@ -93,7 +93,7 @@ const og_image = ''
                     />
                   </a>
                   <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id}>{content.title}</a>
+                  <a href={'/works/' + content.id} class="hover__underline">{content.title}</a>
                 </li>
               ) : null
             )

@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import '@/scss/subpage.scss'
-import MV from "@/components/Mv.astro"
+import MV from '@/components/Mv.astro'
 import { Image } from 'astro:assets'
 import Button from '@/components/Button.astro'
 //microCMS呼び出し
@@ -30,12 +30,15 @@ const og_image = ''
 <Layout title={title} , description={description} , og_image={og_image}>
   <main id="works-detail" class="p-works-detail">
     <MV
-      title= {work.title}
+      title={work.title}
       bgImg="/assets/images/works.JPG"
       items={[
         { text: 'TOP', link: '/' },
         { text: '制作実績', link: '/works' },
-        { text: work.title, link: '' },
+        {
+          text: work.title,
+          link: '',
+        },
       ]}
     />
     <section id="works-detail-fv" class="p-works-detail-fv">
@@ -59,6 +62,16 @@ const og_image = ''
           </div>
         </div>
         <a href={work.url} target="_blank" rel="noopener">{work.url}</a>
+        <div class="p-works-detail-fv__table__wrapper">
+          {
+            work.productDetailTables.map((productDetailTable) => (
+              <div class="p-works-detail-fv__table">
+                <h4>{productDetailTable.detailTitle}</h4>
+                <p>{productDetailTable.detailDescription}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
     <section id="works-detail-content" class="sub-page">
