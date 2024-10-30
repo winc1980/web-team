@@ -9,7 +9,7 @@ import { getWorks } from '@/lib/microcms'
 const response = await getWorks({
   fields: ['id', 'title', 'pc_image', 'product_category'],
 })
-console.log(response)
+console.log(response);
 const title = ''
 const description = ''
 const og_image = ''
@@ -34,7 +34,7 @@ const og_image = ''
               content.product_category[0] != 'Webアプリ開発' &&
               content.product_category[0] != 'Webサイト制作(自由制作)' ? (
                 <li>
-                  <a href={'/works/' + content.id}>
+                  <a href={'/works/' + content.id} class="hover__opacity">
                     <Image
                       src={content.pc_image.url}
                       alt={content.title + 'のPC画像'}
@@ -43,19 +43,23 @@ const og_image = ''
                     />
                   </a>
                   <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id}>{content.title}</a>
+                  <a href={'/works/' + content.id} class="hover__underline">{content.title}</a>
                 </li>
               ) : null
             )
           }
         </ul>
+      </div>
+    </section>
+    <section id="works-list-cards" class="p-works-list-cards">
+      <div class="l-container">
         <h2>Webサイト制作(自由制作)</h2>
         <ul>
           {
             response.contents.map((content: any) =>
               content.product_category[0] === 'Webサイト制作(自由制作)' ? (
                 <li>
-                  <a href={'/works/' + content.id}>
+                  <a href={'/works/' + content.id} class="hover__opacity">
                     <Image
                       src={content.pc_image.url}
                       alt={content.title + 'のPC画像'}
@@ -64,19 +68,23 @@ const og_image = ''
                     />
                   </a>
                   <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id}>{content.title}</a>
+                  <a href={'/works/' + content.id} class="hover__underline">{content.title}</a>
                 </li>
               ) : null
             )
           }
         </ul>
+      </div>
+    </section>
+    <section id="works-list-cards" class="p-works-list-cards">
+      <div class="l-container">
         <h2>Webアプリケーション開発</h2>
         <ul>
           {
             response.contents.map((content: any) =>
               content.product_category[0] === 'Webアプリ開発' ? (
                 <li>
-                  <a href={'/works/' + content.id}>
+                  <a href={'/works/' + content.id} class="hover__opacity">
                     <Image
                       src={content.pc_image.url}
                       alt={content.title + 'のPC画像'}
@@ -85,7 +93,7 @@ const og_image = ''
                     />
                   </a>
                   <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id}>{content.title}</a>
+                  <a href={'/works/' + content.id} class="hover__underline">{content.title}</a>
                 </li>
               ) : null
             )
@@ -95,3 +103,13 @@ const og_image = ''
     </section>
   </main>
 </Layout>
+<style>
+  section {
+    padding: 45px 0;
+  }
+  @media (max-width: 767px) {
+    section {
+      padding: 30px 0;
+    }
+  }
+</style>
