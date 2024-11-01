@@ -162,6 +162,22 @@ section {
     }
   }
 
+  &__sp-header {
+    display: none;
+  }
+  @media (max-width: $breakpoint-md) {
+    &__sp-header {
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      img {
+        width: 146px;
+        object-fit: contain;
+      }
+    }
+  }
+
   &__mv {
     height: 370px;
     position: relative;
