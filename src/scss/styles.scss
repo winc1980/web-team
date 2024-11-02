@@ -22,7 +22,7 @@ h5 {
 }
 p,
 a {
-  font-family: 'Noto Sans JP';
+  font-family: 'Noto Sans JP Variable', sans-serif;
 }
 
 h1,
@@ -984,7 +984,7 @@ section {
   &-fv {
     &__wrapper {
       width: fit-content;
-      margin: 5rem auto;
+      margin: 0 auto;
     }
     &__images {
       display: flex;
@@ -1018,6 +1018,7 @@ section {
       width: fit-content;
       padding: 4px 24px;
       border-radius: 10px;
+      margin-top: 65px;
       /* &::before {
         content: '';
         background-image: url('/assets/images/External_Link.svg');
@@ -1028,7 +1029,6 @@ section {
     }
     @media (max-width: $breakpoint-lg) {
       &__wrapper {
-        margin: 120px auto 25px auto;
       }
       &__images {
         > img {
@@ -1047,6 +1047,7 @@ section {
         text-decoration-line: underline;
         padding: 0;
         background: initial;
+        margin-top: 25px;
       }
     }
     &__table {
