@@ -330,6 +330,59 @@ section {
       background-color: #518ef2;
     }
   }
+
+  &__work-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    li {
+      max-width: 380px;
+      a {
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 17px;
+        img {
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+        }
+      }
+      p {
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 30px;
+        background: rgba(81, 142, 242, 0.6);
+        width: fit-content;
+        padding: 8px 12px;
+        margin-top: 10px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    &__work-card {
+      grid-template-columns: 1fr;
+      li {
+        max-width: 380px;
+        margin-bottom: 20px;
+        a {
+          font-size: 16px;
+          margin-top: 17px;
+          img {
+          }
+        }
+        p {
+          font-size: 16px;
+          padding: 8px 12px;
+          margin: 12px 0 8px;
+        }
+      }
+    }
+  }
 }
 
 /* ------------------- 共通要素ここまで ------------------- */
@@ -864,14 +917,6 @@ section {
 
 /* ------------------- 制作実績一覧ここから ------------------- */
 .p-works-list {
-  &-mv {
-    h1 {
-      color: #000;
-      font-size: 38px;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
   &-cards {
     ul {
       display: grid;
@@ -910,11 +955,6 @@ section {
 
 @media (max-width: $breakpoint-md) {
   .p-works-list {
-    &-mv {
-      h1 {
-        font-size: 38px;
-      }
-    }
     &-cards {
       ul {
         grid-template-columns: 1fr;
@@ -941,14 +981,6 @@ section {
 
 /* ------------------- 制作実績詳細ここから ------------------- */
 .p-works-detail {
-  &-mv {
-    h1 {
-      color: #000;
-      font-size: 38px;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
   &-fv {
     &__wrapper {
       width: fit-content;
@@ -1166,12 +1198,14 @@ section {
       font-weight: 700;
       line-height: normal;
       text-align: center;
+      margin-bottom: 75px;
     }
   }
   @media (max-width: $breakpoint-md) {
     &-other-works {
       h2 {
         font-size: 20px;
+        margin-bottom: 57px;
       }
     }
   }

@@ -24,10 +24,10 @@ const og_image = ''
         { text: '制作実績', link: '/works' }
       ]}
     />
-    <section id="works-list-cards" class="p-works-list-cards">
+    <section>
       <div class="l-container">
         <h2>Webサイト制作(案件)</h2>
-        <ul>
+        <ul class="web-team__work-card">
           {
             response.contents.map((content: any) =>
               content.product_category[0] != 'Webアプリ開発' &&
@@ -50,10 +50,10 @@ const og_image = ''
         </ul>
       </div>
     </section>
-    <section id="works-list-cards" class="p-works-list-cards">
+    <section>
       <div class="l-container">
         <h2>Webサイト制作(自由制作)</h2>
-        <ul>
+        <ul class="web-team__work-card">
           {
             response.contents.map((content: any) =>
               content.product_category[0] === 'Webサイト制作(自由制作)' ? (
@@ -75,10 +75,10 @@ const og_image = ''
         </ul>
       </div>
     </section>
-    <section id="works-list-cards" class="p-works-list-cards">
+    <section>
       <div class="l-container">
         <h2>Webアプリケーション開発</h2>
-        <ul>
+        <ul class="web-team__work-card">
           {
             response.contents.map((content: any) =>
               content.product_category[0] === 'Webアプリ開発' ? (
