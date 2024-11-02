@@ -4,6 +4,7 @@ import '@/scss/subpage.scss'
 import MV from '@/components/Mv.astro'
 import WorkCard from '@/components/WorkCard.astro'
 import { Image } from 'astro:assets'
+import github from '@/assets/images/icon-github.svg'
 //microCMS呼び出し
 import { getWorks, getWorksDetail } from '@/lib/microcms'
 
@@ -20,6 +21,7 @@ export async function getStaticPaths() {
 //記事の詳細情報を取得
 const { workId } = Astro.params
 const work = await getWorksDetail(workId as string)
+console.log(work);
 const response = await getWorks({
   fields: ['id', 'title', 'pc_image', 'product_category'],
 })
@@ -68,7 +70,12 @@ const og_image = ''
             </div>
           </div>
         </div>
-        <a href={work.url} target="_blank" rel="noopener">{work.url}</a>
+        <div class="p-works-detail-fv__links">
+          <a href={work.url} target="_blank" rel="noopener" class="hover__opacity">{work.url}</a>
+          <a href={work.githubLink} target="_blank" rel="noopener">
+            <Image src={github} alt="GitHubのアイコン" />
+          </a>
+        </div>
         {
           work.productDetailTables && (
             <div class="p-works-detail-fv__table__wrapper">

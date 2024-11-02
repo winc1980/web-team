@@ -115,7 +115,7 @@ section {
       a {
         display: block;
         width: 147px;
-        height: 112px;
+        height: 111px;
         padding-top: 40px;
         background-color: #f2b551;
         transition: 0.3s all;
@@ -137,7 +137,7 @@ section {
       a {
         display: block;
         width: 147px;
-        height: 112px;
+        height: 111px;
         padding-top: 40px;
         background-color: #518ef2;
         transition: 0.3s all;
@@ -1004,28 +1004,27 @@ section {
         }
       }
     }
-    a {
-      color: #fff;
-      font-family: 'Inter Variable', sans-serif;
-      font-style: normal;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: normal;
-      text-decoration-line: underline;
+    &__links {
       display: flex;
       align-items: center;
-      background: rgba(81, 142, 242, 0.6);
-      width: fit-content;
-      padding: 4px 24px;
-      border-radius: 10px;
       margin-top: 65px;
-      /* &::before {
-        content: '';
-        background-image: url('/assets/images/External_Link.svg');
-        width: 17px;
-        height: 17px;
-        margin-right: 5px;
-      } */
+      a:first-child {
+        color: #fff;
+        text-decoration-line: underline;
+        background: rgba(81, 142, 242, 0.6);
+        width: fit-content;
+        height: fit-content;
+        padding: 4px 24px;
+        border-radius: 10px;
+      }
+      img {
+        width: 40px;
+        margin-left: 30px;
+        transition: transform .5s ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
     }
     @media (max-width: $breakpoint-lg) {
       &__wrapper {
@@ -1041,13 +1040,21 @@ section {
           }
         }
       }
-      a {
-        color: #518ef2;
-        font-size: 10px;
-        text-decoration-line: underline;
-        padding: 0;
-        background: initial;
+      &__links {
+        display: flex;
+        align-items: center;
         margin-top: 25px;
+        a:first-child {
+          color: #518ef2;
+          font-size: 10px;
+          text-decoration-line: underline;
+          padding: 0;
+          background: initial;
+        }
+        img {
+          width: 22px;
+          margin-left: 20px;
+        }
       }
     }
     &__table {
