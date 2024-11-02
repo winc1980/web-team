@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets'
+const { id, imgpath, imgwidth, imgheight, category, title} = Astro.props;
+---
+<li>
+    <a href={'/works/' + id} class="hover__opacity">
+      <Image
+        src={imgpath}
+        alt={title + 'のPC画像'}
+        width={imgwidth}
+        height={imgheight}
+      />
+    </a>
+    <p>{category}</p>
+    <a href={'/works/' + id} class="hover__underline">{title}</a>
+  </li>

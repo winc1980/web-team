@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import '@/scss/subpage.scss'
 import MV from '@/components/Mv.astro'
+import WorkCard from '@/components/WorkCard.astro'
 import { Image } from 'astro:assets'
 //microCMS呼び出し
 import { getWorks, getWorksDetail } from '@/lib/microcms'
@@ -22,7 +23,12 @@ const work = await getWorksDetail(workId as string)
 const response = await getWorks({
   fields: ['id', 'title', 'pc_image', 'product_category'],
 })
-
+/* response.contentsで返ってくる配列をランダムに並び替える */
+const shuffledContents = response.contents.sort(() => Math.random() - 0.5)
+/* このページで表示する事例を含まない配列を生成 */
+const filteredContents = shuffledContents.filter(
+  (item) => item.title != work.title
+)
 const title = ''
 const description = ''
 const og_image = ''
@@ -63,16 +69,18 @@ const og_image = ''
           </div>
         </div>
         <a href={work.url} target="_blank" rel="noopener">{work.url}</a>
-        <div class="p-works-detail-fv__table__wrapper">
-          {
-            work.productDetailTables?.map((productDetailTable) => (
-              <div class="p-works-detail-fv__table">
-                <h4>{productDetailTable.detailTitle}</h4>
-                <p>{productDetailTable.detailDescription}</p>
-              </div>
-            ))
-          }
-        </div>
+        {
+          work.productDetailTables && (
+            <div class="p-works-detail-fv__table__wrapper">
+              {work.productDetailTables?.map((productDetailTable) => (
+                <div class="p-works-detail-fv__table">
+                  <h4>{productDetailTable.detailTitle}</h4>
+                  <p>{productDetailTable.detailDescription}</p>
+                </div>
+              ))}
+            </div>
+          )
+        }
       </div>
     </section>
     <section id="works-detail-content" class="sub-page">
@@ -109,6 +117,23 @@ const og_image = ''
     <section id="works-detail-other-works" class="p-works-detail-other-works">
       <div class="l-container">
         <h2>Other Works</h2>
+        <ul class="web-team__work-card">
+          {
+            filteredContents.slice(0, 3).map((content: any) =>
+              /* 現在表示されている事例以外3つをランダム表示 */
+              content.title != work.title ? (
+                <WorkCard
+                  id={content.id}
+                  imgpath={content.pc_image.url}
+                  imgwidth={content.pc_image.width}
+                  imgheight={content.pc_image.height}
+                  category={content.product_category}
+                  title={content.title}
+                />
+              ) : null
+            )
+          }
+        </ul>
       </div>
     </section>
   </main>
