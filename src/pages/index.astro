@@ -21,6 +21,11 @@ import HTML from '@/assets/images/HTML5_logo.webp'
 import Flask from '@/assets/images/cover-flask.webp'
 import astro from '@/assets/images/astro_logo.webp'
 import three from '@/assets/images/three.js.webp'
+import activities from '@/assets/images/activities_img.webp'
+import communication from '@/assets/images/communication.webp'
+import programming from '@/assets/images/programming.webp'
+import vector from '@/assets/images/Vector.webp'
+import webteamlogo from '@/assets/images/webteam_logo.webp'
 
 const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getPosts(NUMBER_OF_POSTS_PER_PAGE),
@@ -109,25 +114,32 @@ console.log(posts)
         </div>
       </div>
     </section>
-    <section id="activities">
-      <div class="l-container">
+    <section id="activities" class="activities">
+      
         <div class="activities__wrapper">
           <div class="activities__wrapper__ttl">
             <h3>活動内容</h3>
             <p class="sp-none">01</p>
           </div>
-          <div class="activities__wrapper__imgwrapper pc-none">
-          <Image
-          src={WAXAPC}
-          alt={""}
-          class="PC-img"
-          />
-          <Image
-          src={WAXASP}
-          alt={""}
-          class="SP-img"
-          />
+          <div class="activities__wrapper__topbox pc-none">
+            <div class="activities__wrapper__topbox__imgwrapper">
+            <Image
+            src={WAXAPC}
+            alt={""}
+            class="activities__wrapper__topbox__imgwrapper__PC-img"
+            />
+            <Image
+            src={WAXASP}
+            alt={""}
+            class="activities__wrapper__topbox__imgwrapper__SP-img"
+            />
+            </div>
+      
+            <div class="activities__wrapper__topbox__triangle-button__wrapper">
+              <a href="" class="triangle-button__white">製作実績</a>
+            </div>
           </div>
+          <div class="l-container">
           <p class="activities__topcardttl">Webサイトの案件制作</p>
           <div class="activities__topcard"> 
             <div class="activities__topcard__txtwrapper">
@@ -144,7 +156,7 @@ console.log(posts)
               class="PC-img sp-none"
               />
               <div class="activities__flexbox__imgwrapper__row">
-              <Image
+                <Image
                 src={WAXASP}
                 alt={""}
                 class="SP-img sp-none"
@@ -165,56 +177,57 @@ console.log(posts)
                 <Image
                   src={CSS}
                   alt={""}
-                  class="vertically__long"
+                  class="CSS-img"
                 />
                 <Image
                   src={HTML}
                   alt={""}
-                  class="vertically__long"
+                  class="HTML-img"
                 />
                 <Image
                   src={Flask}
                   alt={""}
-                  class="horizontally__long"
+                  class="Flask-img"
                 />
               </div>
               <div class="activities__middlecard__flexbox__imgwrapper__down">
                 <Image
                   src={three}
                   alt={""}
-                  class="horizontally__long"
+                  class="three-img"
                 />
                 <Image
                   src={astro}
                   alt={""}
-                  class="horizontally__long"
+                  class="astro-img"
                 />
               </div>
             </div>
             <div class="activities__middlecard__flexbox__txtwrapper">
             <p class="activities__middlecard__flexbox__ttl">Webアプリ開発</p>
-            <p class="activities__middlecard__flexbox__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリー<br>オ市、<br>
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>     
+            <p class="activities__middlecard__flexbox__txt ">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
+              あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森</p>     
             </div>
           </div>
           
-          <div class="activities__bottomcard">
+          <div class="activities__bottomcard sp-none">
             <p class="bottomcardnumber sp-none">03</p>
-            <div>
+            <div class="sp-none">
               <p class="activities__bottomcard__cardttl">合宿によるハッカソン</p>
-              <p class="activities__bottomcard__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリー<br>オ市、<br>
-                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br>つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>   
+              <p class="activities__bottomcard__txt">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br class="pc-br">つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br class="pc-br">トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>   
             </div>
-              <div>
+            <div class="activities__bottomcard__imgwrapper">
               <Image
-              src={IMG}
-              alt={"Astro"}              
+              src={activities}
+              alt={""}              
               />
               <div class="activities__bottomcard__triangle-button__wrapper">
                 <a href="" class="triangle-button__white">Webチームの一年</a>
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -228,33 +241,33 @@ console.log(posts)
               <p>01</p>
             </div>
             <Image
-            src={IMG}
-            alt={"Astro"}              
+            src={communication}
+            alt={""}              
             />
-            <p class="p-teamcharacteristic__cardwrapper__card__ttl">ほとんどがプログラミング未経験</p>
-            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__ttl">ほとんどがプログラミング<br class="sp-br">未経験</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきと<br class="sp-br">おった風、夏<br class="pc-br">でも底に冷たさ<br class="sp-br">をもつ青いそら、うつくし<br class="pc-br">い<br class="sp-br">森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎ<br class="pc-br">らひかる草の波。<br class="sp-br">あのイーハトーヴォのす<br class="pc-br">きと<br class="sp-br">おった風、夏でも底に冷たさ<br class="sp-br">をもつ青<br class="pc-br">いそら、うつくしい<br class="sp-br">森で飾られたモリーオ<br class="pc-br">市、郊<br class="sp-br">外のぎらぎらひかる草の波。</p>
           </div>
           <div class="p-teamcharacteristic__cardwrapper__card center">
             <div class="p-teamcharacteristic__cardwrapper__card__number">
               <p>02</p>
             </div>
             <Image
-            src={IMG}
-            alt={"Astro"}              
+            src={programming}
+            alt={""}              
             />
             <p class="p-teamcharacteristic__cardwrapper__card__ttl">男女比は7:3</p>
-            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきと<br class="sp-br">おった風、夏<br class="pc-br">でも底に冷たさ<br class="sp-br">をもつ青いそら、うつくし<br class="pc-br">い<br class="sp-br">森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎ<br class="pc-br">らひかる草の波。<br class="sp-br">あのイーハトーヴォのす<br class="pc-br">きと<br class="sp-br">おった風、夏でも底に冷たさ<br class="sp-br">をもつ青<br class="pc-br">いそら、うつくしい<br class="sp-br">森で飾られたモリーオ<br class="pc-br">市、郊<br class="sp-br">外のぎらぎらひかる草の波。</p>
           </div>
           <div class="p-teamcharacteristic__cardwrapper__card right">
             <div class="p-teamcharacteristic__cardwrapper__card__number">
               <p>03</p>
             </div>
             <Image
-            src={IMG}
-            alt={"Astro"}              
+            src={vector}
+            alt={""}              
             />
             <p class="p-teamcharacteristic__cardwrapper__card__ttl">インターカレッジ</p>
-            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+            <p class="p-teamcharacteristic__cardwrapper__card__txt">あのイーハトーヴォのすきと<br class="sp-br">おった風、夏<br class="pc-br">でも底に冷たさ<br class="sp-br">をもつ青いそら、うつくし<br class="pc-br">い<br class="sp-br">森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎ<br class="pc-br">らひかる草の波。<br class="sp-br">あのイーハトーヴォのす<br class="pc-br">きと<br class="sp-br">おった風、夏でも底に冷たさ<br class="sp-br">をもつ青<br class="pc-br">いそら、うつくしい<br class="sp-br">森で飾られたモリーオ<br class="pc-br">市、郊<br class="sp-br">外のぎらぎらひかる草の波。</p>
           </div>
         </div>
       </div>
@@ -303,10 +316,10 @@ console.log(posts)
         <a href="" >コンピュータ研究会・WINC</a></div>
       </div>
       <div class="flexbox-bottom">
-        <p>早稲田コンピュータ研究会　WINC</p>
+        <p>早稲田コンピュータ研究会　<br class="sp-br">WINC</p>
         <Image
-         src={IMG}
-         alt={"Astro"}
+         src={webteamlogo}
+         alt={""}
         />
       </div>
     </footer>
