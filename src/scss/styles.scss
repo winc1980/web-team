@@ -839,7 +839,7 @@ section {
   left: 29%;
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .activities__topcard {
     display: none;
     align-items: center;
@@ -854,7 +854,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .activities__topcardttl {
     font-weight: 400;
     font-size: 18px;
@@ -956,7 +956,7 @@ section {
   left: 38%;
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .activities__middlecard__flexbox {
     position: relative;
     display: none;
@@ -1084,7 +1084,7 @@ section {
   font-weight: 500;
   font-size: 15px;
 }
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .triangle-button__white {
     position: relative;
     padding: 0px 0px 0px 1em;
@@ -1129,20 +1129,20 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .activities__flexbox__imgwrapper__triangle-button__wrapper {
     display: none;
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .triangle-button__wrapper {
     padding-top: 100%;
     color: #518ef2;
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .activities__wrapper__topbox {
     background-color: #518ef299;
     text-align: center;
@@ -1177,7 +1177,7 @@ section {
   padding-top: 0;
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .activities__wrapper {
     margin: 0 auto;
     width: 100%;
@@ -1467,7 +1467,7 @@ section {
   height: 66px;
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .CSS-img {
     width: 53px;
     height: 70px;
@@ -1490,7 +1490,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .triangle-button__wrapper {
     margin-top: 10%;
     padding-top: 10%;
@@ -1582,7 +1582,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .p-teamcharacteristic {
     margin-bottom: 5%;
     text-align: center;
@@ -1743,7 +1743,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .p-blogList {
     align-items: center;
   }
