@@ -16,14 +16,14 @@ h2,
 h3,
 h4,
 h5 {
-  color: #000;
+  color: #000000d1;
   font-style: normal;
   line-height: 172.3%; /* 24.122px */
-  font-weight: 500;
+  font-weight: 400;
 }
 p,
 a {
-  font-family: 'Noto Sans JP';
+  font-family: 'Noto Sans JP Variable', sans-serif;
 }
 
 h1,
@@ -70,6 +70,12 @@ section {
       font-weight: 900;
     }
   }
+  &__scale {
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .web-team {
@@ -99,12 +105,11 @@ section {
         li {
           margin: 0 15px;
           a {
-            color: #000;
+            font-family: 'Inter Variable', sans-serif;
             font-size: 18px;
             font-weight: 400;
             line-height: normal;
-            font-weight: 500;
-            font-style: normal;
+            font-weight: 400;
           }
         }
       }
@@ -116,7 +121,7 @@ section {
       a {
         display: block;
         width: 147px;
-        height: 112px;
+        height: 111px;
         padding-top: 40px;
         background-color: #f2b551;
         transition: 0.3s all;
@@ -126,10 +131,9 @@ section {
         }
         p {
           color: #fff;
+          font-family: 'Inter Variable', sans-serif;
           font-size: 18px;
-          font-style: normal;
           font-weight: 400;
-          line-height: normal;
           text-align: center;
         }
       }
@@ -138,7 +142,7 @@ section {
       a {
         display: block;
         width: 147px;
-        height: 112px;
+        height: 111px;
         padding-top: 40px;
         background-color: #518ef2;
         transition: 0.3s all;
@@ -149,9 +153,8 @@ section {
         p {
           color: #fff;
           font-size: 18px;
-          font-style: normal;
+          font-family: 'Inter Variable', sans-serif;
           font-weight: 400;
-          line-height: normal;
           text-align: center;
         }
       }
@@ -160,6 +163,32 @@ section {
   @media (max-width: $breakpoint-md) {
     &__header {
       display: none;
+    }
+  }
+
+  &__sp-header {
+    display: none;
+  }
+  @media (max-width: $breakpoint-md) {
+    &__sp-header {
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      nav {
+        height: 45px;
+        position: relative;
+      }
+      img {
+        width: fit-content;
+        height: 20px;
+        object-fit: contain;
+      }
+      button {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+      }
     }
   }
 
@@ -303,6 +332,60 @@ section {
     }
     &.--blue {
       background-color: #518ef2;
+    }
+  }
+
+  &__work-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 50px;
+    column-gap: 30px;
+    place-items: center;
+    li {
+      max-width: 380px;
+      a {
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        img {
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+        }
+      }
+      p {
+        color: #fff;
+        font-family: 'Inter Variable', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 30px;
+        background: rgba(81, 142, 242, 0.6);
+        width: fit-content;
+        padding: 4px 10px;
+        margin: 10px 0;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    &__work-card {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+      li {
+        max-width: 380px;
+        a {
+          font-size: 16px;
+          margin-top: 17px;
+          img {
+          }
+        }
+        p {
+          font-size: 12px;
+          padding: 4px 10px;
+          margin: 12px 0 8px;
+        }
+      }
     }
   }
 }
@@ -1672,22 +1755,7 @@ section {
 
 /* ------------------- 制作実績一覧ここから ------------------- */
 .p-works-list {
-  &-mv {
-    h1 {
-      color: #000;
-      font-size: 38px;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
   &-cards {
-    h2 {
-      color: #000;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
     ul {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -1725,15 +1793,7 @@ section {
 
 @media (max-width: $breakpoint-md) {
   .p-works-list {
-    &-mv {
-      h1 {
-        font-size: 38px;
-      }
-    }
     &-cards {
-      h2 {
-        font-size: 20px;
-      }
       ul {
         grid-template-columns: 1fr;
         li {
@@ -1759,18 +1819,10 @@ section {
 
 /* ------------------- 制作実績詳細ここから ------------------- */
 .p-works-detail {
-  &-mv {
-    h1 {
-      color: #000;
-      font-size: 38px;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
   &-fv {
     &__wrapper {
       width: fit-content;
-      margin: 5rem auto;
+      margin: 0 auto;
     }
     &__images {
       display: flex;
@@ -1790,31 +1842,26 @@ section {
         }
       }
     }
-    a {
-      color: #fff;
-      font-family: 'Inter Variable', sans-serif;
-      font-style: normal;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: normal;
-      text-decoration-line: underline;
+    &__links {
       display: flex;
       align-items: center;
-      background: rgba(81, 142, 242, 0.6);
-      width: fit-content;
-      padding: 4px 24px;
-      border-radius: 10px;
-      /* &::before {
-        content: '';
-        background-image: url('/assets/images/External_Link.svg');
-        width: 17px;
-        height: 17px;
-        margin-right: 5px;
-      } */
+      margin-top: 65px;
+      a:first-child {
+        color: #fff;
+        text-decoration-line: underline;
+        background: rgba(81, 142, 242, 0.6);
+        width: fit-content;
+        height: fit-content;
+        padding: 4px 24px;
+        border-radius: 10px;
+      }
+      img {
+        width: 40px;
+        margin-left: 30px;
+      }
     }
     @media (max-width: $breakpoint-lg) {
       &__wrapper {
-        margin: 120px auto 25px auto;
       }
       &__images {
         > img {
@@ -1827,12 +1874,21 @@ section {
           }
         }
       }
-      a {
-        color: #518ef2;
-        font-size: 10px;
-        text-decoration-line: underline;
-        padding: 0;
-        background: initial;
+      &__links {
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        a:first-child {
+          color: #518ef2;
+          font-size: 10px;
+          text-decoration-line: underline;
+          padding: 0;
+          background: initial;
+        }
+        img {
+          width: 22px;
+          margin-left: 20px;
+        }
       }
     }
     &__table {
@@ -1984,12 +2040,14 @@ section {
       font-weight: 700;
       line-height: normal;
       text-align: center;
+      margin-bottom: 75px;
     }
   }
   @media (max-width: $breakpoint-md) {
     &-other-works {
       h2 {
         font-size: 20px;
+        margin-bottom: 57px;
       }
     }
   }

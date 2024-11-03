@@ -1,13 +1,16 @@
 ---
-import "@/scss/styles.scss";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import '@/scss/styles.scss'
+import Header from '@/components/Header.astro'
+import SPHeader from '@/components/SPHeader.astro'
+import Footer from '@/components/Footer.astro'
 // Supports weights 100-900
-import '@fontsource-variable/heebo';
-import '@fontsource-variable/inter';
+import '@fontsource-variable/noto-sans-jp';
+import '@fontsource-variable/heebo'
+import '@fontsource-variable/inter'
 // タイトル等をPropsとして受け取る。
-let { title = "", description = "", og_image = "" } = Astro.props;
+let { title = '', description = '', og_image = '' } = Astro.props
 ---
+
 <!doctype html>
 <html lang="ja">
   <head>
@@ -29,9 +32,15 @@ let { title = "", description = "", og_image = "" } = Astro.props;
     <meta name="twitter:image" content={og_image} />
     <link rel="icon" sizes="32x32" type="image/png" href="" />
     <link rel="shortcut icon" href="" />
-  </head>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+    ></script></head
+  >
+
   <body>
     <Header />
+    <SPHeader />
     <slot />
     <Footer />
   </body>
