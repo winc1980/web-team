@@ -27,6 +27,7 @@ import programming from '@/assets/images/programming.webp'
 import vector from '@/assets/images/Vector.webp'
 import webteamlogo from '@/assets/images/webteam_logo.webp'
 
+
 const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getPosts(NUMBER_OF_POSTS_PER_PAGE),
   getRankedPosts(),
