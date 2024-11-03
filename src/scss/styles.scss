@@ -69,6 +69,12 @@ section {
       font-weight: 900;
     }
   }
+  &__scale {
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .web-team {
@@ -98,12 +104,11 @@ section {
         li {
           margin: 0 15px;
           a {
-            color: #000;
+            font-family: 'Inter Variable', sans-serif;
             font-size: 18px;
             font-weight: 400;
             line-height: normal;
-            font-weight: 500;
-            font-style: normal;
+            font-weight: 400;
           }
         }
       }
@@ -332,6 +337,8 @@ section {
   &__work-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 50px;
+    column-gap: 30px;
     place-items: center;
     li {
       max-width: 380px;
@@ -341,7 +348,6 @@ section {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        margin-top: 17px;
         img {
           aspect-ratio: 16 / 9;
           object-fit: cover;
@@ -349,24 +355,24 @@ section {
       }
       p {
         color: #fff;
-        font-size: 16px;
-        font-style: normal;
+        font-family: 'Inter Variable', sans-serif;
+        font-size: 14px;
         font-weight: 700;
         line-height: normal;
         border-radius: 30px;
         background: rgba(81, 142, 242, 0.6);
         width: fit-content;
-        padding: 8px 12px;
-        margin-top: 10px;
+        padding: 4px 10px;
+        margin: 10px 0;
       }
     }
   }
   @media (max-width: $breakpoint-md) {
     &__work-card {
       grid-template-columns: 1fr;
+      row-gap: 30px;
       li {
         max-width: 380px;
-        margin-bottom: 20px;
         a {
           font-size: 16px;
           margin-top: 17px;
@@ -374,8 +380,8 @@ section {
           }
         }
         p {
-          font-size: 16px;
-          padding: 8px 12px;
+          font-size: 12px;
+          padding: 4px 10px;
           margin: 12px 0 8px;
         }
       }
@@ -1018,10 +1024,6 @@ section {
       img {
         width: 40px;
         margin-left: 30px;
-        transition: transform 0.5s ease;
-        &:hover {
-          transform: scale(1.2);
-        }
       }
     }
     @media (max-width: $breakpoint-lg) {
