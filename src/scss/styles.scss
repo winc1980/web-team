@@ -15,10 +15,10 @@ h2,
 h3,
 h4,
 h5 {
-  color: #000;
+  color: #000000d1;
   font-style: normal;
   line-height: 172.3%; /* 24.122px */
-  font-weight: 500;
+  font-weight: 400;
 }
 p,
 a {
@@ -125,10 +125,9 @@ section {
         }
         p {
           color: #fff;
+          font-family: 'Inter Variable', sans-serif;
           font-size: 18px;
-          font-style: normal;
           font-weight: 400;
-          line-height: normal;
           text-align: center;
         }
       }
@@ -148,9 +147,8 @@ section {
         p {
           color: #fff;
           font-size: 18px;
-          font-style: normal;
+          font-family: 'Inter Variable', sans-serif;
           font-weight: 400;
-          line-height: normal;
           text-align: center;
         }
       }
