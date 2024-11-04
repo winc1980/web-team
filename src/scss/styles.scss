@@ -11,12 +11,13 @@ $breakpointMobile: 767px;
 }
 
 p,
+a,
 h1,
 h2,
 h3,
 h4,
 h5 {
-  color: #000000d1;
+  color: $defaultColor;
   font-style: normal;
   line-height: 172.3%; /* 24.122px */
   font-weight: 400;
@@ -105,10 +106,9 @@ section {
         li {
           margin: 0 15px;
           a {
+            color: $defaultColor;
             font-family: 'Inter Variable', sans-serif;
             font-size: 18px;
-            font-weight: 400;
-            line-height: normal;
             font-weight: 400;
           }
         }
@@ -133,7 +133,6 @@ section {
           color: #fff;
           font-family: 'Inter Variable', sans-serif;
           font-size: 18px;
-          font-weight: 400;
           text-align: center;
         }
       }
@@ -219,11 +218,8 @@ section {
       overflow-x: scroll;
       li {
         color: #fff;
-        font-family: Inter;
         font-size: 18px;
-        font-style: normal;
         font-weight: 400;
-        line-height: normal;
         display: flex;
         &::before {
           content: '>';
@@ -239,6 +235,8 @@ section {
         a {
           display: block;
           white-space: nowrap;
+          color: #fff;
+          font-family: 'Inter Variable', sans-serif;
           &:hover {
             color: #518ef2;
             transition: all 0.5s 0s ease;

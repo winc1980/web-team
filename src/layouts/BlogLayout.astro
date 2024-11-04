@@ -7,6 +7,14 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 import SearchModal from '../components/SearchModal.astro'
 import SearchButton from '../components/SearchButton.astro'
 import Header from '../components/Header.astro'
+import SPHeader from '@/components/SPHeader.astro'
+import Footer from '@/components/Footer.astro'
+// Supports weights 100-900
+import '@fontsource-variable/noto-sans-jp'
+import '@fontsource-variable/heebo'
+import '@fontsource-variable/inter'
+import SPHeader from '@/components/SPHeader.astro'
+import "@/scss/styles.scss"
 
 export interface Props {
   title: string
@@ -50,7 +58,7 @@ if (database.Icon && database.Icon.Type === 'file') {
 }
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,12 +83,16 @@ if (database.Icon && database.Icon.Type === 'file') {
       integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
       crossorigin="anonymous"
     />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+    ></script>
   </head>
   <body>
     <Header />
+    <SPHeader />
     <GoogleAnalytics trackingId={PUBLIC_GA_TRACKING_ID} />
     <div class="container">
-
       <div>
         <main>
           <div class="content">
@@ -263,7 +275,8 @@ if (database.Icon && database.Icon.Type === 'file') {
   }
 </style>
 
-<style is:global>
+<!-- astro-notion-blogデフォルトのスタイルをコメントアウト -->
+<!-- <style is:global>
   :root {
     --gap-quarter: 0.25rem;
     --gap-half: 0.5rem;
@@ -303,14 +316,28 @@ if (database.Icon && database.Icon.Type === 'file') {
     min-height: 100vh;
     background: var(--bg);
     color: var(--fg);
-    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Helvetica, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
-      'Hiragino Sans GB', メイリオ, Meiryo, 'Apple Color Emoji', Arial,
-      sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family:
+      ui-sans-serif,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Helvetica,
+      'Hiragino Sans',
+      'Hiragino Kaku Gothic ProN',
+      'Hiragino Sans GB',
+      メイリオ,
+      Meiryo,
+      'Apple Color Emoji',
+      Arial,
+      sans-serif,
+      'Segoe UI Emoji',
+      'Segoe UI Symbol';
 
     /*background-image: radial-gradient(#ddd 1px, transparent 1px),
       radial-gradient(#ddd 1px, transparent 1px);*/
-    background-position: 0 0, 25px 25px;
+    background-position:
+      0 0,
+      25px 25px;
     background-attachment: fixed;
     background-size: 50px 50px;
 
@@ -364,7 +391,7 @@ if (database.Icon && database.Icon.Type === 'file') {
     color: #222;
     font-weight: 400;
     font-size: 1rem;
-    line-height: 1.8rem;
+    line-height: 172.3%;
   }
   ul,
   ol {
@@ -427,4 +454,4 @@ if (database.Icon && database.Icon.Type === 'file') {
     display: inline-block;
     min-height: 0.9rem;
   }
-</style>
+</style> -->
