@@ -1,9 +1,9 @@
 ---
-const { title, bgImg, items } = Astro.props
+const { title, bgImg, imgClass, items } = Astro.props
 ---
 
 <div class="web-team__mv">
-  <div class="web-team__mv__bg"><img src={bgImg} alt="メインビジュアル" /></div>
+  <div class={'web-team__mv__bg ' + imgClass}><img src={bgImg} alt="メインビジュアル"/></div>
   <ul>
     {
       items.map((i) => {

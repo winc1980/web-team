@@ -990,6 +990,24 @@ function _buildPost(pageObject: responses.PageObject): Post {
         : '',
     FeaturedImage: featuredImage,
     Rank: prop.Rank.number ? prop.Rank.number : 0,
+    AuthorProfile:
+      prop.AuthorProfile.rich_text && prop.AuthorProfile.rich_text.length > 0
+        ? prop.AuthorProfile.rich_text
+            .map((richText) => richText.plain_text)
+            .join('')
+        : '',
+    AuthorGitHub:
+      prop.AuthorGitHub.rich_text && prop.AuthorGitHub.rich_text.length > 0
+        ? prop.AuthorGitHub.rich_text
+            .map((richText) => richText.plain_text)
+            .join('')
+        : '',
+    AuthorWebsite:
+      prop.AuthorWebsite.rich_text && prop.AuthorWebsite.rich_text.length > 0
+        ? prop.AuthorWebsite.rich_text
+            .map((richText) => richText.plain_text)
+            .join('')
+        : '',
   }
 
   return post

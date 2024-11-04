@@ -6,7 +6,7 @@ import {
   getAllTags,
   getNumberOfPages,
 } from '../../lib/notion/client.ts'
-import Layout from '../../layouts/BlogLayout.astro'
+import Layout from '../../layouts/BlogTopLayout.astro'
 import NoContents from '../../components/NoContents.astro'
 import PostDate from '../../components/PostDate.astro'
 import PostTags from '../../components/PostTags.astro'
@@ -29,6 +29,9 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
 
 <Layout>
   <div slot="main" class={styles.main}>
+    <div class="sub-page max-sm:mt-4">
+      <h2>新着記事</h2>
+    </div>
     {
       posts.length === 0 ? (
         <NoContents contents={posts} />
@@ -45,10 +48,11 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
         ))
       )
     }
+    <div class="sub-page max-sm:mt-4">
+      <h2>おすすめ記事</h2>
+    </div>
 
-    <footer>
-      <Pagination currentPage={1} numberOfPages={numberOfPages} />
-    </footer>
+    <Pagination currentPage={1} numberOfPages={numberOfPages} />
   </div>
 
   <div slot="aside" class={styles.aside}>
