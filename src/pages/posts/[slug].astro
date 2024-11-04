@@ -37,7 +37,8 @@ const post = await getPostBySlug(slug)
 if (!post) {
   throw new Error('Post not found. slug: ${slug}')
 }
-
+console.log(post)
+console.log(post.AuthorProfile.rich_text)
 const [blocks, allPosts, rankedPosts, recentPosts, tags, postsHavingSameTag] =
   await Promise.all([
     getAllBlocksByBlockId(post.PageId),
@@ -106,16 +107,13 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
       <PostTitle post={post} enableLink={false} />
       <PostBody blocks={blocks} />
       <PostTags post={post} />
-
-      <footer>
-        <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
-      </footer>
+      <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
     </div>
   </div>
 
   <div slot="aside" class="aside">
     <BlogPostsLink
-      heading="Posts in the same category"
+      heading="同じカテゴリの投稿"
       posts={postsHavingSameTag.filter(
         (p: interfaces.Post) => p.Slug !== post.Slug
       )}

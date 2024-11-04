@@ -159,7 +159,7 @@ section {
       }
     }
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-xl) {
     &__header {
       display: none;
     }
@@ -168,7 +168,7 @@ section {
   &__sp-header {
     display: none;
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-xl) {
     &__sp-header {
       display: block;
       position: sticky;
@@ -206,6 +206,13 @@ section {
         object-fit: cover;
       }
     }
+    /* MVの画像を個別調整するクラスを定義する */
+    &__blog-bg {
+      opacity: 0.5;
+      img {
+        object-position: 50% 40%;
+      }
+    }
     ul {
       position: absolute;
       width: fit-content;
@@ -215,7 +222,6 @@ section {
       padding: 7px;
       display: flex;
       background-color: #518ef299;
-      overflow-x: scroll;
       li {
         color: #fff;
         font-size: 18px;
@@ -252,16 +258,17 @@ section {
       font-weight: 700;
       position: absolute;
       top: 176px;
+      text-align: center;
       background-color: #fff;
       min-width: 719px;
-      text-align: center;
-      padding: 0 24px;
-      line-height: 1.8;
+      max-width: 95%;
+      padding: 8px 24px;
+      line-height: 1.4;
       &::after {
         content: '';
         position: absolute;
         width: 100%;
-        height: 87px;
+        height: 100%;
         background-color: #518ef2;
         left: 14px;
         top: 14px;
@@ -278,10 +285,16 @@ section {
           height: 196px;
         }
       }
+      &__blog-bg {
+        img {
+          object-position: 50% 0;
+        }
+      }
       ul {
         top: 8px;
         left: 13px;
         padding: 3px;
+        overflow-x: scroll;
         li {
           font-size: 10px;
           &::before {
@@ -301,10 +314,8 @@ section {
         font-size: 20px;
         top: 103px;
         min-width: 171px;
-        padding: 0 24px;
-        line-height: 1.8;
+        padding: 4px 12px;
         &::after {
-          height: 35px;
           left: 4px;
           top: 4px;
         }
