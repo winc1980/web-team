@@ -49,4 +49,9 @@ export default defineConfig({
     PublicNotionCopier(),
     tailwind(),
   ],
+  // Astroを実行したときにブラウザが自動でサーバーを開く
+  server: {
+    host: true,
+    open: true,
+  },
 });
