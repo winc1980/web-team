@@ -207,6 +207,11 @@ section {
       }
     }
     /* MVの画像を個別調整するクラスを定義する */
+    &__works-bg {
+      img {
+        object-position: 50% 40%;
+      }
+    }
     &__blog-bg {
       opacity: 0.5;
       img {

@@ -37,8 +37,7 @@ const post = await getPostBySlug(slug)
 if (!post) {
   throw new Error('Post not found. slug: ${slug}')
 }
-console.log(post)
-console.log(post.AuthorProfile.rich_text)
+console.log(post.Authors)
 const [blocks, allPosts, rankedPosts, recentPosts, tags, postsHavingSameTag] =
   await Promise.all([
     getAllBlocksByBlockId(post.PageId),

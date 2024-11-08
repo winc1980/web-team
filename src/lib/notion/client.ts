@@ -1008,6 +1008,7 @@ function _buildPost(pageObject: responses.PageObject): Post {
             .map((richText) => richText.plain_text)
             .join('')
         : '',
+    Authors: prop.authors,
   }
 
   return post
