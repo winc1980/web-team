@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @use './variables' as *;
 
+/* --------------------------------- layoutファイルにglobalで書かれていたcssここから(不要だと判断した記述は削除) --------------------------------- */
 :root {
   --gap-quarter: 0.25rem;
   --gap-half: 0.5rem;
@@ -8,6 +9,7 @@
   --gap-double: 2rem;
 
   --bg: #fff;
+  --bg-blue: #edf2f7;
   --fg: #333;
   --accents-1: #666;
   --accents-2: #666;
@@ -24,36 +26,15 @@
     Courier, monospace;
 }
 
-* {
-  box-sizing: border-box;
-  word-break: break-word;
+body {
+  background: var(--bg-blue);
+  color: $defaultColor;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-}
-
-body {
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Helvetica, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans GB',
-    メイリオ, Meiryo, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
-    'Segoe UI Symbol';
-
-  /*background-image: radial-gradient(#ddd 1px, transparent 1px),
-      radial-gradient(#ddd 1px, transparent 1px);*/
-  background-position: 0 0, 25px 25px;
-  background-attachment: fixed;
-  background-size: 50px 50px;
-
-  /* Hack */
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
+@media (max-width: $breakpointMobile) {
+    body {
+        background: #fff;
+    }
 }
 
 figure {
@@ -64,11 +45,8 @@ figure {
 }
 
 a {
-  color: var(--accents-1);
-  text-decoration: none;
 }
 a:hover {
-  color: var(--accents-1);
 }
 
 mark {
@@ -96,18 +74,7 @@ ol {
   font-size: 0.9rem;
   line-height: 1.8rem;
 }
-p,
-ul {
-  color: #222;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 172.3%;
-}
-ul,
-ol {
-  margin: 0;
-  padding-inline-start: 1.5rem;
-}
+
 pre {
   margin: 0;
   white-space: pre;
@@ -164,43 +131,48 @@ table td::after {
   display: inline-block;
   min-height: 0.9rem;
 }
+/* --------------------------------- layoutファイルにglobalで書かれていたcssここまで --------------------------------- */
 
-/* --------------------------------- layoutファイルに書かれていたcssここから --------------------------------- */
+/* --------------------------------- layoutファイルに書かれていたcssここから(不要だと判断した記述は削除) --------------------------------- */
 .container {
-  min-height: 100vh;
+  max-width: $blog-content-width;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .container > div {
   display: flex;
-  max-width: 1280px;
 }
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-xl) {
   .container > div {
     display: block;
   }
 }
+@media (max-width: $breakpointMobile) {
+  .container {
+    max-width: 100%;
+  }
+}
 
 main {
-  flex: 1;
-  order: 2;
-  justify-content: space-between;
+  order: 1;
 }
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-xl) {
   main {
     order: 1;
   }
 }
 
 aside {
-  order: 1;
-  width: 300px;
-  padding: 20px 20px;
-  background-color: #f4f4f4;
+  order: 2;
+  max-width: 300px;
+  padding: 20px 0;
 }
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-xl) {
   aside {
     order: 2;
     width: 100%;
+    max-width: initial;
   }
 }
 
@@ -215,11 +187,17 @@ div.cover img {
 }
 
 div.content {
-  padding: 20px 40px;
+  padding-right: 60px;
 }
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-xl) {
   div.content {
     padding: 0 18px;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  div.content {
+    padding: 0px;
   }
 }
 
@@ -302,3 +280,543 @@ main footer a {
 }
 
 /* --------------------------------- tag/index.astroに書かれていたcssここまで --------------------------------- */
+
+// ↓↓ componentファイル内に定義されていたcssをアルファベット順にscssファイルに移動する。(編集する必要が生じたときのみ) ↓↓
+
+/* --------------------------------- BulletedListItems.astroここから --------------------------------- */
+
+ul {
+  font-size: 1rem;
+}
+
+/* --------------------------------- BulletedListItems.astroここまで --------------------------------- */
+
+/* --------------------------------- Heading1.astroここから --------------------------------- */
+
+h3 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 20px;
+  display: flex;
+}
+
+h3::before {
+  content: '';
+  display: block;
+  background-color: #518ef2;
+  width: 5px;
+  height: 43px;
+  margin-right: 10px;
+}
+
+@media (max-width: 640px) {
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+.toggle {
+  margin: 2rem 0 0;
+}
+@media (max-width: 640px) {
+  .toggle {
+    margin: 1.4rem 0 0;
+  }
+}
+
+.toggle > summary {
+  cursor: pointer;
+}
+
+.toggle > summary > a {
+  display: inline;
+}
+
+.toggle > summary > a > h3 {
+  display: inline;
+}
+
+.toggle > div {
+  margin-left: 1em;
+}
+
+/* --------------------------------- Heading1.astroここまで --------------------------------- */
+
+/* --------------------------------- Paragraph.astroここから --------------------------------- */
+
+p {
+  margin: 0.3rem 0 1rem 0;
+  font-size: 1rem;
+  min-height: 1.8rem;
+}
+
+/* --------------------------------- Paragraph.astroここから --------------------------------- */
+
+/* --------------------------------- TableOfContents.astroここから --------------------------------- */
+
+.table-of-contents {
+}
+.table-of-contents > a {
+  display: block;
+  line-height: 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.table-of-contents > a:hover {
+  background: rgba(241, 241, 239, 1) !important;
+}
+.table-of-contents > a.indent-1 {
+  padding-left: 1.5rem;
+}
+.table-of-contents > a.indent-2 {
+  padding-left: 3rem;
+}
+
+/* --------------------------------- TableOfContents.astroここまで --------------------------------- */
+
+/* --------------------------------- BlogPostsLink.astroここから --------------------------------- */
+
+.blog-posts-link {
+}
+.blog-posts-link h2 {
+  margin: 0;
+  padding-left: 0.4rem;
+  color: #777;
+  font-size: 0.95rem;
+}
+.blog-posts-link ul {
+  padding: 0;
+  margin-top: 0.4rem;
+  margin-block-end: 1rem;
+}
+.blog-posts-link ul li {
+}
+.blog-posts-link ul li a {
+  display: block;
+  border-radius: var(--radius);
+  padding: 0.4rem 0.4rem;
+  line-height: 1.2rem;
+  color: inherit;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blog-posts-link ul li a:hover {
+  background-color: #ddd;
+}
+.blog-posts-link ul li a span,
+.blog-posts-link ul li a img {
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+.blog-posts-link ul li a img {
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: sub;
+}
+
+/* --------------------------------- BlogPostsLink.astroここまで --------------------------------- */
+
+/* --------------------------------- BlogTagsLink.astroここから --------------------------------- */
+
+.blog-tags-link {
+}
+.blog-tags-link h2 {
+  margin: 0;
+  padding-left: 0.4rem;
+  color: #777;
+  font-size: 0.95rem;
+}
+.blog-tags-link ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0.3rem;
+  margin-block-end: 1rem;
+}
+.blog-tags-link ul li {
+  position: relative;
+  padding: 0.4rem;
+  line-height: 1.2rem;
+  font-size: 0.9rem;
+  gap: 6px;
+}
+.blog-tags-link ul li a {
+  min-width: 0;
+  border-radius: 3px;
+  padding: 2px 6px;
+  line-height: 1.2;
+  color: rgb(50, 48, 44);
+  background: rgba(227, 226, 224, 0.5);
+}
+
+/* --------------------------------- BlogTagsLink.astroここまで --------------------------------- */
+
+/* --------------------------------- PostDate.astroここから --------------------------------- */
+
+.post-date {
+  padding: 0 0 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------- PostDate.astroここまで --------------------------------- */
+
+/* --------------------------------- PostExcerpt.astroここから --------------------------------- */
+
+.post-excerpt {
+  padding: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.post-excerpt p {
+  margin: 0;
+}
+
+/* --------------------------------- PostExcerpt.astroここまで --------------------------------- */
+
+/* --------------------------------- PostFeaturedImage.astroここから --------------------------------- */
+
+.post-featured-image {
+  padding: 0.6rem 0 0.2rem;
+}
+.post-featured-image img {
+  display: block;
+  max-width: 100%;
+  max-height: 20rem;
+}
+
+/* --------------------------------- PostFeaturedImage.astroここまで --------------------------------- */
+
+/* --------------------------------- PostTags.astroここから --------------------------------- */
+
+.post-tags {
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+.post-tags a,
+.post-tags span {
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  min-width: 0;
+  border-radius: 3px;
+  padding: 2px 6px;
+  line-height: 1.2;
+  color: rgb(50, 48, 44);
+  background: rgba(227, 226, 224, 0.5);
+}
+
+/* --------------------------------- PostTags.astroここまで --------------------------------- */
+
+/* --------------------------------- PostTitle.astroここから --------------------------------- */
+
+.post-title {
+  margin: 0;
+  padding: 0.2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--fg);
+}
+.post-title a {
+  font-size: 1.6rem;
+  color: inherit;
+}
+.post-title span,
+.post-title img {
+  display: inline-block;
+  margin-right: 0.2em;
+}
+.post-title span {
+  font-size: 1.2em;
+}
+.post-title img {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: sub;
+}
+@media (max-width: 640px) {
+  .post-title {
+    font-size: 1.4rem;
+  }
+  .post-title a {
+    font-size: 1.2rem;
+  }
+}
+
+/* --------------------------------- PostTitle.astroここまで --------------------------------- */
+
+/* --------------------------------- ReadMoreLink.astroここから --------------------------------- */
+
+.read-more-link {
+  color: var(--fg);
+}
+.read-more-link a {
+  color: rgb(55, 53, 47);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  text-decoration: underline;
+}
+@media (max-width: 640px) {
+  .read-more-link a {
+    width: 50%;
+  }
+}
+
+/* --------------------------------- ReadMoreLink.astroここまで --------------------------------- */
+
+/* --------------------------------- SearchButton.astroここから --------------------------------- */
+
+.search-button {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.4rem 0.4rem;
+  color: #777;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+.search-button:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+.search-button svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.2rem;
+}
+[astro-icon='octicon:search-24'] {
+  color: var(--fg);
+}
+
+@media (max-width: $breakpoint-xl) {
+  .search-button {
+    width: fit-content;
+  }
+}
+
+/* --------------------------------- SearchButton.astroここまで --------------------------------- */
+
+/* --------------------------------- Webチームブログcssここから --------------------------------- */
+
+.ttl {
+  color: #518ef2;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0 60px;
+}
+
+@media (max-width: $breakpoint-lg) {
+  .ttl {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+}
+
+aside {
+  .blog-posts-link ul li a {
+    padding: 0;
+  }
+  .blog-posts-link ul li img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+  }
+  .blog-tags-link ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: $breakpoint-xl) {
+  aside {
+    .blog-posts-link {
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 15px;
+        li {
+          max-width: 350px;
+          > a {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  aside {
+    .blog-posts-link {
+      ul {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+        row-gap: 15px;
+        li {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpointMobile) {
+  aside {
+    .blog-posts-link {
+      ul {
+        grid-template-columns: 1fr;
+        column-gap: 15px;
+        li {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.blog-card {
+  padding: 20px;
+  max-width: 790px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  &__contents {
+    width: 100%;
+  }
+  .post-title {
+  }
+  .post-title a {
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    line-height: 132.3%;
+  }
+  .post-excerpt {
+    padding: 0;
+    p {
+      margin-bottom: 5px;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+  }
+  .post-featured-image {
+    padding: 0;
+    img {
+      max-width: 360px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-right: 20px;
+      max-height: initial;
+    }
+  }
+  .read-more-link {
+    text-align: right;
+  }
+}
+
+@media (max-width: $breakpoint-xl) {
+  .blog-card {
+    max-width: initial;
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .blog-card {
+    padding: 10px;
+    flex-wrap: wrap;
+    &__contents {
+      margin-top: 10px;
+    }
+    .post-title {
+    }
+    .post-excerpt {
+      p {
+      }
+    }
+    .post-featured-image {
+      img {
+        width: 100%;
+        max-width: initial;
+      }
+    }
+    .read-more-link {
+    }
+  }
+}
+
+.blog-content {
+  a {
+    color: #518ef2;
+  }
+  ul {
+    list-style: initial;
+    margin: 0 0 20px 20px;
+  }
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  .post-featured-image {
+    max-width: 790px;
+    img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      max-height: initial;
+    }
+  }
+  &__container {
+    max-width: 790px;
+    background: #fff;
+    padding: 20px 40px;
+    margin-top: 20px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: $breakpoint-xl) {
+  .blog-content {
+    .post-featured-image {
+      img {
+      }
+    }
+    &__container {
+      margin-top: 20px;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: $breakpointMobile) {
+  .blog-content {
+    .post-featured-image {
+      img {
+      }
+    }
+    &__container {
+        margin-top: 10px;
+      padding: 0;
+    }
+  }
+}
+/* --------------------------------- Webチームブログcssここまで --------------------------------- */

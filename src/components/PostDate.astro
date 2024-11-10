@@ -5,17 +5,13 @@ import { getDateStr } from '../lib/blog-helpers.ts'
 export interface Props {
   post: Post
 }
-
+function formatDate(dateString) {
+  return dateString.replace(/-/g, '.');
+}
 const { post } = Astro.props
+const formattedDate = formatDate(post.Date);
 ---
 
 <div class="post-date">
-  {post.Date ? getDateStr(post.Date) : ''}
+  {formattedDate ? formattedDate : ''}
 </div>
-
-<style>
-  .post-date {
-    padding: 0 0 0.3rem;
-    font-size: 0.9rem;
-  }
-</style>

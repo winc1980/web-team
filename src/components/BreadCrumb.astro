@@ -1,0 +1,15 @@
+---
+const { title, bgImg, imgClass, items } = Astro.props
+---
+
+<ul class="web-team__breadcrumb">
+  {
+    items.map((i) => {
+      return (
+        <li>
+          <a href={i.link}> {i.text}</a>
+        </li>
+      )
+    })
+  }
+</ul>

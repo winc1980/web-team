@@ -9,24 +9,6 @@ export interface Props {
 const { post } = Astro.props
 ---
 
-<div class="read-more-link">
+<div class="read-more-link hover__opacity">
   <a href={getPostLink(post.Slug)}>→Read more</a>
 </div>
-
-<style>
-  .read-more-link {
-    color: var(--fg);
-  }
-  .read-more-link a {
-    color: rgb(55, 53, 47);
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 2rem;
-    text-decoration: underline;
-  }
-  @media (max-width: 640px) {
-    .read-more-link a {
-      width: 50%;
-    }
-  }
-</style>

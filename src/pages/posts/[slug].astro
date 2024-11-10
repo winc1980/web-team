@@ -23,8 +23,9 @@ import PostTitle from '../../components/PostTitle.astro'
 import PostBody from '../../components/PostBody.astro'
 import PostRelativeLink from '../../components/PostRelativeLink.astro'
 import BlogPostsLink from '../../components/BlogPostsLink.astro'
+import PostFeaturedImage from '../../components/PostFeaturedImage.astro'
 import BlogTagsLink from '../../components/BlogTagsLink.astro'
-import styles from '../../styles/blog.module.css'
+import BreadCrumb from '@/components/BreadCrumb.astro'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts()
@@ -98,15 +99,19 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
   description={post.Excerpt}
   path={getPostLink(post.Slug)}
   ogImage={ogImage}
+  blogTitle={post.Title}
 >
-  <div slot="main" class={styles.main}>
-    <div class={styles.post}>
-      <PostDate post={post} />
-      <PostTags post={post} />
-      <PostTitle post={post} enableLink={false} />
-      <PostBody blocks={blocks} />
-      <PostTags post={post} />
-      <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
+  <div slot="main">
+    <div>
+      <PostFeaturedImage post={post} enableLink={false} />
+      <div class="blog-content__container">
+        <PostTitle post={post} enableLink={false} />
+        <PostTags post={post} />
+        <PostDate post={post} />
+        <PostBody blocks={blocks} />
+        <PostTags post={post} />
+        <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
+      </div>
     </div>
   </div>
 
@@ -117,8 +122,8 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
         (p: interfaces.Post) => p.Slug !== post.Slug
       )}
     />
-    <BlogPostsLink heading="Recommended" posts={rankedPosts} />
-    <BlogPostsLink heading="Latest posts" posts={recentPosts} />
-    <BlogTagsLink heading="Categories" tags={tags} />
+    <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
+    <!-- <BlogPostsLink heading="Latest posts" posts={recentPosts} /> -->
+    <!-- <BlogTagsLink heading="Categories" tags={tags} /> -->
   </div>
 </Layout>

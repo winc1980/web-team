@@ -23,38 +23,36 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getAllTags(),
   getNumberOfPages(),
 ])
+console.log(posts)
 ---
 
 <Layout>
   <div slot="main">
-    <div class="sub-page max-sm:mt-4">
-      <h2>新着記事</h2>
-    </div>
+    <h2 class="ttl">新着記事</h2>
     {
       posts.length === 0 ? (
         <NoContents contents={posts} />
       ) : (
         posts.map((post) => (
-          <div key={post.Slug}>
-            <PostDate post={post} />
-            <PostTags post={post} />
-            <PostTitle post={post} />
-            <PostFeaturedImage post={post} />
-            <PostExcerpt post={post} />
-            <ReadMoreLink post={post} />
+          <div key={post.Slug} class="blog-card">
+            <PostFeaturedImage post={post} class="blog-card__img"/>
+            <div class="blog-card__contents">
+              <PostTitle post={post} />
+              <PostExcerpt post={post} />
+              <PostTags post={post} />
+              <PostDate post={post} />
+              <ReadMoreLink post={post} />
+            </div>
           </div>
         ))
       )
     }
-    <div class="sub-page max-sm:mt-4">
-      <h2>おすすめ記事</h2>
-    </div>
 
     <Pagination currentPage={1} numberOfPages={numberOfPages} />
   </div>
 
   <div slot="aside">
-    <BlogPostsLink heading="Recommended" posts={rankedPosts} />
-    <BlogTagsLink heading="Categories" tags={tags} />
+    <BlogTagsLink heading="タグ別" tags={tags} />
+    <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
   </div>
 </Layout>

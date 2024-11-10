@@ -8,7 +8,7 @@ import SearchModal from '../components/SearchModal.astro'
 import Header from '../components/Header.astro'
 import SPHeader from '@/components/SPHeader.astro'
 import Footer from '@/components/Footer.astro'
-import MV from '@/components/Mv.astro'
+import BreadCrumb from '@/components/BreadCrumb.astro'
 // Supports weights 100-900
 import '@fontsource-variable/noto-sans-jp'
 import '@fontsource-variable/heebo'
@@ -22,9 +22,10 @@ export interface Props {
   description: string
   path: string
   ogImage: string
+  blogTitle: string
 }
 
-const { title = '', description = '', path = '/', ogImage = '' } = Astro.props
+const { title = '', description = '', path = '/', ogImage = '', blogTitle } = Astro.props
 
 const database = await getDatabase()
 
@@ -94,9 +95,16 @@ if (database.Icon && database.Icon.Type === 'file') {
     <SPHeader />
     <GoogleAnalytics trackingId={PUBLIC_GA_TRACKING_ID} />
     <div class="container">
+      <BreadCrumb
+        items={[
+          { text: 'TOP', link: '/' },
+          { text: 'Webチームブログ', link: '/posts' },
+          { text: blogTitle, link: '' },
+        ]}
+      />
       <div>
         <main>
-          <div class="content">
+          <div class="blog-content">
             <slot name="main" />
           </div>
         </main>

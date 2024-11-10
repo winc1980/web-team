@@ -12,7 +12,7 @@ export interface Props {
 const { block, headings } = Astro.props
 ---
 
-<div class="table-of-contents">
+<div class="table-of-contents" style="margin-bottom: 20px;">
   {
     headings.map((headingBlock: interfaces.Block) => {
       const heading =
@@ -40,24 +40,3 @@ const { block, headings } = Astro.props
     })
   }
 </div>
-
-<style>
-  .table-of-contents {
-  }
-  .table-of-contents > a {
-    display: block;
-    line-height: 1.8rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: underline;
-  }
-  .table-of-contents > a:hover {
-    background: rgba(241, 241, 239, 1) !important;
-  }
-  .table-of-contents > a.indent-1 {
-    padding-left: 1.5rem;
-  }
-  .table-of-contents > a.indent-2 {
-    padding-left: 3rem;
-  }
-</style>
