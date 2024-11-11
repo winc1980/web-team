@@ -32,9 +32,9 @@ body {
 }
 
 @media (max-width: $breakpointMobile) {
-    body {
-        background: #fff;
-    }
+  body {
+    background: #fff;
+  }
 }
 
 figure {
@@ -477,7 +477,7 @@ p {
 /* --------------------------------- PostFeaturedImage.astroここから --------------------------------- */
 
 .post-featured-image {
-  padding: 0.6rem 0 0.2rem;
+  padding: 0;
 }
 .post-featured-image img {
   display: block;
@@ -621,7 +621,8 @@ p {
   }
 }
 
-aside {
+aside,
+.recommend {
   .blog-posts-link ul li a {
     padding: 0;
   }
@@ -639,8 +640,36 @@ aside {
   }
 }
 
+.recommend {
+  display: block !important;
+  h2 {
+    color: #518ef2;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin: 50px 0 60px;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    li {
+      max-width: 350px;
+    }
+  }
+}
+
+@media (max-width: $breakpointMobile) {
+  .recommend {
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
 @media (max-width: $breakpoint-xl) {
-  aside {
+  aside,
+  .recommend {
     .blog-posts-link {
       ul {
         display: grid;
@@ -658,7 +687,8 @@ aside {
 }
 
 @media (max-width: $breakpoint-md) {
-  aside {
+  aside,
+  .recommend {
     .blog-posts-link {
       ul {
         grid-template-columns: 1fr 1fr;
@@ -673,7 +703,8 @@ aside {
 }
 
 @media (max-width: $breakpointMobile) {
-  aside {
+  aside,
+  .recommend {
     .blog-posts-link {
       ul {
         grid-template-columns: 1fr;
@@ -766,6 +797,9 @@ aside {
 }
 
 .blog-content {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   a {
     color: #518ef2;
   }
@@ -773,9 +807,6 @@ aside {
     list-style: initial;
     margin: 0 0 20px 20px;
   }
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto;
   .post-featured-image {
     max-width: 790px;
     img {
@@ -814,8 +845,30 @@ aside {
       }
     }
     &__container {
-        margin-top: 10px;
+      margin-top: 10px;
       padding: 0;
+    }
+  }
+}
+
+.blog-author {
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  &__profile {
+    display: flex;
+    > img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+  }
+  &__detail {
+    margin-left: 10px;
+    h4 {
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 }

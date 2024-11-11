@@ -24,8 +24,7 @@ import PostBody from '../../components/PostBody.astro'
 import PostRelativeLink from '../../components/PostRelativeLink.astro'
 import BlogPostsLink from '../../components/BlogPostsLink.astro'
 import PostFeaturedImage from '../../components/PostFeaturedImage.astro'
-import BlogTagsLink from '../../components/BlogTagsLink.astro'
-import BreadCrumb from '@/components/BreadCrumb.astro'
+import Author from '@/components/Author.astro'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts()
@@ -115,14 +114,17 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
   </div>
 
   <div slot="aside" class="aside">
+    <Author />
     <BlogPostsLink
       heading="同じカテゴリの投稿"
       posts={postsHavingSameTag.filter(
         (p: interfaces.Post) => p.Slug !== post.Slug
       )}
     />
-    <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
     <!-- <BlogPostsLink heading="Latest posts" posts={recentPosts} /> -->
     <!-- <BlogTagsLink heading="Categories" tags={tags} /> -->
+  </div>
+  <div slot="recommend" class="recommend">
+    <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
   </div>
 </Layout>

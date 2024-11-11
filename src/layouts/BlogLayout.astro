@@ -109,10 +109,11 @@ if (database.Icon && database.Icon.Type === 'file') {
           </div>
         </main>
 
-        <aside>
+        <aside class="p-0">
           <slot name="aside" />
         </aside>
       </div>
+      <slot name="recommend" />
     </div>
 
     <SearchModal />
