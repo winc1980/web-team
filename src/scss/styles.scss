@@ -79,6 +79,42 @@ section {
   }
 }
 
+.aside {
+  .toc {
+    position: sticky;
+    top: 139px;
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    .is-active-link::before {
+      background-color: #518ef2;
+    }
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    .toc {
+      display: none;
+    }
+  }
+}
+
+.blog-content__container .toc {
+  display: none;
+}
+
+@media (max-width: $breakpoint-xl) {
+  .blog-content__container .toc {
+    margin-top: 20px;
+    background: #fff;
+    a {
+      color: $defaultColor;
+    }
+    .is-active-link::before {
+      background-color: #518ef2;
+    }
+  }
+}
+
 .web-team {
   &__header {
     height: 109px;
