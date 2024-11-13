@@ -23,7 +23,6 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getAllTags(),
   getNumberOfPages(),
 ])
-console.log(posts)
 ---
 
 <Layout>
@@ -35,7 +34,7 @@ console.log(posts)
       ) : (
         posts.map((post) => (
           <div key={post.Slug} class="blog-card">
-            <PostFeaturedImage post={post} class="blog-card__img"/>
+            <PostFeaturedImage post={post} class="blog-card__img" />
             <div class="blog-card__contents">
               <PostTitle post={post} />
               <PostExcerpt post={post} />
@@ -50,6 +49,8 @@ console.log(posts)
 
     <Pagination currentPage={1} numberOfPages={numberOfPages} />
   </div>
+  <h1>Notionデータベースのデータ</h1>
+  
 
   <div slot="aside">
     <BlogTagsLink heading="タグ別" tags={tags} />

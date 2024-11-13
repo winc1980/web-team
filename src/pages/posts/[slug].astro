@@ -10,6 +10,7 @@ import {
   getAllTags,
   getAllBlocksByBlockId,
   downloadFile,
+  getServerSideProps,
 } from '../../lib/notion/client.ts'
 import {
   getPostLink,
@@ -25,7 +26,7 @@ import PostRelativeLink from '../../components/PostRelativeLink.astro'
 import BlogPostsLink from '../../components/BlogPostsLink.astro'
 import PostFeaturedImage from '../../components/PostFeaturedImage.astro'
 import Author from '@/components/Author.astro'
-import Toc from "@/components/Toc.astro"
+import Toc from '@/components/Toc.astro'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts()
@@ -38,15 +39,23 @@ const post = await getPostBySlug(slug)
 if (!post) {
   throw new Error('Post not found. slug: ${slug}')
 }
-const [blocks, allPosts, rankedPosts, recentPosts, tags, postsHavingSameTag] =
-  await Promise.all([
-    getAllBlocksByBlockId(post.PageId),
-    getAllPosts(),
-    getRankedPosts(),
-    getPosts(5),
-    getAllTags(),
-    getPostsByTag(post.Tags[0]?.name, 6),
-  ])
+const [
+  blocks,
+  allPosts,
+  rankedPosts,
+  recentPosts,
+  tags,
+  postsHavingSameTag,
+  authors,
+] = await Promise.all([
+  getAllBlocksByBlockId(post.PageId),
+  getAllPosts(),
+  getRankedPosts(),
+  getPosts(5),
+  getAllTags(),
+  getPostsByTag(post.Tags[0]?.name, 6),
+  getServerSideProps(),
+])
 
 const fileAtacchedBlocks = extractTargetBlocks('image', blocks)
   .concat(extractTargetBlocks('file', blocks))
@@ -86,6 +95,10 @@ await Promise.all(
 const currentPostIndex = allPosts.findIndex((post) => post.Slug === slug)
 const prevPost = allPosts[currentPostIndex + 1]
 const nextPost = allPosts[currentPostIndex - 1]
+// ページに登録されているAuthorと一致するAuthor情報の詳細を取得
+const authorDetails = authors.props.items.find(
+  (item) => item.pageId === post.Author
+)
 
 let ogImage = ''
 if (post.FeaturedImage && post.FeaturedImage.Url) {
@@ -108,6 +121,8 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
         <PostTags post={post} />
         <PostDate post={post} />
         <PostBody blocks={blocks} />
+        <hr/>
+        {authorDetails && post.ShowAuthor == true ? <Author authorDetails={authorDetails} /> : null}
         <PostTags post={post} />
         <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
       </div>
@@ -115,7 +130,7 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
   </div>
 
   <div slot="aside" class="aside">
-    <Author />
+    {authorDetails && post.ShowAuthor == true ? <Author authorDetails={authorDetails} /> : null}
     <Toc />
     <!-- <BlogPostsLink
       heading="同じカテゴリの投稿"

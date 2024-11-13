@@ -102,19 +102,6 @@ section {
   display: none;
 }
 
-@media (max-width: $breakpoint-xl) {
-  .blog-content__container .toc {
-    margin-top: 20px;
-    background: #fff;
-    a {
-      color: $defaultColor;
-    }
-    .is-active-link::before {
-      background-color: #518ef2;
-    }
-  }
-}
-
 .web-team {
   &__header {
     height: 109px;
