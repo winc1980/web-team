@@ -1,17 +1,32 @@
 ---
-
+import { Image } from 'astro:assets'
+const { authorDetails } = Astro.props
+import githubImg from '@/assets/images/github.svg'
+import linkImg from '@/assets/images/link.svg'
 ---
 
 <div class="blog-author">
   <div class="blog-author__profile">
-    <img src="/assets/images/blog-bg.webp" />
+    <img src={authorDetails?.profileImg} />
     <div class="blog-author__detail">
-      <h4>田中太郎</h4>
-      <a href=""><img src="" alt=""></a>
-      <a href=""><img src="" alt=""></a>
+      <h4>{authorDetails?.name}</h4>
+      {
+        authorDetails.gitHubUrl ? (
+          <a href={authorDetails?.gitHubUrl} target="_blank" rel="noopener">
+            <Image src={githubImg} alt="GitHubのロゴ" />
+          </a>
+        ) : null
+      }
+      {
+        authorDetails.link ? (
+          <a href={authorDetails?.link}>
+            <Image src={linkImg} alt="リンクのロゴ" />
+          </a>
+        ) : null
+      }
     </div>
   </div>
   <p>
-    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    {authorDetails?.description}
   </p>
 </div>

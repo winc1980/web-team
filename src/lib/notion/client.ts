@@ -7,6 +7,7 @@ import ExifTransformer from 'exif-be-gone'
 import {
   NOTION_API_SECRET,
   DATABASE_ID,
+  DATABASE_ID_2,
   NUMBER_OF_POSTS_PER_PAGE,
   REQUEST_TIMEOUT_MS,
 } from '../../server-constants'
@@ -990,25 +991,8 @@ function _buildPost(pageObject: responses.PageObject): Post {
         : '',
     FeaturedImage: featuredImage,
     Rank: prop.Rank.number ? prop.Rank.number : 0,
-    AuthorProfile:
-      prop.AuthorProfile.rich_text && prop.AuthorProfile.rich_text.length > 0
-        ? prop.AuthorProfile.rich_text
-            .map((richText) => richText.plain_text)
-            .join('')
-        : '',
-    AuthorGitHub:
-      prop.AuthorGitHub.rich_text && prop.AuthorGitHub.rich_text.length > 0
-        ? prop.AuthorGitHub.rich_text
-            .map((richText) => richText.plain_text)
-            .join('')
-        : '',
-    AuthorWebsite:
-      prop.AuthorWebsite.rich_text && prop.AuthorWebsite.rich_text.length > 0
-        ? prop.AuthorWebsite.rich_text
-            .map((richText) => richText.plain_text)
-            .join('')
-        : '',
-    Authors: prop.authors,
+    ShowAuthor: prop.ShowAuthor.checkbox || false,
+    Author: prop.Author.relation[0]?.id,
   }
 
   return post
@@ -1063,4 +1047,32 @@ function _buildRichText(richTextObject: responses.RichTextObject): RichText {
   }
 
   return richText
+}
+
+export async function getServerSideProps() {
+  const response = await client.databases.query({
+    database_id: DATABASE_ID_2,
+  })
+
+  const items = response.results.map((item) => {
+    // 各ページのデータをここで整形
+    return {
+      pageId: item?.id || null,
+      name: item.properties.Name.title[0]?.text.content || null,
+      description:
+        item.properties.Description.rich_text[0]?.text.content || null, // 自己紹介（リッチテキスト）の取得
+      gitHubUrl: item.properties.GitHubLink?.url || null,
+      link: item.properties.Link.url || null,
+      profileImg:
+        item.properties.ProfileImg.files[0]?.file?.url ||
+        item.properties.ProfileImg.files[0]?.external?.url ||
+        '/assets/images/profile.svg',
+    }
+  })
+
+  return {
+    props: {
+      items,
+    },
+  }
 }
