@@ -626,6 +626,14 @@ p {
   }
 }
 
+@media (max-width: $breakpoint-xl) {
+  .aside {
+    .blog-author {
+      display: none;
+    }
+  }
+}
+
 aside,
 .recommend {
   .blog-posts-link ul li a {
