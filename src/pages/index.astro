@@ -77,7 +77,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
               alt={""}
               class="pc-none"
               />
-              <p>
+              <p class="p-topblog__flexbox__txtwrapper__toptxt">
                 あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">うつ<br class="pc-br">くしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br class="sp-br">トー<br class="pc-br">ヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br class="sp-br">飾られ<br class="pc-br">たモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br class="sp-br">とおった<br class="pc-br">風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br class="sp-br">オ市、<br class="pc-br">
               </p>
               <p>
@@ -94,19 +94,16 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
       <div class="p-topblog__updateview">
         <h2 class="p-topblog__updateview__ttl">更新情報</h2>
         <div class="l-container">
-          <ul class="p-topblog__updateview__wrappercards">
-            <ul class="p-topblog__updateview__wrappercards__card">
-              <li class="p-topblog__updateview__wrappercards__card__date">2024/08/18</li>
-              <li><a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・<br class="sp-br">WINC WebチームのHPを公開しました</a></li>
-            </ul>
-            <ul class="p-topblog__updateview__wrappercards__card">
-              <li class="p-topblog__updateview__wrappercards__card__date">2024/08/18</li>
-              <li><a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・<br class="sp-br">WINC WebチームのHPを公開しました</a></li>
-            </ul>
-            <ul class="p-topblog__updateview__wrappercards__card">
-              <li class="p-topblog__updateview__wrappercards__card__date">2024/08/18</li>
-              <li><a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・<br class="sp-br">WINC WebチームのHPを公開しました</a></li>
-            </ul>
+          <ul class="p-topblog__updateview__wrappercards">            
+              <li class="p-topblog__updateview__wrappercards__card">
+                <p class="p-topblog__updateview__wrappercards__card__date">2024/08/18</p>
+                <a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・<br class="sp-br">WINC WebチームのHPを公開しました</a></li>
+              <li class="p-topblog__updateview__wrappercards__card">
+                <p class="p-topblog__updateview__wrappercards__card__date">2024/08/18</p>
+                <a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・<br class="sp-br">WINC WebチームのHPを公開しました</a></li>
+              <li class="p-topblog__updateview__wrappercards__card">
+                <p class="p-topblog__updateview__wrappercards__card__date">2024/08/18</p>
+                <a href="" class="p-topblog__updateview__wrappercards__card__txt">早稲田コンピュータ研究会・<br class="sp-br">WINC WebチームのHPを公開しました</a></li>
           </ul>
           <div class="p-topblog__updateview__wrappercards__buttonwrapper">
             <Button url="/posts/" text="更新情報一覧" color="yellow"/>
@@ -115,8 +112,9 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
       </div>
     </section>
     <section id="activities" class="activities">
-      
+      <div class="l-container">
         <div class="activities__wrapper">
+          
           <div class="activities__wrapper__ttl">
             <h3>活動内容</h3>
             <p class="sp-none">01</p>
@@ -139,101 +137,126 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
               <a href="" class="triangle-button__white">製作実績</a>
             </div>
           </div>
-          <div class="l-container">
-          <p class="activities__topcardttl">Webサイトの案件制作</p>
-          <div class="activities__topcard"> 
-            <div class="activities__topcard__txtwrapper">
-              <p class="activities__topcard__txtwrapper__txt">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
-                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br class="pc-br">つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br class="pc-br">トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>
-              <div class="triangle-button__wrapper">
-                <a href="" class="triangle-button__blue">案件製作</a>
-              </div>
-            </div>
-            <div class="activities__flexbox__imgwrapper">
-              <Image
-              src={WAXAPC}
-              alt={""}
-              class="PC-img sp-none"
-              />
-              <div class="activities__flexbox__imgwrapper__row">
-                <Image
-                src={WAXASP}
-                alt={""}
-                class="SP-img sp-none"
-                />
-                <div class="activities__flexbox__imgwrapper__triangle-button__wrapper">
-                  <a href="" class="triangle-button__white">製作実績</a>
+          
+          
+          
+            <div class="activities__topcard">
+              <div class="activities__topcard__txtwrapper">
+                <h2 class="activities__topcardttl">Webサイトの案件制作</h2>
+                <p class="activities__topcard__txtwrapper__txt">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br>
+                  あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森</p>
+                <div class="triangle-button__wrapper">
+                  <a href="" class="triangle-button__blue">案件製作</a>
                 </div>
               </div>
-            </div>  
-            </div>
+              <div class="activities__flexbox__imgwrapper">
+                <Image
+                src={WAXAPC}
+                alt={""}
+                class="PC-img sp-none"
+                />
+                <div class="activities__flexbox__imgwrapper__row sp-none">
+                  <Image
+                  src={WAXASP}
+                  alt={""}
+                  class="SP-img sp-none"
+                  />
+                  <div class="activities__flexbox__imgwrapper__triangle-button__wrapper">
+                    <a href="" class="triangle-button__white">製作実績</a>
+                  </div>
+                </div>
+              </div>  
+          
           </div>
           
           
           <div class="activities__middlecard__flexbox">
-            <p class="middlecardnumber sp-none">02</p>
+            <p class="middlecardnumber sp-none">02</p>            
             <div class="activities__middlecard__flexbox__imgwrapper">
-              <div class="activities__middlecard__flexbox__imgwrapper__up">
-                <Image
-                  src={CSS}
-                  alt={""}
-                  class="CSS-img"
-                />
-                <Image
-                  src={HTML}
-                  alt={""}
-                  class="HTML-img"
-                />
+              
+              <div class="activities__middlecard__flexbox__imgwrapper__right">
+                <div class="flexbox"><!--class名(実験用) -->
+                  <Image
+                    src={CSS}
+                    alt={""}
+                    class="CSS-img"
+                  />
+                  <Image
+                    src={HTML}
+                    alt={""}
+                    class="HTML-img"
+                  />
+                </div>
+                  <Image
+                    src={three}
+                    alt={""}
+                    class="three-img"
+                  />
+              </div>
+              <div class="activities__middlecard__flexbox__imgwrapper__left">
+                <div>
                 <Image
                   src={Flask}
                   alt={""}
                   class="Flask-img"
-                />
-              </div>
-              <div class="activities__middlecard__flexbox__imgwrapper__down">
-                <Image
-                  src={three}
-                  alt={""}
-                  class="three-img"
-                />
+                  />
                 <Image
                   src={astro}
                   alt={""}
                   class="astro-img"
                 />
+                </div>
               </div>
             </div>
-            <div class="activities__middlecard__flexbox__txtwrapper">
-            <p class="activities__middlecard__flexbox__ttl">Webアプリ開発</p>
-            <p class="activities__middlecard__flexbox__txt ">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
-              あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森</p>     
+              <div class="activities__middlecard__flexbox__txtwrapper">
+              <p class="activities__middlecard__flexbox__ttl sp-none">Webアプリ開発</p>　<!-- sp画面で消えてしまう-->
+              <p class="activities__middlecard__flexbox__spttl pc-none">Webアプリ開発</p> 
+              <p class="activities__middlecard__flexbox__txt ">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
+                あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森</p>     
+              </div>
             </div>
           </div>
           
-          <div class="activities__bottomcard sp-none">
+          <div class="activities__bottomcard">
+           
             <p class="bottomcardnumber sp-none">03</p>
-            <div class="sp-none">
-              <p class="activities__bottomcard__cardttl">合宿によるハッカソン</p>
-              <p class="activities__bottomcard__txt">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
-                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、う<br class="pc-br">つくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハ<br class="pc-br">トーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森</p>   
-            </div>
-            <div class="activities__bottomcard__imgwrapper">
+            <div class="activities__bottomcard__imgwrapper pc-none">
               <Image
               src={activities}
-              alt={""}              
+              alt={""}
+              class="activities-img"                
               />
               <div class="activities__bottomcard__triangle-button__wrapper">
+                
                 <a href="" class="triangle-button__white">Webチームの一年</a>
               </div>
             </div>
+           
+              <div class="activities__bottomcard__txtwrapper">
+                <p class="activities__bottomcard__cardttl">合宿によるハッカソン</p>
+                <p class="activities__bottomcard__txt">あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森で<br>飾られたモリーオ市、郊外のぎらぎらひ<br class="sp-br">かる草の波。あのイーハトーヴォのすき<br>とおった風、夏でも底に冷たさをもつ青<br class="sp-br">いそら、うつくしい森で飾られたモリー<br>オ市、<br class="pc-br">
+                  あのイーハトーヴォのすきとおった<br class="sp-br">風、夏でも底に冷たさをもつ青いそら、<br class="sp-br">う<br class="pc-br">つくしい森で飾られたモリーオ市、郊<br class="sp-br">外のぎらぎらひかる草の波。あのイーハ<br>トーヴォのすきとおった風、夏でも底に<br class="sp-br">冷たさをもつ青いそら、うつくしい森</p>   
+              </div>
+              <div class="activities__bottomcard__imgwrapper sp-none">
+                <Image
+                  src={activities}
+                  alt={""}   
+                  />
+                <div class="activities__bottomcard__triangle-button__wrapper sp-none">
+                  <a href="" class="triangle-button__white">Webチームの一年</a>
+                </div>
+              </div>
+            
           </div>
         </div>
-        </div>
+        
       </div>
     </section>
     <section id="teamcharacteristic" class="p-teamcharacteristic">
-      <div class="l-container">
-        <h4>チームの特徴</h4>
+      
+        
+        <div class="p-teamcharacteristic-bg">
+          <h4>チームの特徴</h4>
         <div class="p-teamcharacteristic__cardwrapper">
           
           <div class="p-teamcharacteristic__cardwrapper__card left">
@@ -271,6 +294,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
           </div>
         </div>
       </div>
+      
     </section>
     <section id="schedule" class="p-schedule">
       <p class="p-schedule__ttl">活動日程</p>
@@ -303,25 +327,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
       </div>
     </section>
     <footer>
-      <div class="flexbox-top">
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">TOP</a></div>
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">Webチームの一年</a></div>
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">得られる経験</a></div>
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">製作実績</a></div>
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">案件製作</a></div>
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">ブログ</a></div>
-        <div class="flexbox-top__buttonwrapper"><a href="" class="hover__thick">更新情報一覧</a></div>
-        <div class="flexbox-top__buttonwrapper flexname">
-        <p>© 2024 Copyright: </p>
-        <a href="" >コンピュータ研究会・WINC</a></div>
-      </div>
-      <div class="flexbox-bottom">
-        <p>早稲田コンピュータ研究会　<br class="sp-br">WINC</p>
-        <Image
-         src={webteamlogo}
-         alt={""}
-        />
-      </div>
+      
     </footer>
   </main>
 </Layout>
