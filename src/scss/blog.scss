@@ -828,7 +828,7 @@ aside,
     margin-top: 20px;
     margin-right: 40px;
     hr {
-        background-color: #C6C6C6;
+      background-color: #c6c6c6;
     }
   }
 }
@@ -879,11 +879,12 @@ aside,
       font-weight: 400;
       font-family: 'Noto Sans JP Variable', sans-serif;
     }
-    a, img {
-        display: inline-block;
+    a,
+    img {
+      display: inline-block;
     }
     a {
-        margin-right: 10px;
+      margin-right: 10px;
     }
   }
 }

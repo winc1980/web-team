@@ -1052,23 +1052,27 @@ function _buildRichText(richTextObject: responses.RichTextObject): RichText {
 export async function getServerSideProps() {
   const response = await client.databases.query({
     database_id: DATABASE_ID_2,
-  });
+  })
 
   const items = response.results.map((item) => {
     // 各ページのデータをここで整形
     return {
       pageId: item?.id || null,
       name: item.properties.Name.title[0]?.text.content || null,
-      description: item.properties.Description.rich_text[0]?.text.content || null, // 自己紹介（リッチテキスト）の取得
+      description:
+        item.properties.Description.rich_text[0]?.text.content || null, // 自己紹介（リッチテキスト）の取得
       gitHubUrl: item.properties.GitHubLink?.url || null,
       link: item.properties.Link.url || null,
-      profileImg: item.properties.ProfileImg.files[0]?.file?.url || item.properties.ProfileImg.files[0]?.external?.url || "/assets/images/profile.svg",
-    };
-  });
+      profileImg:
+        item.properties.ProfileImg.files[0]?.file?.url ||
+        item.properties.ProfileImg.files[0]?.external?.url ||
+        '/assets/images/profile.svg',
+    }
+  })
 
   return {
     props: {
       items,
     },
-  };
+  }
 }
