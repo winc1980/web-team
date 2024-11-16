@@ -304,6 +304,7 @@ h3 {
   line-height: normal;
   margin: 0 0 20px;
   display: flex;
+  align-items: center;
 }
 
 h3::before {
@@ -347,6 +348,50 @@ h3::before {
 
 /* --------------------------------- Heading1.astroここまで --------------------------------- */
 
+/* --------------------------------- Heading2.astroここから --------------------------------- */
+
+h4 {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-bottom: 1px solid #518ef2;
+  margin-bottom: 10px;
+}
+@media (max-width: 640px) {
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+.toggle {
+  margin: 1.6rem 0 0;
+}
+@media (max-width: 640px) {
+  .toggle {
+    margin: 1.2rem 0 0;
+  }
+}
+
+.toggle > summary {
+  cursor: pointer;
+}
+
+.toggle > summary > a {
+  display: inline;
+}
+
+.toggle > summary > a > h4 {
+  display: inline;
+}
+
+.toggle > div {
+  margin-left: 1em;
+}
+
+/* --------------------------------- Heading2.astroここまで --------------------------------- */
+
 /* --------------------------------- Paragraph.astroここから --------------------------------- */
 
 p {
@@ -385,15 +430,26 @@ p {
 .blog-posts-link {
 }
 .blog-posts-link h2 {
-  margin: 0;
-  padding-left: 0.4rem;
-  color: #777;
-  font-size: 0.95rem;
+  color: #518ef2;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0 60px;
+}
+@media (max-width: $breakpoint-lg) {
+  .blog-posts-link h2 {
+    font-size: 20px;
+    margin: 30px 0;
+  }
 }
 .blog-posts-link ul {
   padding: 0;
-  margin-top: 0.4rem;
-  margin-block-end: 1rem;
+  margin: 120px 0;
+}
+@media (max-width: $breakpoint-lg) {
+  .blog-posts-link ul {
+    margin: 0 0 50px;
+  }
 }
 .blog-posts-link ul li {
 }
@@ -456,6 +512,40 @@ p {
 }
 
 /* --------------------------------- BlogTagsLink.astroここまで --------------------------------- */
+
+/* --------------------------------- Pagination.astroここから --------------------------------- */
+
+.pagination {
+  display: flex;
+  width: 100%;
+  margin: 20px auto;
+  color: var(--fg);
+  justify-content: center;
+  align-items: center;
+}
+.pagination a {
+  display: block;
+  width: 2.4rem;
+  height: 3rem;
+  margin: 0 0.4rem;
+  border-radius: var(--radius);
+  background: #f4f4f4;
+  color: inherit;
+  font-size: 0.85rem;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 500;
+  line-height: 3rem;
+}
+.pagination a:hover:not(.inactive) {
+  background: #ddd;
+}
+.pagination a.inactive {
+  color: #999;
+  text-decoration: none;
+}
+
+/* --------------------------------- Pagination.astroここまで --------------------------------- */
 
 /* --------------------------------- PostDate.astroここから --------------------------------- */
 
@@ -653,15 +743,26 @@ aside,
   }
 }
 
+@media (min-width: $breakpoint-xl) {
+  aside,
+  .recommend {
+    .blog-posts-link {
+      h2 {
+        font-size: 20px;
+        margin: 20px 0;
+      }
+      ul {
+        margin: 0;
+        li {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+
 .recommend {
   display: block !important;
-  h2 {
-    color: #518ef2;
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-    margin: 50px 0 60px;
-  }
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

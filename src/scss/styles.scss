@@ -23,16 +23,13 @@ h5 {
   font-weight: 400;
 }
 p,
-a {
-  font-family: 'Noto Sans JP Variable', sans-serif;
-}
-
+a,
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Inter Variable', sans-serif;
+  font-family: 'Noto Sans JP Variable', sans-serif;
 }
 
 section {
@@ -130,7 +127,6 @@ section {
           margin: 0 15px;
           a {
             color: $defaultColor;
-            font-family: 'Inter Variable', sans-serif;
             font-size: 18px;
             font-weight: 400;
           }
@@ -154,7 +150,6 @@ section {
         }
         p {
           color: #fff;
-          font-family: 'Inter Variable', sans-serif;
           font-size: 18px;
           text-align: center;
         }
@@ -175,7 +170,6 @@ section {
         p {
           color: #fff;
           font-size: 18px;
-          font-family: 'Inter Variable', sans-serif;
           font-weight: 400;
           text-align: center;
         }
@@ -270,7 +264,6 @@ section {
           display: block;
           white-space: nowrap;
           color: #fff;
-          font-family: 'Inter Variable', sans-serif;
           &:hover {
             color: #518ef2;
             transition: all 0.5s 0s ease;
@@ -393,7 +386,6 @@ section {
       }
       p {
         color: #fff;
-        font-family: 'Inter Variable', sans-serif;
         font-size: 14px;
         font-weight: 700;
         line-height: normal;
@@ -455,7 +447,6 @@ section {
         display: block;
         white-space: nowrap;
         color: #fff;
-        font-family: 'Inter Variable', sans-serif;
         &:hover {
           color: #518ef2;
           transition: all 0.5s 0s ease;
@@ -2000,7 +1991,6 @@ section {
         margin-left: 17px;
         p {
           color: #000;
-          font-family: 'Inter Variable', sans-serif;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
