@@ -1049,7 +1049,7 @@ function _buildRichText(richTextObject: responses.RichTextObject): RichText {
   return richText
 }
 
-export async function getServerSideProps() {
+export async function getAuthors() {
   const response = await client.databases.query({
     database_id: DATABASE_ID_2,
   })
