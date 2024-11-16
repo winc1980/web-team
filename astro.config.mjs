@@ -3,7 +3,7 @@ import { CUSTOM_DOMAIN, BASE_PATH } from './src/server-constants';
 import CoverImageDownloader from './src/integrations/cover-image-downloader';
 import CustomIconDownloader from './src/integrations/custom-icon-downloader';
 import FeaturedImageDownloader from './src/integrations/featured-image-downloader';
-import AuthorImageDownloader from '@/integrations/author-image-downloader';
+import AuthorImageDownloader from './src/integrations/author-image-downloader';
 import PublicNotionCopier from './src/integrations/public-notion-copier';
 import tailwind from '@astrojs/tailwind';
 const getSite = function () {
