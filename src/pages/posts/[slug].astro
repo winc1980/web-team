@@ -10,7 +10,7 @@ import {
   getAllTags,
   getAllBlocksByBlockId,
   downloadFile,
-  getServerSideProps,
+  getAuthors,
 } from '../../lib/notion/client.ts'
 import {
   getPostLink,
@@ -33,6 +33,12 @@ export async function getStaticPaths() {
   return posts.map((post: interfaces.Post) => ({ params: { slug: post.Slug } }))
 }
 
+/* const seePosts = await getAllPosts()
+console.log(seePosts); */
+
+const seeGetAuthors = await getAuthors()
+console.log(seeGetAuthors);
+
 const { slug } = Astro.params
 
 const post = await getPostBySlug(slug)
@@ -54,7 +60,7 @@ const [
   getPosts(5),
   getAllTags(),
   getPostsByTag(post.Tags[0]?.name, 6),
-  getServerSideProps(),
+  getAuthors(),
 ])
 
 const fileAtacchedBlocks = extractTargetBlocks('image', blocks)

@@ -4,7 +4,6 @@ const { authorDetails } = Astro.props
 import { filePath } from '@/lib/blog-helpers'
 import githubImg from '@/assets/images/github.svg'
 import linkImg from '@/assets/images/link.svg'
-console.log(authorDetails)
 
 let image = '/assets/images/profile.svg'
 if (authorDetails.profileImg && authorDetails.profileImg.file.url) {
@@ -14,7 +13,6 @@ if (authorDetails.profileImg && authorDetails.profileImg.file.url) {
     image = filePath(new URL(authorDetails.profileImg.file.url))
   }
 }
-console.log("image:" + image);
 
 let alt = 'このブログを書いた人の画像'
 if (authorDetails.name  != null){
