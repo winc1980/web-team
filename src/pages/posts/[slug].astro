@@ -33,12 +33,6 @@ export async function getStaticPaths() {
   return posts.map((post: interfaces.Post) => ({ params: { slug: post.Slug } }))
 }
 
-/* const seePosts = await getAllPosts()
-console.log(seePosts); */
-
-const seeGetAuthors = await getAuthors()
-console.log(seeGetAuthors.props.items);
-
 const { slug } = Astro.params
 
 const post = await getPostBySlug(slug)
