@@ -1063,10 +1063,7 @@ export async function getServerSideProps() {
         item.properties.Description.rich_text[0]?.text.content || null, // 自己紹介（リッチテキスト）の取得
       gitHubUrl: item.properties.GitHubLink?.url || null,
       link: item.properties.Link.url || null,
-      profileImg:
-        item.properties.ProfileImg.files[0]?.file?.url ||
-        item.properties.ProfileImg.files[0]?.external?.url ||
-        '/assets/images/profile.svg',
+      profileImg: item.properties.ProfileImg.files[0] || null,
     }
   })
 
