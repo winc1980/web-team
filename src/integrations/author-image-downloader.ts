@@ -8,7 +8,7 @@ export default (): AstroIntegration => ({
       const authors = await getAuthors()
 
       await Promise.all(
-        authors.map((author) => {
+        authors.props.items.map((author) => {
           if (!author.profileImg || !author.profileImg.file.url) {
             return Promise.resolve()
           }

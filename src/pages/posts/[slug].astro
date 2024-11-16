@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 console.log(seePosts); */
 
 const seeGetAuthors = await getAuthors()
-console.log(seeGetAuthors);
+console.log(seeGetAuthors.props.items);
 
 const { slug } = Astro.params
 
