@@ -33,12 +33,6 @@ export async function getStaticPaths() {
   return posts.map((post: interfaces.Post) => ({ params: { slug: post.Slug } }))
 }
 
-/* const seePosts = await getAllPosts()
-console.log(seePosts); */
-
-const seeGetAuthors = await getAuthors()
-console.log(seeGetAuthors.props.items);
-
 const { slug } = Astro.params
 
 const post = await getPostBySlug(slug)
@@ -127,16 +121,24 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
         <PostTags post={post} />
         <PostDate post={post} />
         <PostBody blocks={blocks} />
-        <hr/>
-        {authorDetails && post.ShowAuthor == true ? <Author authorDetails={authorDetails} /> : null}
-        <PostTags post={post} />
-        <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
+        <hr />
       </div>
+      {
+        authorDetails && post.ShowAuthor == true ? (
+          <Author authorDetails={authorDetails} />
+        ) : null
+      }
+      <PostTags post={post} />
+      <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
     </div>
   </div>
 
   <div slot="aside" class="aside">
-    {authorDetails && post.ShowAuthor == true ? <Author authorDetails={authorDetails} /> : null}
+    {
+      authorDetails && post.ShowAuthor == true ? (
+        <Author authorDetails={authorDetails} />
+      ) : null
+    }
     <Toc />
     <!-- <BlogPostsLink
       heading="同じカテゴリの投稿"
