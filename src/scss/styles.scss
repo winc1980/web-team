@@ -89,11 +89,12 @@ section {
 }
 
 .section-ttl {
-  display: inline;
+  width: fit-content;
   background-color: #518ef2;
   font-weight: 400;
   font-size: 40px;
-  padding: 5px 12px;
+  line-height: normal;
+  padding: 2px 12px;
   color: white;
   position: relative;
   z-index: 100;
@@ -106,6 +107,25 @@ section {
     top: 14px;
     left: 14px;
     z-index: -10;
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 20px;
+    margin: 0 auto;
+    &:after {
+      top: 7px;
+      left: 7px;
+    }
+  }
+}
+
+.pc-none {
+  display: none;
+}
+
+.sp-none {
+  display: block;
+  @media (max-width: $breakpoint-md) {
+    display: none;
   }
 }
 
@@ -510,22 +530,8 @@ section {
 }
 
 /* ------------------- 共通要素ここまで ------------------- */
+
 /* ------------------- FVここから ------------------------ */
-.pc-br {
-  display: block;
-}
-.sp-br {
-  display: none;
-}
-
-.pc-none {
-  display: none;
-}
-
-.sp-none {
-  display: block;
-}
-
 .p-fv {
   &__backimg {
     z-index: -99;
@@ -847,6 +853,7 @@ section {
 
 .p-activities {
   overflow: hidden;
+  fill: rgba(217, 217, 217, 0.20);
 }
 
 .p-activities__wrapper {
