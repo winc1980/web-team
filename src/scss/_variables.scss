@@ -12,3 +12,4 @@ $blog-content-width: 1160px;
 $defaultColor: #000000d1;
 
 // Margins
+$margin: calc((100vw - ($content-width - 30px))/2);
