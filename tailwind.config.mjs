@@ -16,5 +16,5 @@ export default {
     },
   },
   plugins: [require('flowbite/plugin')],
-  important: true
+  important: true,
 };
