@@ -11,16 +11,12 @@ import {
 } from '@/lib/notion/client.ts'
 
 import IMG from '@/assets/images/dummy.webp'
-import topImagecenter from '@/assets/images/topimage_center.jpg'
+import topImagecenter from '@/assets/images/fv2.jpg'
 import topImageright from '@/assets/images/topimage_right.webp'
 import topblogImage from '@/assets/images/topblog.webp'
-import WAXAPC from '@/assets/images/WAXA_PC.webp'
-import WAXASP from '@/assets/images/WAXA_SP.webp'
-import CSS from '@/assets/images/CSS_logo.webp'
-import HTML from '@/assets/images/HTML5_logo.webp'
-import Flask from '@/assets/images/cover-flask.webp'
-import astro from '@/assets/images/astro_logo.webp'
-import three from '@/assets/images/three.js.webp'
+import WAXAPC from '@/assets/images/waxa_pc.png'
+import WAXASP from '@/assets/images/waxa_sp.webp'
+import logo from '@/assets/images/logo.svg'
 import activities from '@/assets/images/activities_img.webp'
 import communication from '@/assets/images/communication.webp'
 import programming from '@/assets/images/programming.webp'
@@ -45,12 +41,12 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
   <main>
     <section id="fv" class="p-fv">
       <div class="p-fv__backimg">
-        <h1>「創る」を楽しめる人になろう</h1>
+        <h1 class="fade">「創る」を楽しめる人になろう</h1>
         <div class="p-fv__backimg__center">
-          <Image src={topImagecenter} alt={''} />
+          <Image src={topImagecenter} alt={''} loading="eager" />
         </div>
         <div class="p-fv__backimg__right">
-          <Image src={topImageright} alt={''} />
+          <Image src={topImageright} alt={''} loading="eager" />
         </div>
       </div>
     </section>
@@ -66,7 +62,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
             </p>
           </div>
           <div class="p-about__flexbox__imgwrapper">
-            <Image src={topblogImage} alt={''} />
+            <Image src={topblogImage} alt={''} loading="eager" />
           </div>
         </div>
       </div>
@@ -101,30 +97,213 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
   </main>
 
   <section id="activities" class="p-activities">
+    <div class="l-container">
+      <h2 class="section-ttl">活動内容</h2>
+    </div>
+    <div class="l-container">
+      <p class="p-activities__number text-right">01</p>
+    </div>
+    <div class="p-activities__wrapper">
       <div class="l-container">
-        <h2 class="section-ttl">活動内容</h2>
+        <h3>Webサイトの案件制作</h3>
+        <Image src={rect1} alt="台形装飾" class="p-activities__wrapper__bg" />
+        <div class="p-activities__wrapper__content">
+          <div class="fade">
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+            </p>
+            <a
+              href=""
+              class="web-team__link justify-center lg:justify-end hover__opacity"
+              >案件制作</a
+            >
+          </div>
+          <div>
+            <div
+              class="w-full flex items-baseline justify-center mb-5 md:pt-0 pt-5 fade"
+            >
+              <Image src={WAXAPC} alt="" class="w-8/12 mr-4" />
+              <Image src={WAXASP} alt="" class="w-2/12" />
+            </div>
+            <a
+              href="/works/"
+              class="web-team__link--white justify-center lg:justify-end hover__opacity"
+              >制作実績</a
+            >
+          </div>
+        </div>
       </div>
-      <p class="p-activities__number">01</p>
-      <div class="p-activities__wrapper">
-        <div class="l-container">
-          <h3>Webサイトの案件制作</h3>
-          <Image src={rect1} alt="台形装飾" class="p-activities__wrapper__bg"/>
-          <div class="p-activities__wrapper__content">
-            <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
-            <div>
-              <Image src={topblogImage} alt="" />
+    </div>
+    <div class="l-container">
+      <p class="p-activities__number text-left">02</p>
+    </div>
+    <div class="p-activities__wrapper--reversed">
+      <div class="l-container">
+        <h3>Webアプリ開発</h3>
+        <Image
+          src={rect1}
+          alt="台形装飾"
+          class="p-activities__wrapper--reversed__bg"
+        />
+        <div class="p-activities__wrapper--reversed__content">
+          <div class="px-3 fade">
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+            </p>
+          </div>
+          <div class="fade">
+            <Image src={logo} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-container">
+      <p class="p-activities__number text-right">03</p>
+    </div>
+    <div class="p-activities__wrapper">
+      <div class="l-container">
+        <h3>合宿によるハッカソン</h3>
+        <Image src={rect1} alt="台形装飾" class="p-activities__wrapper__bg" />
+        <div class="p-activities__wrapper__content">
+          <div class="px-3 fade">
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+            </p>
+            <a
+              href=""
+              class="web-team__link justify-center lg:justify-end hover__opacity"
+              >Webチームの一年</a
+            >
+          </div>
+          <div class="px-0 md:px-3 fade">
+            <!-- flowbite carousel -->
+            <div
+              id="default-carousel"
+              class="relative w-full"
+              data-carousel="slide"
+            >
+              <!-- Carousel wrapper -->
+              <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <Image src={activities} alt="合宿の画像" />
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <Image src={activities} alt="合宿の画像" />
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <Image src={activities} alt="合宿の画像" />
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <Image src={activities} alt="合宿の画像" />
+                </div>
+                <!-- Item 5 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <Image src={activities} alt="合宿の画像" />
+                </div>
+              </div>
+              <!-- Slider indicators -->
+              <div
+                class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+              >
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                  data-carousel-slide-to="0"></button>
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full"
+                  aria-current="false"
+                  aria-label="Slide 2"
+                  data-carousel-slide-to="1"></button>
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full"
+                  aria-current="false"
+                  aria-label="Slide 3"
+                  data-carousel-slide-to="2"></button>
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full"
+                  aria-current="false"
+                  aria-label="Slide 4"
+                  data-carousel-slide-to="3"></button>
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full"
+                  aria-current="false"
+                  aria-label="Slide 5"
+                  data-carousel-slide-to="4"></button>
+              </div>
+              <!-- Slider controls -->
+              <button
+                type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                >
+                  <svg
+                    class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 1 1 5l4 4"></path>
+                  </svg>
+                  <span class="sr-only">Previous</span>
+                </span>
+              </button>
+              <button
+                type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                >
+                  <svg
+                    class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 9 4-4-4-4"></path>
+                  </svg>
+                  <span class="sr-only">Next</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </section>
 
-  <section id="feature" class="p-feature">
+  <section id="feature" class="p-feature p-0">
     <div class="p-feature-bg">
       <div class="l-container">
         <h2 class="section-ttl">チームの特徴</h2>
         <div class="p-feature__cardwrapper">
-          <div class="p-feature__cardwrapper__card left">
+          <div class="p-feature__cardwrapper__card left fade delay-100">
             <div class="p-feature__cardwrapper__card__number">
               <p>01</p>
             </div>
@@ -133,69 +312,27 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
               ほとんどがプログラミング<br class="sp-br" />未経験
             </p>
             <p class="p-feature__cardwrapper__card__txt">
-              あのイーハトーヴォのすきと<br class="sp-br" />おった風、夏<br
-                class="pc-br"
-              />でも底に冷たさ<br class="sp-br" />をもつ青いそら、うつくし<br
-                class="pc-br"
-              />い<br class="sp-br" />森で飾られたモリーオ市、郊<br
-                class="sp-br"
-              />外のぎらぎ<br class="pc-br" />らひかる草の波。<br
-                class="sp-br"
-              />あのイーハトーヴォのす<br class="pc-br" />きと<br
-                class="sp-br"
-              />おった風、夏でも底に冷たさ<br class="sp-br" />をもつ青<br
-                class="pc-br"
-              />いそら、うつくしい<br class="sp-br" />森で飾られたモリーオ<br
-                class="pc-br"
-              />市、郊<br class="sp-br" />外のぎらぎらひかる草の波。
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
             </p>
           </div>
-          <div class="p-feature__cardwrapper__card center">
+          <div class="p-feature__cardwrapper__card center fade delay-300">
             <div class="p-feature__cardwrapper__card__number">
               <p>02</p>
             </div>
             <Image src={programming} alt={''} />
             <p class="p-feature__cardwrapper__card__ttl">男女比は7:3</p>
             <p class="p-feature__cardwrapper__card__txt">
-              あのイーハトーヴォのすきと<br class="sp-br" />おった風、夏<br
-                class="pc-br"
-              />でも底に冷たさ<br class="sp-br" />をもつ青いそら、うつくし<br
-                class="pc-br"
-              />い<br class="sp-br" />森で飾られたモリーオ市、郊<br
-                class="sp-br"
-              />外のぎらぎ<br class="pc-br" />らひかる草の波。<br
-                class="sp-br"
-              />あのイーハトーヴォのす<br class="pc-br" />きと<br
-                class="sp-br"
-              />おった風、夏でも底に冷たさ<br class="sp-br" />をもつ青<br
-                class="pc-br"
-              />いそら、うつくしい<br class="sp-br" />森で飾られたモリーオ<br
-                class="pc-br"
-              />市、郊<br class="sp-br" />外のぎらぎらひかる草の波。
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
             </p>
           </div>
-          <div class="p-feature__cardwrapper__card right">
+          <div class="p-feature__cardwrapper__card right fade delay-500">
             <div class="p-feature__cardwrapper__card__number">
               <p>03</p>
             </div>
             <Image src={vector} alt={''} />
             <p class="p-feature__cardwrapper__card__ttl">インターカレッジ</p>
             <p class="p-feature__cardwrapper__card__txt">
-              あのイーハトーヴォのすきと<br class="sp-br" />おった風、夏<br
-                class="pc-br"
-              />でも底に冷たさ<br class="sp-br" />をもつ青いそら、うつくし<br
-                class="pc-br"
-              />い<br class="sp-br" />森で飾られたモリーオ市、郊<br
-                class="sp-br"
-              />外のぎらぎ<br class="pc-br" />らひかる草の波。<br
-                class="sp-br"
-              />あのイーハトーヴォのす<br class="pc-br" />きと<br
-                class="sp-br"
-              />おった風、夏でも底に冷たさ<br class="sp-br" />をもつ青<br
-                class="pc-br"
-              />いそら、うつくしい<br class="sp-br" />森で飾られたモリーオ<br
-                class="pc-br"
-              />市、郊<br class="sp-br" />外のぎらぎらひかる草の波。
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
             </p>
           </div>
         </div>
@@ -203,9 +340,9 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
     </div>
   </section>
 
-  <section id="schedule" class="p-schedule">
+  <!-- <section id="schedule" class="p-schedule">
     <p class="p-schedule__ttl">活動日程</p>
-  </section>
+  </section> -->
 
   <section id="blogList" class="p-blogList">
     <div class="l-container">
@@ -213,7 +350,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
       <div class="p-blogList__wrapper">
         {
           posts.slice(0, 3).map((post) => (
-            <a href={`${dynamicPath}/${post.Slug}`} class="p-blogList__card">
+            <a href={`${dynamicPath}/${post.Slug}`} class="p-blogList__card fade">
               <Image
                 src={post?.FeaturedImage?.Url ?? defaultImg}
                 alt={post.Title}
@@ -235,3 +372,4 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
     </div>
   </section>
 </Layout>
+<script src="/assets/js/main.js" is:inline></script>
