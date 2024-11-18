@@ -6,7 +6,15 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        sm: '590px',
+        md: '767px',
+        lg: '992px',
+        xl: '1230px',
+      },
+    },
   },
   plugins: [require('flowbite/plugin')],
+  important: true,
 };
