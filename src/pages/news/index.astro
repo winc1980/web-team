@@ -3,8 +3,10 @@ import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import MV from '@/components/Mv.astro'
 import '@/scss/subpage.scss'
+import dayjs from 'dayjs';
 //microCMS呼び出し
-
+import { getNews } from '@/lib/microcms'
+const response = await getNews({ fields: ['id', 'title', 'date'] })
 const title = ''
 const description = ''
 const og_image = ''
@@ -24,24 +26,16 @@ const og_image = ''
     <section>
       <div class="l-container">
         <ul class="p-news__wrapper">
-          <li class="p-news__wrapper__card">
-            <p>2024/08/18</p>
-            <a href=""
-              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
-            >
-          </li>
-          <li class="p-news__wrapper__card">
-            <p>2024/08/18</p>
-            <a href=""
-              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
-            >
-          </li>
-          <li class="p-news__wrapper__card">
-            <p>2024/08/18</p>
-            <a href=""
-              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
-            >
-          </li>
+          {
+            response.contents.map((content: any) => (
+              <li class="p-news__wrapper__card">
+                <p>{dayjs(content.date).format('YYYY/MM/DD')}</p>
+                <a href={'/news/' + content.id}>
+                  {content.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </section>
