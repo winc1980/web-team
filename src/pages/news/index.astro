@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '@/layouts/Layout.astro'
+import MV from '@/components/Mv.astro'
+import '@/scss/subpage.scss'
+//microCMS呼び出し
+
+const title = ''
+const description = ''
+const og_image = ''
+---
+
+<Layout title={title} , description={description} , og_image={og_image}>
+  <main id="works-list" class="p-works-list sub-page">
+    <MV
+      title="更新情報"
+      bgImg="/assets/images/works.JPG"
+      imgClass="web-team__mv__works-bg"
+      items={[
+        { text: 'TOP', link: '/' },
+        { text: '更新情報', link: '' },
+      ]}
+    />
+    <section>
+      <div class="l-container">
+        <ul class="p-news__wrapper">
+          <li class="p-news__wrapper__card">
+            <p>2024/08/18</p>
+            <a href=""
+              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
+            >
+          </li>
+          <li class="p-news__wrapper__card">
+            <p>2024/08/18</p>
+            <a href=""
+              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
+            >
+          </li>
+          <li class="p-news__wrapper__card">
+            <p>2024/08/18</p>
+            <a href=""
+              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</Layout>
+<style></style>
