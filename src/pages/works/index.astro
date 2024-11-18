@@ -4,7 +4,6 @@ import { Image } from 'astro:assets'
 import Button from '@/components/Button.astro'
 import MV from '@/components/Mv.astro'
 import WorkCard from '@/components/WorkCard.astro'
-import '@/scss/subpage.scss'
 //microCMS呼び出し
 import { getWorks } from '@/lib/microcms'
 const response = await getWorks({
@@ -16,7 +15,7 @@ const og_image = ''
 ---
 
 <Layout title={title} , description={description} , og_image={og_image}>
-  <main id="works-list" class="p-works-list sub-page">
+  <main id="works-list" class="p-works-list">
     <MV
       title="制作実績"
       bgImg="/assets/images/works.JPG"
@@ -28,7 +27,7 @@ const og_image = ''
     />
     <section>
       <div class="l-container">
-        <h2>Webサイト制作(案件)</h2>
+        <h2 class="section-ttl mb-6 md:mb-12">Webサイト制作(案件)</h2>
         <ul class="web-team__work-card">
           {
             response.contents.map((content: any) =>
@@ -50,7 +49,7 @@ const og_image = ''
     </section>
     <section>
       <div class="l-container">
-        <h2>Webサイト制作(自由制作)</h2>
+        <h2 class="section-ttl mb-6 md:mb-12">Webサイト制作(自由制作)</h2>
         <ul class="web-team__work-card">
           {
             response.contents.map((content: any) =>
@@ -77,7 +76,7 @@ const og_image = ''
     </section>
     <section>
       <div class="l-container">
-        <h2>Webアプリケーション開発</h2>
+        <h2 class="section-ttl mb-6 md:mb-12">Webアプリケーション開発</h2>
         <ul class="web-team__work-card">
           {
             response.contents.map((content: any) =>

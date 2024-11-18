@@ -2,6 +2,9 @@
 @use './variables' as *;
 
 .sub-page {
+  .l-container {
+    max-width: $article-content-width;
+  }
   h2 {
     font-size: 38px;
     margin-bottom: 25px;
