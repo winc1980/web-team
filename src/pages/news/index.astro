@@ -7,6 +7,8 @@ import dayjs from 'dayjs';
 //microCMS呼び出し
 import { getNews } from '@/lib/microcms'
 const response = await getNews({ fields: ['id', 'title', 'date'] })
+// dateプロパティをもとにオブジェクトを降順に並び替える
+response.contents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 const title = ''
 const description = ''
 const og_image = ''
@@ -30,7 +32,7 @@ const og_image = ''
             response.contents.map((content: any) => (
               <li class="p-news__wrapper__card">
                 <p>{dayjs(content.date).format('YYYY/MM/DD')}</p>
-                <a href={'/news/' + content.id}>
+                <a href={'/news/' + content.id} class="hover__opacity">
                   {content.title}
                 </a>
               </li>

@@ -5,6 +5,10 @@
   .l-container {
     max-width: $article-content-width;
   }
+  h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
   h2 {
     font-size: 38px;
     margin-bottom: 25px;
@@ -20,6 +24,10 @@
     }
   }
   @media (max-width: $breakpointMobile) {
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
     h2 {
       font-size: 20px;
       margin-bottom: 20px;

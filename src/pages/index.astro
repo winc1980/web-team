@@ -9,6 +9,12 @@ import {
   getAllTags,
   getNumberOfPages,
 } from '@/lib/notion/client.ts'
+import dayjs from 'dayjs'
+//microCMS呼び出し
+import { getNews } from '@/lib/microcms'
+const response = await getNews({ fields: ['id', 'title', 'date'] })
+// dateプロパティをもとにオブジェクトを降順に並び替える
+response.contents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 import topImagecenter from '@/assets/images/fv2.jpg'
 import topImageright from '@/assets/images/topimage_right.webp'
@@ -70,24 +76,16 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
       <h2>更新情報</h2>
       <div class="l-container">
         <ul class="p-news__wrapper">
-          <li class="p-news__wrapper__card">
-            <p>2024/08/18</p>
-            <a href=""
-              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
-            >
-          </li>
-          <li class="p-news__wrapper__card">
-            <p>2024/08/18</p>
-            <a href=""
-              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
-            >
-          </li>
-          <li class="p-news__wrapper__card">
-            <p>2024/08/18</p>
-            <a href=""
-              >早稲田コンピュータ研究会・WINC WebチームのHPを公開しました</a
-            >
-          </li>
+          {
+            response.contents.slice(0, 3).map((content: any) => (
+              <li class="p-news__wrapper__card">
+                <p>{dayjs(content.date).format('YYYY/MM/DD')}</p>
+                <a href={'/news/' + content.id} class="hover__opacity">
+                  {content.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
         <Button url="/news/" text="更新情報一覧" color="yellow" />
       </div>
@@ -96,7 +94,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
 
   <section id="activities" class="p-activities">
     <div class="l-container">
-      <h2 class="section-ttl">活動内容</h2>
+      <h2 class="section-ttl mb-5 lg:mb-0">活動内容</h2>
     </div>
     <div class="l-container">
       <p class="p-activities__number text-right">01</p>
@@ -299,7 +297,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
   <section id="feature" class="p-feature p-0">
     <div class="p-feature-bg">
       <div class="l-container">
-        <h2 class="section-ttl">チームの特徴</h2>
+        <h2 class="section-ttl mb-12 lg:mb-0">チームの特徴</h2>
         <div class="p-feature__cardwrapper">
           <div class="p-feature__cardwrapper__card left fade delay-100">
             <div class="p-feature__cardwrapper__card__number">
@@ -348,7 +346,10 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
       <div class="p-blogList__wrapper">
         {
           posts.slice(0, 3).map((post) => (
-            <a href={`${dynamicPath}/${post.Slug}`} class="p-blogList__card fade">
+            <a
+              href={`${dynamicPath}/${post.Slug}`}
+              class="p-blogList__card fade"
+            >
               <Image
                 src={post?.FeaturedImage?.Url ?? defaultImg}
                 alt={post.Title}
