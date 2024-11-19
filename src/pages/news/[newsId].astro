@@ -19,7 +19,6 @@ export async function getStaticPaths() {
 const { newsId } = Astro.params
 const news = await getNewsDetail(newsId as string)
 
-console.log(news)
 const title = ''
 const description = ''
 const og_image = ''
