@@ -113,24 +113,22 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
   ogImage={ogImage}
   blogTitle={post.Title}
 >
-  <div slot="main">
-    <div>
-      <PostFeaturedImage post={post} enableLink={false} />
-      <div class="blog-content__container">
-        <PostTitle post={post} enableLink={false} />
-        <PostTags post={post} />
-        <PostDate post={post} />
-        <PostBody blocks={blocks} />
-        <hr />
-      </div>
-      {
-        authorDetails && post.ShowAuthor == true ? (
-          <Author authorDetails={authorDetails} />
-        ) : null
-      }
+  <div slot="main" class="blog-content">
+    <PostFeaturedImage post={post} enableLink={false} />
+    <div class="blog-content__container">
+      <PostTitle post={post} enableLink={false} />
       <PostTags post={post} />
-      <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
+      <PostDate post={post} />
+      <PostBody blocks={blocks} />
+      <hr />
     </div>
+    {
+      authorDetails && post.ShowAuthor == true ? (
+        <Author authorDetails={authorDetails} />
+      ) : null
+    }
+    <PostTags post={post} />
+    <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
   </div>
 
   <div slot="aside" class="aside">

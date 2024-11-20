@@ -3,6 +3,13 @@ import Layout from '@/layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import { NUMBER_OF_POSTS_PER_PAGE } from '@/server-constants.ts'
 import Button from '@/components/Button.astro'
+import NoContents from '@/components/NoContents.astro'
+import PostDate from '@/components/PostDate.astro'
+import PostTags from '@/components/PostTags.astro'
+import PostTitle from '@/components/PostTitle.astro'
+import PostFeaturedImage from '@/components/PostFeaturedImage.astro'
+import PostExcerpt from '@/components/PostExcerpt.astro'
+import ReadMoreLink from '@/components/ReadMoreLink.astro'
 import {
   getPosts,
   getRankedPosts,
@@ -14,7 +21,9 @@ import dayjs from 'dayjs'
 import { getNews } from '@/lib/microcms'
 const response = await getNews({ fields: ['id', 'title', 'date'] })
 // dateプロパティをもとにオブジェクトを降順に並び替える
-response.contents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+response.contents.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)
 
 import topImagecenter from '@/assets/images/fv2.jpg'
 import topImageright from '@/assets/images/topimage_right.webp'
@@ -22,11 +31,38 @@ import topblogImage from '@/assets/images/topblog.webp'
 import WAXAPC from '@/assets/images/waxa_pc.png'
 import WAXASP from '@/assets/images/WAXA_SP.webp'
 import logo from '@/assets/images/logo.svg'
-import activities from '@/assets/images/activities_img.webp'
+import activity1 from '@/assets/images/activity1.webp'
+import activity2 from '@/assets/images/activity2.jpg'
+import activity3 from '@/assets/images/activity3.jpg'
+import activity4 from '@/assets/images/activity4.jpg'
+import activity5 from '@/assets/images/activity5.jpg'
+import activity6 from '@/assets/images/activity6.jpg'
+import activity7 from '@/assets/images/activity7.jpg'
+import activity8 from '@/assets/images/activity8.jpg'
+import activity9 from '@/assets/images/activity9.jpg'
+import activity10 from '@/assets/images/activity10.jpg'
+const activities = [
+  activity1,
+  activity2,
+  activity3,
+  activity4,
+  activity5,
+  activity6,
+  activity7,
+  activity8,
+  activity9,
+  activity10,
+]
+const activitiesWithIndex = activities.map((activity, index) => ({
+  ...activity, // 元のオブジェクトを展開
+  index    // インデックスを追加
+}));
+
 import communication from '@/assets/images/communication.webp'
 import programming from '@/assets/images/programming.webp'
 import vector from '@/assets/images/Vector.webp'
 import rect1 from '@/assets/images/rectangle1.svg'
+import '@/scss/blog.scss'
 
 const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getPosts(NUMBER_OF_POSTS_PER_PAGE),
@@ -35,13 +71,12 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getNumberOfPages(),
 ])
 const dynamicPath = 'posts'
-const title = ''
-const description = ''
-const og_image = ''
 const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
+
+console.log(posts);
 ---
 
-<Layout title={title} , description={description} , og_image={og_image}>
+<Layout>
   <main>
     <section id="fv" class="p-fv">
       <div class="p-fv__backimg">
@@ -62,7 +97,9 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
           <div class="p-about__flexbox__txtwrapper">
             <h2>Webチームとは</h2>
             <p>
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+              Webチームとは早稲田コンピュータ研究会WINCのチームのひとつです。主にWebサイトやWebアプリケーションをチームで開発しています。Webサイトは外部のサークルや団体に対して無償で制作・提供をしており、これまで多くの制作実績があります。Webアプリケーションは、主にNext.jsやAstro.jsなどのJavaScriptのフレームワークを利用して開発します。
+              <br
+              />Webチームは2022年10月に「Webの楽しさをたくさんの人と共有したい」と思う人々によって立ち上げられました。Web制作をチームで行うのは、他の人と協同して誰かのために何かを創る楽しさを感じるためです。それと同時に、人との関わりの中で、自分自身を成長させ、スキルを高めることを目的としています。Webチームは人と関わり、人の役に立ち、「創る」を楽しめる人になることを目標に活動しています。
             </p>
           </div>
           <div class="p-about__flexbox__imgwrapper">
@@ -171,7 +208,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
               >Webチームの一年</a
             >
           </div>
-          <div class="px-0 md:px-3 fade">
+          <div class="px-0 lg:px-3 fade">
             <!-- flowbite carousel -->
             <div
               id="default-carousel"
@@ -180,61 +217,32 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
             >
               <!-- Carousel wrapper -->
               <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <Image src={activities} alt="合宿の画像" />
-                </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <Image src={activities} alt="合宿の画像" />
-                </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <Image src={activities} alt="合宿の画像" />
-                </div>
-                <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <Image src={activities} alt="合宿の画像" />
-                </div>
-                <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                  <Image src={activities} alt="合宿の画像" />
-                </div>
+                {
+                  activities.map((i) => (
+                    <div
+                      class="hidden duration-700 ease-in-out"
+                      data-carousel-item
+                    >
+                      <Image src={i} alt="合宿の画像" />
+                    </div>
+                  ))
+                }
               </div>
               <!-- Slider indicators -->
               <div
                 class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
               >
-                <button
+                {
+                  activitiesWithIndex.map((i) =>(
+                  <button
                   type="button"
                   class="w-3 h-3 rounded-full"
                   aria-current="true"
-                  aria-label="Slide 1"
-                  data-carousel-slide-to="0"></button>
-                <button
-                  type="button"
-                  class="w-3 h-3 rounded-full"
-                  aria-current="false"
-                  aria-label="Slide 2"
-                  data-carousel-slide-to="1"></button>
-                <button
-                  type="button"
-                  class="w-3 h-3 rounded-full"
-                  aria-current="false"
-                  aria-label="Slide 3"
-                  data-carousel-slide-to="2"></button>
-                <button
-                  type="button"
-                  class="w-3 h-3 rounded-full"
-                  aria-current="false"
-                  aria-label="Slide 4"
-                  data-carousel-slide-to="3"></button>
-                <button
-                  type="button"
-                  class="w-3 h-3 rounded-full"
-                  aria-current="false"
-                  aria-label="Slide 5"
-                  data-carousel-slide-to="4"></button>
+                  aria-label={"Slide" + (i.index + 1)}
+                  data-carousel-slide-to={i.index}></button>
+                  ))
+                }
+                
               </div>
               <!-- Slider controls -->
               <button
@@ -343,26 +351,26 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
   <section id="blogList" class="p-blogList">
     <div class="l-container">
       <h2 class="section-ttl">Webチームブログ</h2>
-      <div class="p-blogList__wrapper">
+    </div>
+      <div class="p-blogList__wrapper l-container-sm">
+        
         {
-          posts.slice(0, 3).map((post) => (
-            <a
-              href={`${dynamicPath}/${post.Slug}`}
-              class="p-blogList__card fade"
-            >
-              <Image
-                src={post?.FeaturedImage?.Url ?? defaultImg}
-                alt={post.Title}
-                width="350"
-                height="196"
-              />
-              <div class="p-blogList__card__text">
-                <h5>{post.Date}</h5>
-                <h4>{post.Title}</h4>
-                <p>{post.Excerpt}</p>
+          posts.length === 0 ? (
+            <NoContents contents={posts} />
+          ) : (
+            posts.slice(0, 3).map((post) => (
+              <div key={post.Slug} class="blog-card">
+                <PostFeaturedImage post={post} class="blog-card__img" />
+                <div class="blog-card__contents">
+                  <PostTitle post={post} />
+                  <PostExcerpt post={post} />
+                  <PostTags post={post} />
+                  <PostDate post={post} />
+                  <ReadMoreLink post={post} />
+                </div>
               </div>
-            </a>
-          ))
+            ))
+          )
         }
       </div>
       <div class="my-10">

@@ -135,7 +135,7 @@ table td::after {
 
 /* --------------------------------- layoutファイルに書かれていたcssここから(不要だと判断した記述は削除) --------------------------------- */
 .container {
-  max-width: $blog-content-width;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 0 15px;
 }

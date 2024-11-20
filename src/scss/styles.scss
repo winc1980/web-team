@@ -2,10 +2,21 @@
 @use './variables' as *;
 
 /* ------------------- 共通要素ここから ------------------- */
-$breakpointMobile: 767px;
 
 .l-container {
   max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.l-container-md {
+  max-width: $content-width-md;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.l-container-sm {
+  max-width: $content-width-sm;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -34,7 +45,7 @@ h5 {
 
 section {
   padding: 40px 0;
-  &:first-child {
+  &:first-of-type {
     padding: 0;
   }
 }
@@ -42,7 +53,7 @@ section {
 @media (max-width: $breakpoint-md) {
   section {
     padding: 20px 0;
-    &:first-child {
+    &:first-of-type {
       padding: 0;
     }
   }
@@ -51,9 +62,7 @@ section {
 .fade {
   opacity: 0;
   transform: translateY(30px);
-  transition:
-    opacity 1.5s,
-    transform 1s;
+  transition: opacity 1.5s, transform 1s;
 }
 
 .fade.active {
@@ -436,6 +445,7 @@ section {
     row-gap: 50px;
     column-gap: 30px;
     place-items: center;
+    align-items: start;
     li {
       max-width: 380px;
       a {
@@ -464,7 +474,7 @@ section {
   }
   @media (max-width: $breakpoint-md) {
     &__work-card {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       row-gap: 30px;
       li {
         max-width: 380px;
@@ -480,6 +490,11 @@ section {
           margin: 12px 0 8px;
         }
       }
+    }
+  }
+  @media (max-width: $breakpointMobile) {
+    &__work-card {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -578,6 +593,20 @@ section {
       }
     }
   }
+
+  &__callout {
+    color: #518ef2;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  @media (max-width: $breakpoint-md) {
+    &__callout {
+      font-size: 12px;
+      text-align: left;
+    }
+  }
 }
 
 /* ------------------- 共通要素ここまで ------------------- */
@@ -651,7 +680,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .p-fv {
     &__backimg {
       z-index: -99;
@@ -759,10 +788,6 @@ section {
           margin-left: 15px;
         }
       }
-      p {
-        font-size: 16px;
-        font-weight: 500;
-      }
     }
     &__imgwrapper {
       width: 50%;
@@ -778,7 +803,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .p-about {
     &__spTitle {
       font-size: 20px;
@@ -818,10 +843,6 @@ section {
         order: 1;
         h2 {
           display: none;
-        }
-        p {
-          font-size: 16px;
-          font-weight: 500;
         }
       }
       &__imgwrapper {
@@ -886,7 +907,7 @@ section {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .p-news {
     > h2 {
       font-size: 20px;
@@ -964,13 +985,13 @@ section {
       z-index: 100;
       display: flex;
       margin: 30px 0;
-      div:first-child {
+      div:first-of-type {
         width: 50%;
         p {
           margin-bottom: 20px;
         }
       }
-      div:last-child {
+      div:last-of-type {
         width: 50%;
         div {
           width: auto;
@@ -1834,6 +1855,9 @@ section {
     background-image: url('/src/assets/images/bg1.webp');
     background-color: rgba(255, 255, 255, 0.8);
     background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
     padding-top: 3%;
     padding-bottom: 20%;
   }
@@ -1929,7 +1953,8 @@ section {
     &__card {
       padding-bottom: 5%;
       position: relative;
-      width: 248px;
+      max-width: 450px;
+      width: 90%;
       height: auto;
       margin-right: 2%;
       margin-left: 2%;
@@ -2009,6 +2034,7 @@ section {
 /* ------------------- scheduleここまで------------------- */
 /* ------------------- bloglistここから ------------------- */
 .p-blogList {
+  background-color: #edf2f7;
   h6 {
     color: white;
     background-color: #518ef2;
@@ -2411,7 +2437,7 @@ footer {
   }
 }
 
-@media screen and (max-width: $breakpointMobile) {
+@media screen and (max-width: $breakpoint-md) {
   .flexbox-top {
     display: flex;
     justify-content: center;
