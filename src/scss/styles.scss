@@ -784,9 +784,9 @@ section {
         }
         &::after {
           content: '';
-          height: 1px;
+          height: 2px;
           flex-grow: 1;
-          background-color: white;
+          background-color: #518ef2;
           margin-left: 15px;
         }
       }
