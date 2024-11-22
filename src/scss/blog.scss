@@ -26,17 +26,6 @@
     Courier, monospace;
 }
 
-body {
-  background: var(--bg-blue);
-  color: $defaultColor;
-}
-
-@media (max-width: $breakpointMobile) {
-  body {
-    background: #fff;
-  }
-}
-
 figure {
   margin: 0;
   font-size: 0.85rem;
