@@ -47,18 +47,13 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
       )
     }
 
-    <!-- Pagination一旦コメントアウト -->
-    <!-- <Pagination currentPage={1} numberOfPages={numberOfPages} /> -->
+    <Pagination currentPage={1} numberOfPages={numberOfPages} />
   </div>
   <h1>Notionデータベースのデータ</h1>
+  
 
   <div slot="aside">
     <BlogTagsLink heading="タグ別" tags={tags} />
     <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
   </div>
 </Layout>
-<style>
-  body {
-    background: var(--bg-blue);
-  }
-</style>
