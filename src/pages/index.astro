@@ -54,8 +54,8 @@ const activities = [
   activity10,
 ]
 const activitiesWithIndex = activities.map((activity, index) => ({
-  ...activity, // 元のオブジェクトを展開
-  index    // インデックスを追加
+  ...activity, // activityオブジェクトを展開
+  index    // インデックス番号を追加
 }));
 
 import communication from '@/assets/images/communication.webp'
@@ -72,8 +72,6 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
 ])
 const dynamicPath = 'posts'
 const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
-
-console.log(posts);
 ---
 
 <Layout>

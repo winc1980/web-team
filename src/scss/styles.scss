@@ -216,7 +216,7 @@ section {
       a {
         display: block;
         width: 147px;
-        height: 111px;
+        height: 110px;
         padding-top: 40px;
         background-color: #f2b551;
         transition: 0.3s all;
@@ -784,9 +784,9 @@ section {
         }
         &::after {
           content: '';
-          height: 1px;
+          height: 2px;
           flex-grow: 1;
-          background-color: white;
+          background-color: #518ef2;
           margin-left: 15px;
         }
       }
@@ -1935,7 +1935,6 @@ section {
 
 @media screen and (max-width: $breakpoint-lg) {
   .p-feature {
-    text-align: center;
     h4 {
       background-color: #518ef2;
       font-weight: 400;
@@ -2165,7 +2164,7 @@ section {
   &-fv {
     &__wrapper {
       width: fit-content;
-      margin: 0 auto;
+      margin: 20px auto;
     }
     &__images {
       display: flex;
