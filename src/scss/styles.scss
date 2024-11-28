@@ -43,6 +43,16 @@ h5 {
   font-family: 'Noto Sans JP Variable', sans-serif;
 }
 
+.sp-br {
+  display: none;
+}
+
+@media (max-width: $breakpoint-md) {
+  .sp-br {
+    display: block;
+  }
+}
+
 section {
   padding: 40px 0;
   &:first-of-type {
