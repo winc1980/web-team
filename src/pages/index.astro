@@ -55,8 +55,8 @@ const activities = [
 ]
 const activitiesWithIndex = activities.map((activity, index) => ({
   ...activity, // activityオブジェクトを展開
-  index    // インデックス番号を追加
-}));
+  index, // インデックス番号を追加
+}))
 
 import communication from '@/assets/images/communication.webp'
 import programming from '@/assets/images/programming.webp'
@@ -97,7 +97,9 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
             <p>
               Webチームとは早稲田コンピュータ研究会WINCのチームのひとつです。主にWebサイトやWebアプリケーションをチームで開発しています。Webサイトは外部のサークルや団体に対して無償で制作・提供をしており、これまで多くの制作実績があります。Webアプリケーションは、主にNext.jsやAstro.jsなどのJavaScriptのフレームワークを利用して開発します。
               <br
-              />Webチームは2022年10月に「Webの楽しさをたくさんの人と共有したい」と思う人々によって立ち上げられました。Web制作をチームで行うのは、他の人と協同して誰かのために何かを創る楽しさを感じるためです。それと同時に、人との関わりの中で、自分自身を成長させ、スキルを高めることを目的としています。Webチームは人と関わり、人の役に立ち、<b>「創る」を楽しめる人になる</b>ことを目標に活動しています。
+              />Webチームは2022年10月に「Webの楽しさをたくさんの人と共有したい」と思う人々によって立ち上げられました。Web制作をチームで行うのは、他の人と協同して誰かのために何かを創る楽しさを感じるためです。それと同時に、人との関わりの中で、自分自身を成長させ、スキルを高めることを目的としています。Webチームは人と関わり、人の役に立ち、<b
+                >「創る」を楽しめる人になる</b
+              >ことを目標に活動しています。
             </p>
           </div>
           <div class="p-about__flexbox__imgwrapper">
@@ -141,7 +143,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
         <div class="p-activities__wrapper__content">
           <div class="fade">
             <p>
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+              Webチームではサークルや学生団体、企業に対して無償でWebサイトを制作・提供をしています。これまで、多くのWebサイトを制作してきた実績があります。開発は複数のチームメンバーで協力して行います。開発における仕事には、デザイン、コーディング、ディレクションなどがあります。初心者はコーディングで実力をつけ、経験者はディレクションを通じてマネジメント能力を鍛えます。
             </p>
             <a
               href=""
@@ -179,7 +181,7 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
         <div class="p-activities__wrapper--reversed__content">
           <div class="px-3 fade">
             <p>
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+              Webサイト制作をひと通り経験しWeb開発の基礎(HTML/CSS)が身につき、新しいことにチャレンジしたい人はWebアプリケーションを開発します。主にReactやNext.jsなどのJavaScriptのライブラリ/フレームワークを学びながら、メンバーが作りたいもの開発します。
             </p>
           </div>
           <div class="fade">
@@ -193,12 +195,12 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
     </div>
     <div class="p-activities__wrapper">
       <div class="l-container">
-        <h3>合宿によるハッカソン</h3>
+        <h3>合宿でのハッカソン</h3>
         <Image src={rect1} alt="台形装飾" class="p-activities__wrapper__bg" />
         <div class="p-activities__wrapper__content">
           <div class="px-3 fade">
             <p>
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+              Webチームでは夏休みと春休みの長期休暇期間に合宿を行います。合宿ではアプリチームと合同でハッカソンが開催されます。ハッカソンとはhackとマラソンをかけた造語で、マラソンのごとく一気にチームでプロダクトを開発をするイベントです。例年、観光地のコテージや別荘を貸し切り、2泊3日で朝から晩までパソコンと向き合います。もちろん、BBQや観光など楽しいイベントもあり、楽しみながらスキルを高め、メンバー同士が仲を深められる機会になっています。
             </p>
             <a
               href=""
@@ -231,16 +233,16 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
                 class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
               >
                 {
-                  activitiesWithIndex.map((i) =>(
-                  <button
-                  type="button"
-                  class="w-3 h-3 rounded-full"
-                  aria-current="true"
-                  aria-label={"Slide" + (i.index + 1)}
-                  data-carousel-slide-to={i.index}></button>
+                  activitiesWithIndex.map((i) => (
+                    <button
+                      type="button"
+                      class="w-3 h-3 rounded-full"
+                      aria-current="true"
+                      aria-label={'Slide' + (i.index + 1)}
+                      data-carousel-slide-to={i.index}
+                    />
                   ))
                 }
-                
               </div>
               <!-- Slider controls -->
               <button
@@ -309,32 +311,39 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
             <div class="p-feature__cardwrapper__card__number">
               <p>01</p>
             </div>
-            <Image src={communication} alt={''} />
+            <Image src={programming} alt={''} />
             <p class="p-feature__cardwrapper__card__ttl">
               ほとんどがプログラミング<br class="sp-br" />未経験
             </p>
             <p class="p-feature__cardwrapper__card__txt">
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              Webチームに入る9割はプログラミング未経験です。Webチームは「Webの楽しさをたくさんの人と共有する」ことを目的の一つとしているので、パソコンに不慣れな人、ブラインドタッチが出来ない人、どんな人も歓迎です。初心者の方が迷わず学べるロードマップが用意されています。
             </p>
           </div>
           <div class="p-feature__cardwrapper__card center fade delay-300">
             <div class="p-feature__cardwrapper__card__number">
               <p>02</p>
             </div>
-            <Image src={programming} alt={''} />
-            <p class="p-feature__cardwrapper__card__ttl">男女比は7:3</p>
+            <Image src={communication} alt="男女比は7:3程度" />
+            <p class="p-feature__cardwrapper__card__ttl">男女比は7:3程度</p>
             <p class="p-feature__cardwrapper__card__txt">
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              Webチームの男女比は7:3か6:4程度です。年代によっては女子の方が多く、WebチームはWINCのチームの中では女子率が高い傾向があります。IT業界は男臭い社会ですが、ITの技術は男女関係なく楽しめるものです。ぜひ気軽に遊びにきてください。
             </p>
           </div>
           <div class="p-feature__cardwrapper__card right fade delay-500">
             <div class="p-feature__cardwrapper__card__number">
               <p>03</p>
             </div>
-            <Image src={vector} alt={''} />
+            <Image src={vector} alt="インターカレッジ" />
             <p class="p-feature__cardwrapper__card__ttl">インターカレッジ</p>
             <p class="p-feature__cardwrapper__card__txt">
-              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+              Webチームおよびその母体の早稲田コンピュータ研究会・WINCはインターカレッジ(インカレ)です。例年多くの他大生が参加しています。<br
+              />
+              実績校<br />
+              ・明治大学<br />
+              ・法政大学<br />
+              ・日本女子大学<br />
+              ・電気通信大学<br />
+              ・お茶の水女子大学 etc...<br />
             </p>
           </div>
         </div>
@@ -350,31 +359,30 @@ const defaultImg = 'https://www.winc.ne.jp/images/background.jpg'
     <div class="l-container">
       <h2 class="section-ttl">Webチームブログ</h2>
     </div>
-      <div class="p-blogList__wrapper l-container-sm">
-        
-        {
-          posts.length === 0 ? (
-            <NoContents contents={posts} />
-          ) : (
-            posts.slice(0, 3).map((post) => (
-              <div key={post.Slug} class="blog-card">
-                <PostFeaturedImage post={post} class="blog-card__img" />
-                <div class="blog-card__contents">
-                  <PostTitle post={post} />
-                  <PostExcerpt post={post} />
-                  <PostTags post={post} />
-                  <PostDate post={post} />
-                  <ReadMoreLink post={post} />
-                </div>
+    <div class="p-blogList__wrapper l-container-sm">
+      {
+        posts.length === 0 ? (
+          <NoContents contents={posts} />
+        ) : (
+          posts.slice(0, 3).map((post) => (
+            <div key={post.Slug} class="blog-card">
+              <PostFeaturedImage post={post} class="blog-card__img" />
+              <div class="blog-card__contents">
+                <PostTitle post={post} />
+                <PostExcerpt post={post} />
+                <PostTags post={post} />
+                <PostDate post={post} />
+                <ReadMoreLink post={post} />
               </div>
-            ))
-          )
-        }
-      </div>
-      <div class="my-10">
-        <Button url="/posts/" text="ブログ一覧" color="yellow" />
-      </div>
+            </div>
+          ))
+        )
+      }
+    </div>
+    <div class="my-10">
+      <Button url="/posts/" text="ブログ一覧" color="yellow" />
     </div>
   </section>
 </Layout>
+
 <script src="/assets/js/main.js" is:inline></script>
