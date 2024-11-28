@@ -72,9 +72,7 @@ section {
 .fade {
   opacity: 0;
   transform: translateY(30px);
-  transition:
-    opacity 1.5s,
-    transform 1s;
+  transition: opacity 1.5s, transform 1s;
 }
 
 .fade.active {
@@ -435,7 +433,7 @@ section {
     width: fit-content;
     height: 47px;
     text-align: center;
-    padding: 8px 25px 0 25px;
+    padding: 8px 20px;
     margin: 0 auto;
     flex-shrink: 0;
     color: #fff;
@@ -448,6 +446,14 @@ section {
     }
     &.--blue {
       background-color: #518ef2;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    &__button {
+      padding: 10px 12px;
+      font-size: 16px;
+      line-height: normal;
     }
   }
 

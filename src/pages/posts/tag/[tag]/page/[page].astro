@@ -80,11 +80,11 @@ const currentTag = posts[0].Tags.find((t) => t.name === tag)
     }
 
     <footer>
-      <Pagination
+      <!-- <Pagination
         tag={tag}
         currentPage={parseInt(page, 10)}
         numberOfPages={numberOfPages}
-      />
+      /> -->
     </footer>
   </div>
 
@@ -93,3 +93,8 @@ const currentTag = posts[0].Tags.find((t) => t.name === tag)
     <BlogTagsLink heading="タグ別" tags={tags} />
   </div>
 </Layout>
+<style>
+  body {
+    background-color: #edf2f7;
+  }
+</style>

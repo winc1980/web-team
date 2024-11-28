@@ -65,7 +65,7 @@ const currentTag = posts[0].Tags.find((t) => t.name === tag)
       )
     }
 
-    <Pagination tag={tag} currentPage={1} numberOfPages={numberOfPages} />
+    <!-- <Pagination tag={tag} currentPage={1} numberOfPages={numberOfPages} /> -->
   </div>
 
   <div slot="aside">
@@ -73,3 +73,8 @@ const currentTag = posts[0].Tags.find((t) => t.name === tag)
     <BlogPostsLink heading="おすすめの記事" posts={rankedPosts} />
   </div>
 </Layout>
+<style>
+  body {
+    background-color: #edf2f7;
+  }
+</style>

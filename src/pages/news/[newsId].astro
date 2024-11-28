@@ -36,10 +36,8 @@ const og_image = ''
         { text: news.title, link: '' },
       ]}
     />
-    <section class="sub-page">
-      <div class="l-container-sm">
-        <div set:html={news.content} />
-      </div>
+    <section class="sub-page py-10 md:py-20">
+      <div class="l-container-sm" set:html={news.content} />
     </section>
   </main>
 </Layout>
