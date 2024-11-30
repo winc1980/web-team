@@ -50,6 +50,7 @@ export default defineConfig({
     AuthorImageDownloader(),
     PublicNotionCopier(),
     tailwind(),
+    sitemap(),
   ],
   // Astroを実行したときにブラウザが自動でサーバーを開く
   server: {

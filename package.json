@@ -20,6 +20,7 @@
   "dependencies": {
     "@astrojs/react": "^3.0.3",
     "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/heebo": "^5.1.0",
     "@fontsource-variable/inter": "^5.1.0",
