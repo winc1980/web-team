@@ -2322,11 +2322,7 @@ section {
         max-width: 350px;
         > p {
           margin-top: 27px;
-          color: #222;
           font-size: 16px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 172.3%; /* 27.568px */
         }
       }
     }
@@ -2336,6 +2332,8 @@ section {
         border-radius: 50px;
         aspect-ratio: 1/1;
         object-fit: cover;
+        width: 100px;
+        height: 100px;
       }
       &__detail {
         margin-top: 28px;
