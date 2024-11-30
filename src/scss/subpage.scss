@@ -8,46 +8,50 @@
   }
   h2 {
     font-size: 38px;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
+    margin: 0 0 25px 20px;
+    position: relative;
     &::before {
       content: '';
-      display: block;
+      position: absolute;
       background-color: #518ef2;
       width: 6px;
-      height: 48px;
-      margin-right: 10px;
-    }
-  }
-  @media (max-width: $breakpointMobile) {
-    h1 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-    h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      &::before {
-        width: 3px;
-        height: 24px;
-      }
+      height: 100%;
+      left: -20px;
     }
   }
   h3 {
     font-size: 28px;
-    font-weight: 400;
     border-bottom: #518ef2 3px solid;
     margin-bottom: 20px;
   }
+  h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
   @media (max-width: $breakpointMobile) {
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 0 0 20px 10px;
+      margin-bottom: 20px;
+      &::before {
+        width: 3px;
+        left: -10px;
+      }
+    }
     h3 {
       font-size: 20px;
       border-bottom: #518ef2 2px solid;
       margin-bottom: 20px;
     }
-  }
-  p {
-    margin-bottom: 20px;
+    h4 {
+      font-size: 18px;
+    }
   }
 }
