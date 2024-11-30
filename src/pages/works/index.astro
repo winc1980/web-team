@@ -9,6 +9,14 @@ import { getWorks } from '@/lib/microcms'
 const response = await getWorks({
   fields: ['id', 'title', 'pc_image', 'product_category'],
 })
+
+const isFreeDev = response.contents.some((i) =>
+  i.product_category.includes('Webサイト制作(自由制作)')
+)
+const isWebApp = response.contents.some((i) =>
+  i.product_category.includes('Webアプリ開発')
+)
+
 const title = '制作実績'
 const description = ''
 const og_image = ''
@@ -31,6 +39,10 @@ const og_image = ''
           サークルを中心に制作実績があります。<br
           />サークルだけでなく、部活動・学生団体・自治体からのご依頼も歓迎しております。
         </p>
+      </div>
+    </section>
+    <section>
+      <div class="l-container">
         <h2 class="section-ttl mb-6 md:mb-12">Webサイト制作(案件)</h2>
         <ul class="web-team__work-card">
           {
@@ -51,56 +63,49 @@ const og_image = ''
         </ul>
       </div>
     </section>
-    <section>
-      <div class="l-container">
-        <h2 class="section-ttl mb-6 md:mb-12">Webサイト制作(自由制作)</h2>
-        <ul class="web-team__work-card">
-          {
-            response.contents.map((content: any) =>
-              content.product_category[0] === 'Webサイト制作(自由制作)' ? (
-                <li>
-                  <a href={'/works/' + content.id} class="hover__opacity">
-                    <Image
-                      src={content.pc_image.url}
-                      alt={content.title + 'のPC画像'}
-                      width={content.pc_image.width}
-                      height={content.pc_image.height}
-                    />
-                  </a>
-                  <p>{content.product_category}</p>
-                  <a href={'/works/' + content.id} class="hover__underline">
-                    {content.title}
-                  </a>
-                </li>
-              ) : null
-            )
-          }
-        </ul>
-      </div>
-    </section>
-    <section>
-      <div class="l-container">
-        <h2 class="section-ttl mb-6 md:mb-12">Webアプリケーション開発</h2>
-        <ul class="web-team__work-card">
-          {
-            response.contents.map((content: any) =>
-              content.product_category[0] === 'Webアプリ開発' ? (
-                <WorkCard
-                  id={content.id}
-                  imgpath={content.pc_image.url}
-                  imgwidth={content.pc_image.width}
-                  imgheight={content.pc_image.height}
-                  category={content.product_category}
-                  title={content.title}
-                />
-              ) : null
-            )
-          }
-        </ul>
-      </div>
-    </section>
+    {
+      isFreeDev ? (
+        <section>
+          <div class="l-container">
+            <h2 class="section-ttl mb-6 md:mb-12">Webサイト制作(自由制作)</h2>
+            <ul class="web-team__work-card">
+              {response.contents.map((content: any) =>
+                content.product_category[0] === 'Webサイト制作(自由制作)' ? (
+                  <WorkCard
+                    id={content.id}
+                    imgpath={content.pc_image.url}
+                    imgwidth={content.pc_image.width}
+                    imgheight={content.pc_image.height}
+                    category={content.product_category}
+                    title={content.title}
+                  />
+                ) : null
+              )}
+            </ul>
+          </div>
+        </section>
+      ) : isWebApp ? (
+        <section>
+          <div class="l-container">
+            <h2 class="section-ttl mb-6 md:mb-12">Webアプリケーション開発</h2>
+            <ul class="web-team__work-card">
+              {response.contents.map((content: any) =>
+                content.product_category[0] === 'Webアプリ開発' ? (
+                  <WorkCard
+                    id={content.id}
+                    imgpath={content.pc_image.url}
+                    imgwidth={content.pc_image.width}
+                    imgheight={content.pc_image.height}
+                    category={content.product_category}
+                    title={content.title}
+                  />
+                ) : null
+              )}
+            </ul>
+          </div>
+        </section>
+      ) : null
+    }
   </main>
 </Layout>
-<style>
-  
-</style>
+<style></style>
