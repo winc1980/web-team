@@ -9,8 +9,8 @@ import { getNews } from '@/lib/microcms'
 const response = await getNews({ fields: ['id', 'title', 'date'] })
 // dateプロパティをもとにオブジェクトを降順に並び替える
 response.contents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const title = ''
-const description = ''
+const title = '更新情報 | 早稲田コンピュータ研究会・WINC Webチーム'
+const description = 'Webチーム公式サイトの更新情報一覧です。過去に更新した情報はこちらからアクセスできます。'
 const og_image = ''
 ---
 

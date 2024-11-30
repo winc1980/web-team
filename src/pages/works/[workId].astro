@@ -30,9 +30,10 @@ const shuffledContents = response.contents.sort(() => Math.random() - 0.5)
 const filteredContents = shuffledContents.filter(
   (item) => item.title != work.title
 )
-const title = ''
-const description = ''
-const og_image = ''
+console.log(work)
+const title = work.title + ' | 制作実績 | 早稲田コンピュータ研究会・WINC Webチーム'
+const description = work.description
+const og_image = work.pc_image.url
 ---
 
 <Layout title={title} , description={description} , og_image={og_image}>

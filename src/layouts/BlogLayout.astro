@@ -35,7 +35,7 @@ const {
 
 const database = await getDatabase()
 
-const siteTitle = title ? `${title} - ${database.Title}` : database.Title
+const siteTitle = title ? `${title} | ${database.Title} | 早稲田コンピュータ研究会・WINC Webチーム` : database.Title
 const siteDescription = description ? description : database.Description
 const siteURL = new URL(getNavLink(path), Astro.site).toString()
 const siteOGImage = new URL(

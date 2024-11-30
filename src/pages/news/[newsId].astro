@@ -18,10 +18,9 @@ export async function getStaticPaths() {
 //ニュースの詳細情報を取得
 const { newsId } = Astro.params
 const news = await getNewsDetail(newsId as string)
-
-const title = ''
-const description = ''
-const og_image = ''
+const title = news.title + ' | 更新情報 | 早稲田コンピュータ研究会・WINC Webチーム';
+const description = news.description;
+const og_image = news.og_Image?.url;
 ---
 
 <Layout title={title} , description={description} , og_image={og_image}>
