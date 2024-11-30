@@ -3,28 +3,31 @@ import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import MV from '@/components/Mv.astro'
 import '@/scss/subpage.scss'
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 //microCMS呼び出し
 import { getNews } from '@/lib/microcms'
 const response = await getNews({ fields: ['id', 'title', 'date'] })
 // dateプロパティをもとにオブジェクトを降順に並び替える
-response.contents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+response.contents.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)
 const title = '更新情報 | 早稲田コンピュータ研究会・WINC Webチーム'
-const description = 'Webチーム公式サイトの更新情報一覧です。過去に更新した情報はこちらからアクセスできます。'
+const description =
+  'Webチーム公式サイトの更新情報一覧です。過去に更新した情報はこちらからアクセスできます。'
 const og_image = ''
 ---
 
 <Layout title={title} , description={description} , og_image={og_image}>
+  <MV
+    title="更新情報"
+    bgImg="/assets/images/pudding.webp"
+    imgClass="web-team__mv__news-bg"
+    items={[
+      { text: 'TOP', link: '/' },
+      { text: '更新情報', link: '' },
+    ]}
+  />
   <main id="works-list" class="p-works-list sub-page">
-    <MV
-      title="更新情報"
-      bgImg="/assets/images/works.JPG"
-      imgClass="web-team__mv__works-bg"
-      items={[
-        { text: 'TOP', link: '/' },
-        { text: '更新情報', link: '' },
-      ]}
-    />
     <section>
       <div class="l-container">
         <ul class="p-news__wrapper">

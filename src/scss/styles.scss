@@ -301,7 +301,7 @@ section {
       position: absolute;
       height: 370px;
       width: 100%;
-      opacity: 0.3;
+      opacity: .3;
       z-index: -10;
       img {
         width: 100%;
@@ -315,8 +315,13 @@ section {
         object-position: 50% 40%;
       }
     }
+    &__news-bg {
+      img {
+        object-position: 50% 40%;
+      }
+    }
     &__blog-bg {
-      opacity: 0.5;
+      opacity: .5;
       img {
         object-position: 50% 40%;
       }
@@ -350,9 +355,10 @@ section {
           display: block;
           white-space: nowrap;
           color: #fff;
-          &:hover {
-            color: #518ef2;
-            transition: all 0.5s 0s ease;
+        }
+        &:last-child {
+          a {
+            color: #617585;
           }
         }
       }
@@ -547,9 +553,10 @@ section {
         display: block;
         white-space: nowrap;
         color: #fff;
-        &:hover {
-          color: #518ef2;
-          transition: all 0.5s 0s ease;
+      }
+      &:last-child {
+        a {
+          color: #617585;
         }
       }
     }

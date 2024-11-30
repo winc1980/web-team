@@ -5,6 +5,7 @@ import MV from '@/components/Mv.astro'
 import '@/scss/subpage.scss'
 //microCMS呼び出し
 import { getNews, getNewsDetail } from '@/lib/microcms'
+import dayjs from 'dayjs'
 
 // ニュースページの全パスを取得
 export async function getStaticPaths() {
@@ -18,25 +19,30 @@ export async function getStaticPaths() {
 //ニュースの詳細情報を取得
 const { newsId } = Astro.params
 const news = await getNewsDetail(newsId as string)
-const title = news.title + ' | 更新情報 | 早稲田コンピュータ研究会・WINC Webチーム';
-const description = news.description;
-const og_image = news.og_Image?.url;
+const title =
+  news.title + ' | 更新情報 | 早稲田コンピュータ研究会・WINC Webチーム'
+const description = news.description
+const og_image = news.og_Image?.url
 ---
 
 <Layout title={title} , description={description} , og_image={og_image}>
+  <MV
+    title={news.title}
+    bgImg="/assets/images/pudding.webp"
+    imgClass="web-team__mv__news-bg"
+    items={[
+      { text: 'TOP', link: '/' },
+      { text: '更新情報', link: '/news/' },
+      { text: news.title, link: '' },
+    ]}
+  />
   <main id="works-list" class="p-works-list sub-page">
-    <MV
-      title={news.title}
-      bgImg="/assets/images/works.JPG"
-      imgClass="web-team__mv__works-bg"
-      items={[
-        { text: 'TOP', link: '/' },
-        { text: '更新情報', link: '/news/' },
-        { text: news.title, link: '' },
-      ]}
-    />
-    <section class="sub-page py-10 md:py-20">
-      <div class="l-container-sm" set:html={news.content} />
+    <section class="sub-page py-5 md:py-10">
+      <div class="l-container-sm" set:html={news.content}>
+        <p class="text-right text-sm md:text-lg mb-2.5">
+          {dayjs(news.content.date).format('YYYY/MM/DD')}
+        </p>
+      </div>
     </section>
   </main>
 </Layout>

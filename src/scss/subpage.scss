@@ -4,11 +4,11 @@
 .sub-page {
   h1 {
     font-size: 40px;
-    margin-bottom: 25px;
+    margin: 10px 0 20px;
   }
   h2 {
     font-size: 38px;
-    margin: 0 0 25px 20px;
+    margin: 10px 0 20px 20px;
     position: relative;
     &::before {
       content: '';
@@ -22,33 +22,55 @@
   h3 {
     font-size: 28px;
     border-bottom: #518ef2 3px solid;
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
   }
   h4 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin: 10px 0 20px;
   }
   p {
+    margin: 0 0 10px;
+  }
+  figure {
     margin-bottom: 20px;
+    img {
+      margin: 20px 0 0;
+    }
+    figcaption {
+      font-size: smaller;
+      color: #767676;
+      margin: 5px 0;
+    }
+  }
+  img {
+    width: 100%;
+    margin: 20px 0;
+  }
+  a {
+    color: #518ef2;
+    &:hover {
+      opacity: 0.6;
+      transition: 0.3s all;
+    }
+  }
+  hr {
+    margin: 20px 0;
   }
   @media (max-width: $breakpointMobile) {
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 20px;
     }
     h2 {
-      font-size: 22px;
-      margin: 0 0 20px 10px;
-      margin-bottom: 20px;
+      font-size: 20px;
+      margin: 10px 0 20px 10px;
       &::before {
         width: 3px;
         left: -10px;
       }
     }
     h3 {
-      font-size: 20px;
+      font-size: 18px;
       border-bottom: #518ef2 2px solid;
-      margin-bottom: 20px;
     }
     h4 {
       font-size: 18px;

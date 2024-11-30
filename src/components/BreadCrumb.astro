@@ -7,7 +7,7 @@ const { title, bgImg, imgClass, items } = Astro.props
     items.map((i) => {
       return (
         <li>
-          <a href={i.link}> {i.text}</a>
+          <a href={i.link} class="hover__opacity"> {i.text}</a>
         </li>
       )
     })
