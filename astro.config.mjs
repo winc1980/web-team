@@ -6,6 +6,7 @@ import FeaturedImageDownloader from './src/integrations/featured-image-downloade
 import AuthorImageDownloader from './src/integrations/author-image-downloader';
 import PublicNotionCopier from './src/integrations/public-notion-copier';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 const getSite = function () {
   if (CUSTOM_DOMAIN) {
     return new URL(BASE_PATH, `https://${CUSTOM_DOMAIN}`).toString();
