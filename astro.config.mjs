@@ -28,7 +28,7 @@ const getSite = function () {
 
 // https://astro.build/config
 export default defineConfig({
-  site: getSite(),
+  site: https://web-team.winc.ne.jp,
   base: BASE_PATH,
   vite: {
     resolve: {
