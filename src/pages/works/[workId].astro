@@ -30,7 +30,8 @@ const shuffledContents = response.contents.sort(() => Math.random() - 0.5)
 const filteredContents = shuffledContents.filter(
   (item) => item.title != work.title
 )
-const title = work.title + ' | 制作実績 | 早稲田コンピュータ研究会・WINC Webチーム'
+const title =
+  work.title + ' | 制作実績 | 早稲田コンピュータ研究会・WINC Webチーム'
 const description = work.description
 const og_image = work.pc_image.url
 ---
@@ -53,13 +54,17 @@ const og_image = work.pc_image.url
       <div class="l-container">
         <div class="p-works-detail-fv__wrapper">
           <div class="p-works-detail-fv__images">
-            <Image
-              src={work.sp_image.url}
-              alt=""
-              width={work.sp_image.width}
-              height={work.sp_image.height}
-              loading="eager"
-            />
+            {
+              work.sp_image != null ? (
+                <Image
+                  src={work.sp_image.url}
+                  alt=""
+                  width={work.sp_image.width}
+                  height={work.sp_image.height}
+                  loading="eager"
+                />
+              ) : null
+            }
             <div>
               <Image
                 src={work.pc_image.url}

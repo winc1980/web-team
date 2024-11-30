@@ -172,6 +172,9 @@ section {
     .is-active-link::before {
       background-color: #518ef2;
     }
+    &:empty {
+      display: none;
+    }
   }
 
   @media (max-width: $breakpoint-xl) {
@@ -406,7 +409,7 @@ section {
       ul {
         top: 8px;
         left: 13px;
-        padding: 3px;
+        padding: 3px 6px;
         overflow-x: scroll;
         li {
           font-size: 10px;
@@ -2194,6 +2197,7 @@ section {
     &__images {
       display: flex;
       align-items: baseline;
+      justify-content: center;
       > img {
         max-width: 140px;
         object-fit: contain;
@@ -2328,6 +2332,7 @@ section {
       li {
         max-width: 350px;
         width: 100%;
+        margin-bottom: 40px;
         justify-self: center;
         > p {
           margin-top: 27px;
