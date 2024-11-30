@@ -10,6 +10,7 @@ import Header from '../components/Header.astro'
 import SPHeader from '@/components/SPHeader.astro'
 import Footer from '@/components/Footer.astro'
 import MV from '@/components/Mv.astro'
+import { GoogleAnalytics } from 'astro-google-analytics'
 // Supports weights 100-900
 import '@fontsource-variable/noto-sans-jp'
 import '@fontsource-variable/heebo'
@@ -30,7 +31,9 @@ const { title = '', description = '', path = '/', ogImage = '' } = Astro.props
 
 const database = await getDatabase()
 
-const siteTitle = title ? `${title} | ${database.Title} | 早稲田コンピュータ研究会・WINC Webチーム` : `${database.Title} | 早稲田コンピュータ研究会・WINC Webチーム`
+const siteTitle = title
+  ? `${title} | ${database.Title} | 早稲田コンピュータ研究会・WINC Webチーム`
+  : `${database.Title} | 早稲田コンピュータ研究会・WINC Webチーム`
 const siteDescription = description ? description : database.Description
 const siteURL = new URL(getNavLink(path), Astro.site).toString()
 const siteOGImage = new URL(
@@ -90,6 +93,7 @@ if (database.Icon && database.Icon.Type === 'file') {
       is:inline
       src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
     ></script>
+    <GoogleAnalytics id="G-CNNRHBHLJQ" />
   </head>
   <body>
     <Header />
