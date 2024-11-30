@@ -304,7 +304,7 @@ section {
       position: absolute;
       height: 370px;
       width: 100%;
-      opacity: .3;
+      opacity: 0.3;
       z-index: -10;
       img {
         width: 100%;
@@ -324,7 +324,7 @@ section {
       }
     }
     &__blog-bg {
-      opacity: .5;
+      opacity: 0.5;
       img {
         object-position: 50% 40%;
       }
