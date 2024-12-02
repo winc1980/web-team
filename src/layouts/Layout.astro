@@ -15,7 +15,7 @@ title =
 description =
   description ||
   'Webチームの公式サイトです。Webチームは「『創る』を楽しめる人になろう」を指針とし、Webサイトの制作・提供(無償)やWebアプリケーションの開発を行っています。'
-og_image = og_image || '/assets/images/webteam_banner.webp'
+og_image = og_image || 'assets/images/webteam_banner.webp'
 ---
 
 <!doctype html>
@@ -30,7 +30,7 @@ og_image = og_image || '/assets/images/webteam_banner.webp'
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content={og_image} />
+    <meta property="og:image" content={Astro.url + og_image} />
     <meta name="twitter:site" content="@WinCircleHpTeam" />
     <meta name="twitter:url" content={Astro.url} />
     <meta name="twitter:title" content={title} />
