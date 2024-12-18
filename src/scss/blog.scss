@@ -474,6 +474,22 @@ ul {
 
 /* --------------------------------- Heading2.astroここまで --------------------------------- */
 
+/* --------------------------------- Image.astroここから --------------------------------- */
+.image {
+  display: flex;
+  margin: .5rem auto;
+}
+.image > div {
+  margin: 0 auto;
+}
+.image > div > div {
+}
+.image > div > div img {
+  display: block;
+  max-width: 100%;
+}
+/* --------------------------------- Image.astroここまで --------------------------------- */
+
 /* --------------------------------- Paragraph.astroここから --------------------------------- */
 
 p {
@@ -996,6 +1012,10 @@ aside,
   }
   ul {
     list-style: initial;
+    margin: 0 0 20px 20px;
+  }
+  ol {
+    list-style: desc;
     margin: 0 0 20px 20px;
   }
   .post-featured-image {
