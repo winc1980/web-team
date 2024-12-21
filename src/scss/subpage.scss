@@ -56,6 +56,15 @@
   hr {
     margin: 20px 0;
   }
+  ul, ol {
+    margin: 0 0 20px 20px;
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
   @media (max-width: $breakpointMobile) {
     h1 {
       font-size: 20px;
