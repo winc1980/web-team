@@ -190,7 +190,7 @@ section {
 
 .web-team {
   &__header {
-    height: 109px;
+    height: 60px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -226,31 +226,21 @@ section {
       display: flex;
     }
     &__cta {
-      a {
-        display: block;
-        width: 147px;
-        height: 110px;
-        padding-top: 40px;
-        background-color: #f2b551;
-        transition: 0.3s all;
-        &:hover {
-          opacity: 0.6;
-          transition: 0.3s all;
-        }
-        p {
-          color: #fff;
-          font-size: 18px;
-          text-align: center;
+      &.--blue{
+        a {
+          background-color: #518ef2;
         }
       }
-    }
-    &__contact {
+      &.--yellow{
+        a {
+          background-color: #f2b551;
+        }
+      }
       a {
         display: block;
         width: 147px;
-        height: 111px;
-        padding-top: 40px;
-        background-color: #518ef2;
+        height: 60px;
+        padding-top: 10px;
         transition: 0.3s all;
         &:hover {
           opacity: 0.6;
@@ -259,8 +249,10 @@ section {
         p {
           color: #fff;
           font-size: 18px;
-          font-weight: 400;
           text-align: center;
+          font-weight: 400;
+          line-height: normal;
+          margin: 0.3rem 0 1rem 0;
         }
       }
     }
