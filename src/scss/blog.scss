@@ -92,6 +92,12 @@ code {
   font-family: var(--font-mono);
 }
 
+@media (max-width: $breakpointMobile) {
+  code {
+  word-break: break-all;
+  }
+}
+
 table {
   display: block;
   overflow-x: auto;
